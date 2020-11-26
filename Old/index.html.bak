@@ -1,62 +1,0 @@
-<!DOCTYPE html>
-<html>
-  <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-     <title> Marlon Gomes</title>
-     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">  </script>
-  </head>
-  <body topmargin="20">
-     <table border="0">
-        <tbody>
-          <tr>
-            <td width="750" valign="top" align="left">
-              <ul>
-                <ul>
-                  <h1>Marlon de Oliveira Gomes</h1>
-                  Graduate Student <br>
-                  Mathematics Department <br>
-                  Stony Brook University <br>
-                  <hr> <br>
-                  I am a fourth-year Ph.D. student, interested in complex geometry and the geometry of 4-manifolds. My advisor is <a href="http://www.math.stonybrook.edu/%7Eclaude/" target="_blank">Claude LeBrun</a>. <br>
-                  <br>
-                  <ul>
-                    <li> <b> Email:</b> mgomes <i>at</i> math <i>dot </i>stonybrook <i>dot </i>edu </li>
-                    <li> <b> Office: </b>Math Tower 3-101, Stony Brook University.</li>
-                  </ul> <br>
-                  <hr>
-                  <!--<h2>Research</h2>
-                    <ul>
-                    </ul>
-                    <br>
-                  <hr>-->
-                  <h2>Teaching</h2>
-                    <b> Summer session II 2018: </b> <br>
-                      <ul>
-                        <li> <a href="mat203sum18.html" target="_blank">MAT 203 - Calculus III with applications</a></li>
-                        <li> <a href="mat303sum18.html" target="_blank"> MAT 303 - Caclulus IV with applications</a></li>
-                      </ul>
-                    <br>
-                    <br>
-                    <b>Office hours: TBA</b> <br>
-                  <hr>
-                  <h2>Links</h2>
-                    <ul>
-                      <li> <a target="_blank" href="CV/Marlon%20Gomes%20CV.pdf"> My CV</a>.<br></li>
-                      <li> I co-organize the <a target="_blank" href="http://www.math.stonybrook.edu/%7Emgomes/rtg.html"> RTG Student Seminar</a>. </li>
-                    </ul>
-                  <br>
-                  <br>
-                  <span style="color: #0000ee;"></span><br>
-                </ul>
-              </ul>
-            </td>
-            <td width="150" valign="top" align="left"><br>
-            </td>
-            <td width="500" valign="top" align="left"> <img src="Picture2.jpeg" style="width: 389px; height: 519px;">
-              <br>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </body>
-</html>
