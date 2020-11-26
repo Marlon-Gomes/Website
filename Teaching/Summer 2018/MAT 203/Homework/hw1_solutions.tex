@@ -1,0 +1,420 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 203 - Summer II 2018: Homework 1 solutions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 203 - Lecture 1\\
+July 24, 2018
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Homework 1: solutions to selected problems.} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Convince yourself that the addition of vectors and multiplication by scalar satisfy the following properties. 
+
+\begin{parts}
+\part Addition is commutative: $u+v = v+u$, for all vectors $u$, $v$.
+\part Addition is associative: $(u+v)+w = u + (v+w)$ for all vectors $u,v,w$. 
+\part Addition has a neutral element (zero): there exists a unique element called \textit{zero}, denoted by $0$, such that $u+0 = u$ for all vectors $u$. 
+\part Existence of additive inverses: for all $u \in \mathbb{R}^3$, there exists a {\textit{unique}} additive inverse, denoted by $-u$, defined by the property $u+(-u)=0$.
+\part Multiplication by scalars is associative: $a(bv)=(ab)v$, for all scalars $a,b$ and all vectors $v$. 
+\part The scalar $1 \in \mathbb{R}$ is neutral with respect to multiplication: $1v=v$ for all vectors $v$.
+\part Scalar multiplication is distributive with respect to vector addition: $a(u+v)=au+av$, for all scalars $a$ and all vectors $u,v$.
+\part Scalar multiplication is distributive with respect to scalar addition: $(a+b)u=au+bu$, for all scalars $a,b$ and all vectors $u$. 
+\end{parts}
+You should attempt to visualize each of these properties by drawing the associated vector diagrams. Hint: for all but the associative property for addition, you can assume that the vectors are contained in the plane $\mathbb{R}^2$. \textbf{You do not need to turn this problem in.} 
+\end{exercise}
+
+\begin{newsolution} 
+This problem was discussed in class.
+\end{newsolution}
+
+\begin{exercise}{2}
+Using only the definition of the dot product, 
+\begin{equation*}
+(u_1,u_2,u_3)\cdot (v_1,v_2,v_3) = u_1v_1+u_2v_2+u_3v_3,
+\end{equation*}
+convince yourself of the following properties: 
+\begin{parts}
+\part The dot product is symmetric, $u\cdot v=v\cdot u$, for all vectors $u,v$. 
+\part The dot product is linear with respect to sums, $(u+v)\cdot w = u\cdot w + v\cdot w$, for all vectors $u,v,w$. 
+\part The dot product is linear with respect to multiplication by scalars, $(su)\cdot v = s(u\cdot v)$, where $s$ is a scalar, $u$ and $v$ are vectors. 
+\part The dot product is positive-definite, that is, $u \cdot u \geq 0$, and $u \cdot u =0$ only if $u$ is the zero vector. 
+\end{parts}
+\textbf{You do not need to turn this problem in}. If any of these properties is not clear to you, try using a few examples to understand it better. 
+\end{exercise}
+
+\textbf{Hint:} 
+
+(a) Use commutativity of the product of real numbers. \\
+(b) Use the distributive property for real numbers. \\
+(c) Use associativity of multiplication of real numbers, together with the distributive property. \\
+(d) Use the fact that for any real number, $x^2 \geq 0$, and $x^2=0$ only if $x=0$. 
+
+
+\begin{exercise}{3}
+Consider two non-collinear vectors $u,v$ in the plane. The origin, together with the points determined by these vectors, form a triangle. Two of the sides of this triangle are represented by the vectors $u,v$, while the third is parallel to the difference, $(u-v)$. Call the smallest angle between the vectors $\alpha$. 
+\begin{parts}
+\part Use the Law of Cosines to compute the cosine of this angle, in terms of the lenghts of $u, v$, and $(u-v)$. 
+\part Use the properties of the dot product to obtain the following equality:
+\begin{equation*}
+u \cdot v = ||u|| ||v|| \cos(\alpha).
+\end{equation*}
+\part Does the preceding equation still hold if the vectors are collinear? What if one of them is the zero vector?
+\part Can this reasoning be applied to vectors in space? 
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{itemize}
+\item[(a)] Textbook, page 771. 
+\item[(b)] Textbook, page 771.
+\item[(c)] Note that the reasoning employed in the textbook no longer works: if the vectors are aligned there is no triangle. However, you can compute the dot product directly, and verify that it coincides with the expression on the right-hand side. If one of the vectors is zero, then both sides of the equation are zero (regardless of the ambiguity in the notion of angle).
+\item[(d)] The answer is yes. The argument for part (b) only relies on the fact that the third side of the triangle spanned by $u$ and $v$ is congruent to $v-u$, and this is true in space as well.
+\end{itemize}
+\end{newsolution} 
+
+\begin{exercise}{4}
+This exercise you get you better acquainted with the quaternionic number system, and its relation to products of vectors in three dimensions. 
+\begin{parts}
+\part We saw in class that imaginary quaternions (those with scalar part $0$) can be identified with vectors in $\mathbb{R}^3$. Given two such vectors $u=u_1 i + u_2 j + u_3 k$, $v= v_1 i +v_2 j + v_3 k$, their quaternionic product $uv$ has a scalar component and a vector component, which we can identify as follows:
+\begin{equation*}
+uv = -u\cdot v + u \times v.
+\end{equation*}
+What effect does changing the order of multiplication of imaginary quaternions have on the dot and cross products? Hint: you should use the property of anti-commutativity ($ij=-ji$ and similarly for the other pairs), rather than compute this by hand.
+\part What is the vector part of the quaternionic product of two vectors which are aligned? Explain your answer. 
+\part Given imaginary quaternions $u$, $v$ as above, compute the quaternionic product $u(uv)$. Use your result to explain why the cross-product $u \times v$ of vectors in $\mathbb{R}^3$ $u,v$ is orthogonal to both.
+\part We saw in class that the dot product can be used to detect when two vectors are aligned. Can you use the cross product for this as well?
+\part We saw in class that any two non-colinear vectors in space are contained in a unique plane. How can you use the dot and cross product to tell whether a triple of vectors is co-planar (i.e., all belong to the same plane)?
+\part The quaternionic conjugate of a quaternion $q=s+v$, where $s$ is a scalar and $v = v_1 i + v_2 j + v_3 k  \in \mathbb{R}^3$ is a vector, is given by 
+\begin{equation*}
+\bar{q}=s-v = s -v_1 i -v_2 j - v_3  k.
+\end{equation*}
+Explain why the product $q\bar{q}$ is always a scalar. Can it be a negative scalar?
+\part The norm of a quaternion $q$ is given by $|| q || =  \sqrt{q\bar{q}}$. If the quaternion $q$ is purely imaginary, what is the interpretation of the norm of $q$, in terms of the vector $v$?
+\part Show that if $u,v$ are imaginary quaternions, then the norm of their quaternionic product $uv$ satisfies
+\begin{equation*}
+||uv||^2 = ||u||^2||v||^2.
+\end{equation*}
+Use this to obtain the following identity:
+\begin{equation}\label{dot_and_cross_products}
+||u||^2||v||^2 = (u \cdot v)^2 + ||u \times v||^2
+\end{equation}
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{itemize}
+\item[(a)] Changing the order of multiplication of $u$ and $v$ will interchange the order of multiplication of all products involving $i,j$ and $k$. For instance, any term involving $ij$ in one order becomes $ji$ in the second. This change of order is relevant when multiplying different imaginary units, such as $ij=-ji$, but not when multplying an imaginary unit by itself, such as in $i^2$. The first type of products will appear in the vector part of the quaternionic product, while the second will correspond to the scalar part. It follows that the scalar components of $uv$ and $vu$ are the same, whereas the vector components differ by a sign. In terms of the dot and cross products, this is to say that
+\begin{equation*}
+u\cdot v = v\cdot u, \ \ u \times v = -v \times u.
+\end{equation*}
+\item[(b)] Consider two colinear vectors, $u$ and $v$. Say that $v=tu$, that is, $v_1=tu_1, v_2=tu_2$ and $v_3=tu_3$, for some scalar $t$. Their quaternionic product is then 
+\begin{align*}
+uv & =(u_1 i + u_2j +u_3k)(tu_1 i +t u_2j + tu_3k)\\
+& = -t(u_1)^2 +tu_1u_2 k - t u_1u_3 j - tu_2u_1 k -t(u_2)^2 + tu_2u_3 i + tu_3u_1 j -t u_3u_2 i -t(u_3)^2\\
+& = -t [(u_1)^2 + (u_2)^2 + (u_3)^2].
+\end{align*}
+In summary, the quaternionic product of colinear vectors is a  \textit{scalar}. 
+\item[(c)] We can make use of part (b) to simplify the computation. Here the keypoint is that quaternionic multiplication is associative, so $u(uv)=(uu)v$. The product in parenthesis on the right-hand side is a product of two colinear vectors, $u$ and itself, thus it is a scalar quantity, namely
+\begin{equation*}
+uu=-[(u_1)^2+(u_2)^2+(u_3)^2].
+\end{equation*}
+When multipied by the vector $v$, we obtain a vector as a result:
+\begin{equation*}
+u(uv)=-[(u_1)^2+(u_2)^2+(u_3)^2]v_1 i  -[(u_1)^2+(u_2)^2+(u_3)^2] v_2j  -[(u_1)^2+(u_2)^2+(u_3)^2] v_3k.
+\end{equation*}
+Now we can reinterpret this in terms of the decomposition of the quaternionic product into scalar and vector parts. 
+\begin{align*}
+u(uv) & = u ( - u\cdot v + u\times v)\\
+& = -(u\cdot v) u + u(u\times v)\\
+& = -(u\cdot v) u + u\cdot (u\times v) + u\times (u \times v).
+\end{align*}
+The only scalar component of the right-hand side is the product $u\cdot(u \times v)$. This scalar component should be zero, as we saw above, which implies that $u$  and $u\times v$ are perpendicular. A similar reasoning would lead us to conclude that $v$ and $u \times v$ are perpendicular. 
+\item[(d)] Yes, the cross product can detect whether two vectors are aligned, as we saw in part (c). In fact, the cross product of two vectors equal to zero if, and only if, the vectors are aligned. 
+\item[(e)] If $u,v$ adn $w$ are vectors, no two of which are colinear, then any two of them determine a plane. Say we consider the plane spanned by $u$ and $v$. The cross product $u \times v$ is then a normal vector to this plane. To test whether $w$ is on the plane or not, all we have to do is to compute its component in the $u \times v$ direction, using the dot product: $(u \times v) \cdot w$. The vector $w$ is coplanar to $u$ and $v$ if, and only if, this mixed product is equal to zero. 
+\item[(f)] A direct computation shows that the product $q\bar{q}$ is equal to 
+\begin{equation*}
+q\bar{q} = s^2 + ||v||^2 = s^2 + (v_{1}^{2}+v_{2}^{2} + v_{3}^{2}), 
+\end{equation*}
+thus a non-negative scalar, for all quaternions $q$. 
+\item[(g)]  As seen above, if the quaternion is purely imaginary (i.e. its scalar component is zero), then $||q||=\sqrt{q\bar{q}} = ||v||$, the length of its vector component. 
+\item[(h)] Again, the first part of the problem is a direct computation. It boils down to verifying that $\overline{uv}=\bar{v}\bar{u}$ (notice that the order matters). This is because
+\begin{align*}
+uv& =-u\cdot v + u\times v \\ 
+\overline{uv} & = -u\cdot v - u \times v \\
+\overline{uv} & = -v\cdot u + v \times u \\
+\overline{uv} & = -(-v)\cdot (-u) + (-v) \times (-u)\\
+\overline{uv} & = \bar{v}\bar{u}.
+\end{align*}
+Thus
+\begin{equation*}
+||uv||^2 = uv\overline{uv} = uv \bar{v} \bar{u} = ||u||^2||v||^2.
+\end{equation*}
+The identify now follows from part (f), 
+\begin{equation*}
+||uv||^2 = ||u||^2||v||^2 = (u\cdot v)^2 + ||u \times v||^2
+\end{equation*}
+\end{itemize}
+\end{newsolution}
+
+\begin{exercise}{5}
+Consider two non-collinear vectors $u,v$ in space. Together these vectors span a parallelogram. Let $\alpha$ be the angle between the sides determined by $u$ and $v$. 
+\begin{parts}
+\part Compute the area of this parallelogram in terms of the norms of $u$ and $v$ and the sine of the angle.
+\part Now use equation \eqref{dot_and_cross_products} to relate the area of this parallelogram to the cross product of $u$ and $v$. 
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+Textbook, page 781. 
+\end{newsolution}. 
+
+\begin{exercise}{6}
+This exercise will help you understand a property of the cross product which often causes a lot of confusion. It has to do with the way linear transformations (i.e., transformations that are compatible with vector algebra) act on a cross product. The set-up is the following: you are given two vectors, $u$, $v$, and a linear transformation $L$. There are two ways that this transformation can act on the product: by acting on the individual vectors and considering the new product $(Lu)\times (Lv)$; by acting on the product itself $L(u\times v)$. The outputs of these two operations are not always the same, as we will see below. 
+
+\begin{parts}
+\part Consider the transformation $L_1$, which reflects a vector across the $xy$ plane. What is the effect of this transformation on the coordinates of a vector?
+\part Consider the transformation $L_2$, which rotates vectors by $180$ degress about the $z$-axis. What is the effect of this transformation on the coordinates of a vector?
+\part Now consider two vectors, $u=u_1 i + u_2 j +u_3 k$, and $v= v_1 i +v_2j + v_3k$. Using your result from part (a), compare the vectors $(L_1 u) \times (L_1 v)$ and $L_1(u \times v)$.
+\part Compare the vectors $(L_2 u) \times (L_2 v)$ and $L_2 (u \times v)$. 
+\end{parts}
+
+If you are having a hard time understanding the comparison, you may benefit by choosing specific vectors $u,v$ and using a graphing calculator to plot all the vectors involved. However, in this exercise you should compute the differences between the vectors as stated, and not with any examples you may use to help you. 
+ 
+Some people refer to the cross product as a \textit{pseudovector} because of this inconsistency. We will not use this terminology in our course, but you should be aware of it. 
+\end{exercise}
+
+
+\begin{newsolution}
+\begin{itemize}
+\item[(a)] This transformation changes the $z$ coordinate of a vector to its negative, while keeping the other two coordinates intact, $L_1(x,y,z)=(x,y,-z)$. 
+\item[(b)] This transformation changes both the $x$ and $y$ coordinates to their negatives, while keeping the $z$ coordinate fixed, $L_2(x,y,z)=(-x,-y,z)$. 
+\item[(c)] A simple computation of both $L_1 u $ and $L_1 v$, using the result from part (a), shows that 
+\begin{align*}
+(L_1 u) \times (L_1 v) & = (u_1 i + u_2 j - u_3k) \times (v_1 i + v_2 j - v_3 k)\\
+& = -(u_2v_3 - u_3v_2)i + (u_1v_3-u_3v_1)j + (u_1v_2 - u_2v_1)k.
+\end{align*}
+Meanwhile, the cross product $u \times v$ is 
+\begin{align*}
+u \times v & = (u_1 i + u_2 j + u_3k) \times (v_1 i + v_2 j + v_3 k)\\
+& = (u_2v_3-u_3v_2)i - (u_1v_3-u_3v_1)j + (u_1v_2-u_2v_1)k,
+\end{align*}
+hence $L_1$ acts on it by 
+\begin{equation*}
+L_1(u \times v) = (u_2v_3-u_3v_2)i - (u_1v_3-u_3v_1)j - (u_1v_2-u_2v_1)k = -(L_1 u) \times (L_1 v).
+\end{equation*}
+\item[(d)] This is analogous to part (c). The computations simplify if one notices that $L_2u=-L_1u$, and likewise for $v$.
+\begin{equation*}
+(L_2 u) \times (L_2 v) = (-L_1 u) \times (-L_1 v) =  -(u_2v_3 - u_3v_2)i + (u_1v_3-u_3v_1)j + (u_1v_2 - u_2v_1)k.
+\end{equation*}
+Meanwhile, 
+\begin{equation*}
+L_2(u \times v) = -(u_2v_3-u_3v_2)i + (u_1v_3-u_3v_1)j + (u_1v_2-u_2v_1)k = (L_2 u) \times (L_2 v)
+\end{equation*}
+\end{itemize}
+The constrast between parts (c) and (d) shows that acting on a cross products in different ways can either yield the same result, or results that differ by a sign. In general, \textit{the sign will be the same for rotations and will change for reflections. }
+\end{newsolution}
+
+\begin{exercise}{7}
+This exercise is meant for you to reinterpret a couple of facts in classical geometry in terms of vectors. 
+
+\begin{parts}
+\part Given two points in space, there is a unique line trough the two. If the points correspond to vectors $u$, $v$, find the parametric equation of the line. 
+\part Given a line in space and a point not on it, there is a unique plane containing the two. If the line is given parametrically as in part (a), and the point corresponds to the vector $w$, find a parametric equation of the plane (notice: you need two parameters).  
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+Both of these problems were solved in class. 
+\end{newsolution}
+
+\begin{exercise}{8}
+Lines in space that do not intersect and are not parallel are called {\textit{skew}}. Use the formulas given in class for distance between a point and a line, a point and a plane, and two parallel planes to complete the following project (textbook, page 797).
+\begin{parts}
+\part Show that the lines 
+\begin{align*}
+L_1 \colon & x = 4 + 5t, y=5+5t, z=1-4t,\\
+L_2 \colon & x=4+s, y=-6+8s, z=7-3s,
+\end{align*}
+are skew. 
+\part Find two parallel planes containing these lines. 
+\part Find the distance between these planes. That is the distance between the skew lines. 
+\end{parts}
+\end{exercise}.
+
+\begin{newsolution}
+\begin{itemize}
+\item[(a)] The line $L_1$ is parallel to the vector $(5,5,-4)$, while the line $L_2$ is parallel to the vector $(1,8,-3)$. It is easy to check that these vectors are not aligned (their coordinates are not in the same proportion), hence the lines are not parallel to each other. 
+
+To check whether the lines intersect, one sets all three coordinates equal to each other simultaneously, and tries to solve the corresponding linear system, 
+\begin{equation*}
+\left\{ 
+\begin{array}{cc}
+4+5t & = 4+s, \\
+5 + 5t & = -6 +8s,\\ 
+1-4t & = 7-3s.
+\end{array}
+\right.
+\end{equation*}
+This system of three equations in two variables has no solutions. This is because the equations are mutually incompatible. Subtracting the second equation from the first would yield
+\begin{equation*}
+-1 = 10 -7s, 
+\end{equation*}
+thus $s=11/7$. 
+Meanwhile, adding 4 times the first equation to 5 times the third equation would yield
+\begin{equation*}
+21 = 51 - 11s,
+\end{equation*} 
+whose solution is $s=30/11$, contradicting the value of $s$ previously found. This incompatibility means that the lines do not intersect each other. 
+\item[(b)] The plane through the origin containing the directions of the lines, $(5,5,-4)$ and $(1,8,-3)$, is parallel to both lines (but does not necessarily contain them). The cross product of $(5,5,-4)$ and $(1,8,-3)$ is $(17,11,35)$, so the equation os the plane containing these two vectors and the origin is 
+\begin{equation*}
+\Pi \colon \ 17x + 11 y + 35 z =0.
+\end{equation*}
+To find two planes parallel to , each containing one of the lines above, can choose points on the lines and compute the combination of their $x$, $y$ as $z$ coordinates as prescribed by the equation of $\Pi$. For instance, the point $(4,5,1)$ (corresponding to parameter $t=0$) belongs to the line $L_1$. Since 
+\begin{equation*}
+17(4) + 11(5) + 35(1) = 158, 
+\end{equation*}
+the equation of the plane parallel to $\Pi$ containing $L_1$ is 
+\begin{equation*}
+\Pi_1 \colon \ 17x + 11 y + 35 z = 158. 
+\end{equation*}
+Similarly, the equation of the plane parallel to $\Pi$ and containing $L_2$ is 
+\begin{equation*}
+\Pi_2 \colon \ 17x + 11 y + 35 z = 247.
+\end{equation*}
+\item[(c)] By comparing the equations of the two parallel planes $\Pi_1$ and $\Pi_2$, their distance is $247-158=89$. 
+\end{itemize}
+\end{newsolution}
+
+\begin{exercise}{9}
+Use your knowledge of distances to find the equations of the following surfaces. Then identify the surfaces (you may plot the equations using a computer algebra system). 
+\begin{parts}
+\part The set of all points in space equidistant from the point $(0,2,0)$ and the plane $y=-2$. 
+\part The set of all points in space equidistant from the point $(0,0,4)$ and the $xy$-plane. 
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{itemize}
+\item[(a)] The distance between a point $(x,y,z)$ and the plane $y=-2$ is measured by 
+\begin{equation*}
+d_1=|y+2|,
+\end{equation*}
+while the distance between $(x,y,z)$ and the point $(0,2,0)$ is given by
+\begin{equation*}
+d_2=\sqrt{x^2+(y-2)^2+z^2}.
+\end{equation*}
+Therefore, the set of points satisfying $d_1=d_2$ has equation
+\begin{equation*}
+|y+2| = \sqrt{x^2+(y-2)^2+z^2}.
+\end{equation*}
+Equivalently, after squaring and simplyifying this becomes 
+\begin{align*}
+y^2+4y+4 & =x^2+y^2-4y +4 +z^2 \\
+8y & =x^2+z^2
+\end{align*}
+The corresponding surface is a paraboloid, the surface of revolution obtained by rotating a parabola across an axis. 
+\item[(b)] The distance between a point$ (x,y,z)$ and the $xy$-plane is given by $d_1=|z|$. Meanwhile, the distance between the point $(x,y,z)$ and the point $(0,0,4)$ is given by 
+\begin{equation*}
+d_2=\sqrt{x^2+y^2+(z-4)^2}.
+\end{equation*}
+The equations defining the set of points where distances are the same are, after squaring and simplifying, 
+\begin{equation*}
+8z = x^2+y^2+16, 
+\end{equation*}
+again a paraboloid. 
+\end{itemize}
+\end{newsolution}
+
+\begin{exercise}{10} 
+Find the equation of the surface of revolution generated by rotating the circle 
+\begin{equation*}
+C \colon (y-2)^2 + z^2 = 1, x=0,
+\end{equation*}
+around the $z$-axis. Sketch this surface. 
+\end{exercise}
+
+\begin{newsolution}
+The circle can be described parametrically as 
+\begin{equation*}
+C \colon \ (0,2+\cos(\theta), \sin(\theta)),
+\end{equation*}
+where $\theta$ is the angle between a radius of the circle and the $y$ axis, oriented counterclockwise. 
+
+Upon rotation about the $z$-axis, the $z$ coordinate remains the same, while the $x$ and $y$ coordinates can be described in terms of the angle of rotation $\alpha$ and the radius of rotation $2+\cos(\theta)$ as 
+\begin{align*}
+x & = (2+\cos(\theta))\cos(\alpha)\\
+y & = (2+\cos(\theta))\sin(\alpha).
+\end{align*}
+The parametric equations of the surface of revolution is 
+\begin{equation*}
+S \colon ((2+\cos(\theta))\cos(\alpha),(2+\cos(\theta))\sin(\alpha), \sin(\theta)). 
+\end{equation*}
+
+Non-parametrically, this surface can be described by the equation
+\begin{equation*}
+(\sqrt{x^2+y^2}-2)^2 + z^2 = 1, 
+\end{equation*}
+which can be verified directly by substitution of the parametric coordinates. 
+
+The shape that this equation describes is called a torus. It looks like a doughnut. 
+\end{newsolution}
+
+\begin{exercise}{11}\textbf{(Optional)}
+Sketch the hyperboloid of one-sheet given by the equation
+\begin{equation*}
+x^2+y^2-z^2=1.
+\end{equation*}
+You may use an interactive tool to sketch it. For instance, in Wolfram Alpha, type in the equation and hit the "Open code" button on the bottom right corner of the section containing the plot. This will create an interactive Mathematica workboook online, which you can use to see the hyperboloid from different angles. This can be done by prressing the play button on the "Surface plot" section, and dragging the plot around. 
+
+Show that there are two lines entirely contained in this surface passing through each point on the hyperboloid. Do things concretely first. Choose a few points, say in the $xy$-plane, for simplicity, and try to find these lines. Generalize it from there, if you can. 
+
+This exercise shows that a curved surface can consist entirely of lines. Can you think of any other such surfaces? 
+
+Here is another, more exotic, example of a curved surface formed entirely by lines :Whitney's umbrella. It is given by the equation 
+\begin{equation*}
+x^2-y^2z=0.
+\end{equation*}
+Try plotting it for fun, and see if you can find the equations of the lines contained in it.
+\end{exercise}
+
+
+\end{document}
+

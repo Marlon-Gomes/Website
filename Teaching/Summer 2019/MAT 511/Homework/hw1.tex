@@ -1,0 +1,227 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define an environment for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 511 - Summer I 2019: Homework 1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 511 - Summer 1\\
+May 28, 2019
+\end{flushright}
+\bigskip
+
+This homework is due on Tuesday, June 4, by 7:00 pm. 
+\begin{center}
+\textsf{Homework 1} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Make a truth table for each of the propositional forms below:
+\begin{parts}
+\part $p \land \neg p$;
+\part $\neg (p \land q)$;
+\part $(\neg p) \land (\neg q)$.  
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{2}
+Determine if the propositional forms below are equivalent:
+\begin{parts}
+\part $(\neg p) \lor (\neg q)$, $\neg (p \lor \neg q)$;
+\part $\neg (p \land q)$, $(\neg p) \land (\neg q)$;
+\part $(p \land q) \lor p$, $p$.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{3}
+Using truth tables, determine if the propositional forms below are tautologies, contradictions, or neither.
+\begin{parts}
+\part $(p \land q) \lor (\neg p \land \neg q)$; 
+\part $\neg (p \land \neg p)$;
+\part $(q \land \neg p) \land [\neg (p \land r)]$;
+\part $p \land [(\neg q \land p) \land (r \lor q)]$.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{4}
+This exercise is aimed to familiarize you with other commonly used logical connectives. Each connective is given a brief description, from which you should derive its truth-table, and write it in terms of the basic connectives $\neg, \lor, \land$ (Note: there are many tautologous forms of writing a compound connective, hence many correct answers for the last part of the problem. Use the one with fewer connectives, if possible). 
+\begin{parts}
+\part The connective ``exclusive or", denoted by the symbol $\oplus$, means ``one or the other, but not both". 
+\part The connective $NOR$, whose meaning is ``neither $A$ nor $B$."
+\part The connective $NAND$, whose maning is ``not $A$ and $B$."
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{5}
+Make truth tables for the propositional forms below.
+\begin{parts}
+\part $p \Rightarrow (q \land p)$.
+\part $(p \lor q) \Rightarrow (p \land q)$. 
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{6}
+Show that the following pairs of statements are equivalent:
+\begin{parts}
+\part $(p \land q) \Rightarrow r$ and $\neg r \Rightarrow (\neg p \land \neg q)$.
+\part $p \Rightarrow (q \lor r)$ and $(p \land \neg r) \Rightarrow q$. 
+\part $(p \Rightarrow q)\Rightarrow r$ and $(p \land \neg q) \lor r$. 
+\part $p \Leftrightarrow q$ and $(\neg p \lor q) \land (\neg q \lor p)$. 
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{7}
+Give, if possible, an example of a true conditional sentence for which:
+\begin{parts}
+\part the converse is false;
+\part the contrapositive is true.
+\end{parts}
+If any of these is not possible, explain why. 
+\end{exercise}
+
+\begin{exercise}{8}
+Give, if possible, and example of a false conditional sentence for which:
+\begin{parts}
+\part the converse is true;
+\part the contrapositive is false.
+\end{parts}
+If any of these is not possible, explain why. 
+\end{exercise}
+
+\begin{exercise}{9}
+Write each of the following sentences in symbolic form (identify predicates, objects, connectives, and quantifiers). In each case, the \textit{Universe of discourse} is indicated in parenthesis. (Note: not all the sentences below are true).
+\begin{parts}
+\part Some isosceles triangle is a right triangle. (All triangles)
+\part Every triangle that is not isosceles is a right triangle. (All triangles)
+\part Every integer is greater than some integer. (Integer numbers)
+\part Between any two rational numbers, there is an irrational number (Real numbers).
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{10} 
+In this problem, you are given quantified statements, whose universe of discourse is given in parenthesis. In each part, write: the statement in symbolic form; a denial, in symbolic form; a denial, in ordinary English. (Note: in this problem, we are not concerned with the truth-values of the statements). 
+\begin{parts}
+\part ``All even numbers are divisible by four" (integer numbers).
+\part ``There exists a rational number whose square is 2" (rational numbers).
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{11}
+These facts have been established at a crime scene:
+\begin{enumerate}
+\item If Professor Plum is not guilty, then the crime took place in the kitchen.
+\item If the crime took place at midnight, then Professor Plum is guilty.
+\item Miss Scarlet is innocent if and only if the weapon was not the candlestick.
+\item Either the weapon was the candlestick or the crime took place in the library.
+\item Either Miss Scarlet or Professor Plum is guilty.
+\end{enumerate}
+
+In each of the parts below, you are given a sixth clue. Solve the case based on the five clues above, and the additional clue. (Note: clues in different parts of this exercise are independent, i.e., clue (a) should not be applied to part (b)). 
+
+\begin{parts}
+\part The crime did not take place at the library. 
+\part The crime was committed at noon, with the revolver. 
+\part The crime took place at midnight, in the conservatory. 
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{12}
+The following excerpt is drawn from \textit{Alice in Wonderland}, by Lewis Carroll. 
+
+`You should say what you mean,' the March Hare went on. 
+
+`I do,' Alice hastily replied; `at least - at least I mean what I say - that's the same thing, you know.'
+
+`Not the same thing a bit!' said the Hatter. `You might just as well say that ``I see what I eat" is the same thing as ``I eat what I see"! '
+
+`You might just as well say,' added the March Hare, `that ``I like what I get" us the same thing as "I get what I like"! '
+
+`You might just as well say', added the Dormouse, who seemed to be talking in his sleep, `that ``I breathe when I sleep" is the same thing as ``I sleep when I breathe"! '
+
+
+In this conversation between Alice, the March Hare, the Mad Hatter, and the Dormouse, the latter three explain that Alice has made a logical mistake. Can you detect what is the illogical argument made by Alice? Write it in symbolic form, and use truth-tables to support your reasoning. 
+\end{exercise}
+
+\begin{exercise}{13}
+This is an exercise about the a simplified version of the boardgame \textit{Minefield}. I would hope you are familiar with it, but otherwise, the game's instructions can be written in predicate logic. 
+
+The set up consists of an 8x8 board, whose rows are labeled ``1" through ``8", from left to right, and columns are labeled ``1" through ``8", from bottom to top. A \textit{cell} is a position on the board, specified by its row and column number. 
+
+Some cells are empty some contain bombs, some contain clues. You start in cell $(1,1)$, which is assumed to be empty. In each stage of the game, you can move 1 cell in either the horizontal or vertical direction (respecting the boundaries of the board). If you land on an empty cell, you proceed to the next move. If you land on a cell containing a bomb, the game ends, and you lose. 
+
+If you land on a cell containing a clue, you may read the clue contained in it. Clues are true statements described by: the quantifiers ``there exists" $(\exists)$ and ``for all" $(\forall)$; the the predicate $mine(x,y)$, whose variables $x$ and $y$ denote the row and column number on the board, respectively, and whose meaning is ``mine in row $x$, column $y$"; and standard connectives from propositional logic. For instance, the hypothetical statement 
+\begin{equation*}
+\forall \ x \ \exists \ y \ mine(x,y),
+\end{equation*}
+would read ``for all rows $x$, there exists a column $y$ for which the cell $(x,y)$ contains a mine". 
+
+At any stage of the game, you may \textit{declare} a cell to contain a bomb. The caveat is that if that cell does not contain a bomb, you lose. To win you must either declare all bombs in the board, or successfully navigate the \textit{safe} portion of the board, i.e., reveal all its empty cells and flags. 
+
+In the specific example we will work with in this problem there are four bombs, and all the clues are listed below. 
+\begin{enumerate}
+\item At position (1,1): $\neg \exists y \ mine(1,y)$.
+\item At position (1,4): $mine(6,4)$. 
+\item At position (1,5): $\forall x \ (mine(x,1) \Leftrightarrow \ mine(1,x))$. 
+\item At position (1,7): $\exists x \ mine(x,3) \Rightarrow \exists x \ mine(x,8)$.
+\item At position (3,3): $\exists y \ mine(6,y) \Rightarrow \neg \exists \ x \ mine(x,8)$.
+\item At position (3,6): $mine(4,2)\land \ mine(5,7)$.
+\item At position (4,8): $mine(3,5) \lor \ mine(5,3)$. 
+\item At position (6,1): $\forall x (mine(8,x) \Rightarrow \ mine(1,x)$.
+\item At position (6,6): $\neg \ mine(2,3) \land \neg \ mine(3,2)$.
+\item At position (8,3): $\neg \exists x \ mine(x,x)$.
+\item At position (8,8): $\forall \ x \ \forall \ y \ \forall \ z \ (mine(x,y) \land \ y \neq z \ \Rightarrow \ \neg \ mine(x,z)$. 
+\end{enumerate}
+
+List a winning strategy for this game (for simplicity in grading, list each step on a separate line). All moves should be logically justifiable. You must only use a clue if that clue has been found by you (i.e., in order to use clue in position $(8,8)$ you must first write a path that takes you to this position, without hitting any bombs or guessing, at any stage).
+\end{exercise}
+
+\begin{exercise}{14}
+This is another Lewis Carroll puzzle:
+\begin{quotation}
+\textit{The only animals in this house are cats. 
+Every animal is suitable for a pet, that loves to gaze at the moon. 
+When I detest an animal, I avoid it.
+No animals are carnivorous, unless they prowl at night. 
+No cat fails to kill mice. 
+No animals ever take to me, except what are in this house. 
+Kangaroos are not suitable for pets. 
+None but carnivora kill mice. 
+I detest animals that do not take to me. 
+Animals, that prowl at night, always love to gaze at the moon. }
+\end{quotation}
+
+In this exercise, you should: identify the predicates and objects involved; write each sentence symbolically, as an implication involving these predicates and objects; combine such predicates in by a chain of implications, deriving the last sentence. Note: some implications may be not necessary. 
+\end{exercise}
+
+\end{document}
+

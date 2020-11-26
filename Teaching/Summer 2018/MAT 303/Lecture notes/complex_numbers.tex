@@ -1,0 +1,113 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define an environment for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 303 - Summer II 2018: . }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 303 - Lecture 1\\
+July 20, 2018.
+\end{flushright}
+\bigskip
+
+\begin{center}
+\textsf{Reading assignment: polynomial algebra and complex numbers.} 
+\end{center}
+
+\section{Introduction}
+We discussed in class how polynomial equations arise in the study of second-order, linear equations with constant coefficients, and how complex numbers can be used to aid in solving such equations. In the lectures to come we will study higher-order linear differential equations with constant coefficients, and their study too will rely on the study of polynomials and complex numbers. The goal of these notes is to lay the groundwork (or serve as a review) for what we will study in upcoming lectures. 
+
+Consider a polynomial equation of degree $n$, 
+\begin{equation}\label{basic_equation}
+P(\lambda)=a_n\lambda^n+a_{n-1}\lambda^{n-1}+ \cdots + a_1\lambda + a_0=0,
+\end{equation}
+whose coefficients are \textit{real numbers}. You may already be familiar with the fact that not all such equations have solutions within the set of real numbers, the simplest example being 
+\begin{equation}\label{basic_irreducible_equation}
+\lambda^2+1 =0.
+\end{equation}
+
+As we shall see in section 1, finding a solution of a polynomial equation is intimately connected to factorizations of the underlying polynomial. Polynomials such as $P(\lambda)=\lambda^2+1$, which cannot be factored into polynomials of lower degree, are called irreducible (over the real numbers). In section 2, we will see that for each real polynomial of degree at least three is \textit{reducible}, and in fact all such polynomials can be written as products of linear and quadratic factors. Thus, at its core, the non-solvability of polynomial equations over the real numbers stems from the fact that quadratic equations cannot always be solved. 
+
+It is in this context that complex numbers arise. In section 3 we will describe a new number system obtained  by adjoining an immaginary unit, a solution of equation \eqref{basic_irreducible_equation}, and within this new system all real polynomial equations can be solved. This new numbers system, the \textit{complex numbers}, not only has good algebraic properties (that is, it allows us to solve equations), but also good analytic properties, allowing us to study complex functions. Among such functions is the complex exponential, which we will study in section 4, and which plays an important role in the theory of differential equations.  
+
+\section{Polynomial division}
+The idea of polynomial division comes from the Euclidiean Division Algorithim ( Long Division, or Division-with-remainder) of whole numbers. Given a pair of integers $(m,n)$, with $n \neq 0$, there is a unique pair of integers $(q,r)$, with $0 \leq r < n$, satisfying the equation
+\begin{equation}\label{long_division}
+p=qd+r.
+\end{equation}
+In this context, $p,d,q$ and $r$ are called dividend, divisor, quotient and remainder, respectively. 
+
+This algorithm does not carry over to polynomials immediately because there is no straightforward ordering of polynomials, as one could order whole numbers (the fact that $0 \leq r < n$ is what guarantees the uniqueness of the division process). Instead we will use a partial ordering, by the degree of the polynomials. 
+\begin{theorem}
+Let $P(\lambda)$ and $D(\lambda)$ be polynomials with real coefficients, $D$ not constant. Then there is a unique pair of polynomials $Q(\lambda)$ and $R(\lambda)$ satisfying:
+\begin{enumerate}
+\item[i.] the algebraic equation 
+\begin{equation}\label{polynomial_long_division}
+P(\lambda)=Q(\lambda)D(\lambda)+R(\lambda);
+\end{equation}
+\item[ii.] and the degree restriction $0 \leq \textrm{deg}(R) < \textrm{deg}(D)$; 
+\end{enumerate}
+\end{theorem}
+
+To obtain the quotient and remainder polynomials in practice, one solves a recursive system of linear equations. The following example illustrates the process. 
+
+\begin{example}
+Consider the polynomials $P(\lambda)=\lambda^5 + 1$ and $D(\lambda)=\lambda +1 $. By the degree restriction, the remainder $R$ must be a constant, hence the polynomial $Q$ must have degree 4, say 
+\begin{equation*}
+Q(\lambda)=a_4\lambda^4 + a_3\lambda^3 + a_2 \lambda^2 + a_1\lambda + a_0.
+\end{equation*}
+By comparing coefficients of the left and right-hand sides of equation \eqref{polynomial_long_division}, we obtain a linear system
+\begin{align*}
+1 & = a_4 \\
+0 & = a_4 + a_3 \\
+0 & = a_3 + a_2 \\
+0 & = a_2 + a_1 \\
+0 & = a_1 + a_0 \\
+1 & = a_0 + R
+\end{align*} 
+Solving the system recursively for $a_4, a_3, \cdots, a_0$ and $R$ yields $R=0$ and
+\begin{equation*}
+Q(\lambda)= \lambda^4 - \lambda^3 + \lambda^2 -\lambda +1.
+\end{equation*}
+\end{example}
+
+The example above also illustrates the relationship between roots and factorization. The remainder $R$ was zero - meaning $P$ can be written as a product, with $D$ as one of its factors - because $1$ is a common root of both $P$ and the divisor $D$. Thus, whenever a root of $P$ is found, say $r$, one can divide $P$ by the polynomial \begin{equation*}
+D(\lambda)=\lambda-r,
+\end{equation*}  
+whose root is also $r$. 
+\section{Complex numbers}
+
+\section{Complex power series and the exponential}
+
+\end{document}
+

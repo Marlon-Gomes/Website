@@ -1,0 +1,2940 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     97609,       2932]
+NotebookOptionsPosition[     78573,       2599]
+NotebookOutlinePosition[     80974,       2647]
+CellTagsIndexPosition[     80895,       2642]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"806544f5-d036-44c3-80a9-407234f1abf7"],
+
+Cell[CellGroupData[{
+
+Cell["Section 5.5", "Section",
+ CellChangeTimes->{{3.7718449033782787`*^9, 
+  3.771844913999103*^9}},ExpressionUUID->"c034f71f-38b5-44ed-83dd-\
+617e28fa9728"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 12: ", "Subsection",
+ CellChangeTimes->{{3.7718449155253983`*^9, 
+  3.77184492012193*^9}},ExpressionUUID->"bad7a8e6-d500-4fc8-9f2c-\
+2afeaaf3b712"],
+
+Cell["To solve this integral, we use the substitution ", "Text",
+ CellChangeTimes->{{3.771844929889976*^9, 
+  3.771844937653172*^9}},ExpressionUUID->"6ff13d03-abbd-48e2-ad37-\
+7c6a7780256a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{"e", "^", "x"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771844940940803*^9, 3.771844950927911*^9}},
+ CellLabel->
+  "In[279]:=",ExpressionUUID->"a57f6826-471f-4e0b-a4b5-be9d53001e2d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   SuperscriptBox["e", "x"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771844954597517*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[279]//TraditionalForm=",ExpressionUUID->"3714642b-b836-4deb-99cd-\
+788efeb29f17"]
+}, {2}]],
+
+Cell["In terms of the variable y, the integral becomes", "Text",
+ CellChangeTimes->{{3.771844978196664*^9, 
+  3.771845005969136*^9}},ExpressionUUID->"e85735ed-a73e-467c-9651-\
+55a7c72cd075"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TraditionalForm", "[", 
+   RowBox[{
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"e", "^", "x"}], "*", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"e", "^", "x"}], "]"}]}], ",", "x"}], "]"}], "]"}], 
+    "\[Equal]", " ", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"Cos", "[", "y", "]"}], ",", "y"}], "]"}], "]"}], "\[Equal]", 
+    " ", 
+    RowBox[{
+     RowBox[{"Sin", "[", "y", "]"}], "+", "C"}], " ", "\[Equal]", " ", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"e", "^", "x"}], "]"}], "+", "C"}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.771845008172843*^9, 3.771845172975007*^9}},
+ CellLabel->
+  "In[282]:=",ExpressionUUID->"d0175f84-85dd-44d8-8b9c-82daf7c83e78"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["e", "x"], " ", 
+       RowBox[{"cos", "(", 
+        SuperscriptBox["e", "x"], ")"}]}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"cos", "(", "y", ")"}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "+", 
+    RowBox[{"sin", "(", "y", ")"}]}], "\[LongEqual]", 
+   RowBox[{"C", "+", 
+    RowBox[{"sin", "(", 
+     SuperscriptBox["e", "x"], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.77184510108428*^9, 3.771845137724328*^9, 
+  3.771845173677088*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[282]//TraditionalForm=",ExpressionUUID->"a8c56950-a3fc-4ce7-9134-\
+df6f562b9095"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"d4990e33-aee9-43b6-b154-b613e6751fe9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"55256d1c-ef5c-4f52-a998-6305fc6b2cfc"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 14:", "Subsection",
+ CellChangeTimes->{{3.7718452256330233`*^9, 
+  3.771845230483698*^9}},ExpressionUUID->"a3e28484-f0d0-48c5-b15b-\
+478c7d83b25f"],
+
+Cell["A good substitution to solve this problem is ", "Text",
+ CellChangeTimes->{{3.771845238048623*^9, 
+  3.771845245103249*^9}},ExpressionUUID->"5d24d7b5-cbae-476c-9e2c-\
+dc283ae146ed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", "1"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718452488382683`*^9, 3.771845262497109*^9}},
+ CellLabel->
+  "In[283]:=",ExpressionUUID->"ce120c0f-fa01-4cb3-810d-7fbfdb2ac91c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   RowBox[{
+    SuperscriptBox["x", "2"], "+", "1"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771845264011136*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[283]//TraditionalForm=",ExpressionUUID->"2473e6d4-0c65-4321-9a4b-\
+addbf29ca41b"]
+}, {2}]],
+
+Cell["In terms of the variable y, the integral becomes ", "Text",
+ CellChangeTimes->{{3.771845266854199*^9, 
+  3.7718452758941097`*^9}},ExpressionUUID->"4f7a2c19-3a29-4aad-8d0b-\
+f608eab29b3d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"x", "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], "^", "2"}], ")"}]}], 
+      ",", "x"}], "]"}], "]"}], "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"(", 
+        RowBox[{"2", 
+         RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "y"}], "]"}], "]"}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"(", 
+        RowBox[{"2", 
+         RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "y"}], "]"}], " ", "+", " ",
+     "C"}], " ", "\[Equal]", " ", 
+   RowBox[{"C", "-", 
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", 
+        RowBox[{"x", "^", "2"}]}], "+", "2"}], ")"}]}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718452825877943`*^9, 3.771845404951021*^9}},
+ CellLabel->
+  "In[285]:=",ExpressionUUID->"3ada77c1-bfd5-421c-b44f-da07199f6fe4"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox["x", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["x", "2"], "+", "1"}], ")"}], "2"]], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["y", "2"]}]], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    FractionBox["1", 
+     RowBox[{"2", " ", "y"}]]}], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["x", "2"]}], "+", "2"}]]}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.7718453850295877`*^9, 3.771845407899107*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[285]//TraditionalForm=",ExpressionUUID->"18303460-9585-42d8-9867-\
+7beed6e62073"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"868703ce-d953-415d-b116-38c195a18e8c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"1beffebf-5d38-4b86-a197-a99cd5774965"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 24:", "Subsection",
+ CellChangeTimes->{{3.771845443455429*^9, 
+  3.771845448574842*^9}},ExpressionUUID->"cf0f837f-4896-42b2-93b8-\
+995f1e25f44c"],
+
+Cell["We use the substitution ", "Text",
+ CellChangeTimes->{{3.7718454542277317`*^9, 
+  3.771845466347184*^9}},ExpressionUUID->"ae1e398f-97e9-4081-ac5b-\
+52398ac51eb6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{"ln", "[", "x", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771845468411216*^9, 3.771845508047274*^9}},
+ CellLabel->
+  "In[290]:=",ExpressionUUID->"b0bbb287-552f-4fc7-aef4-3c40204eea44"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   RowBox[{"ln", "(", "x", ")"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.77184548238947*^9, 3.7718455096390343`*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[290]//TraditionalForm=",ExpressionUUID->"460c6edc-6352-4f83-800e-\
+94b20ab59979"]
+}, {2}]],
+
+Cell["In terms of this new variable, the integral  becomes", "Text",
+ CellChangeTimes->{{3.771845552318654*^9, 
+  3.77184556463725*^9}},ExpressionUUID->"c7036705-f7a8-4ea4-a7aa-\
+05b78cf0bd6a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"ln", "[", "x", "]"}], "]"}], ")"}], "/", "x"}], ",", "x"}], 
+     "]"}], "]"}], "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", "y", "]"}], ",", "y"}], "]"}], "]"}], "\[Equal]", 
+   " ", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", "y", "]"}], ",", "y"}], "]"}], " ", "+", " ", "C"}],
+    " ", "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"ln", "[", "x", "]"}], "]"}]}], "+", "C"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.77184556705621*^9, 3.771845675587741*^9}},
+ CellLabel->
+  "In[292]:=",ExpressionUUID->"7067a4e2-8b41-4445-8d18-1759472c57a9"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"sin", "(", 
+        RowBox[{"ln", "(", "x", ")"}], ")"}], "x"], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"sin", "(", "y", ")"}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{"cos", "(", "y", ")"}]}], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{"cos", "(", 
+     RowBox[{"ln", "(", "x", ")"}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771845652593659*^9, 3.771845676855308*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[292]//TraditionalForm=",ExpressionUUID->"9f361785-79de-4781-8f61-\
+4134a7cae5d7"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"d5797182-dc06-4784-9e57-6e3fab750b2a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"5bc137ff-1a58-4b61-b7e4-43340f36eb45"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 34:", "Subsection",
+ CellChangeTimes->{{3.771846203869595*^9, 
+  3.771846207005064*^9}},ExpressionUUID->"69d5f60a-e10d-44f4-beec-\
+6a69fe0c1768"],
+
+Cell["In this problem, a useful substitution is ", "Text",
+ CellChangeTimes->{{3.771846221030532*^9, 
+  3.7718462304464693`*^9}},ExpressionUUID->"4c190b93-eeda-4be8-b140-\
+050568360be0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{"Cos", "[", "x", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771846233380142*^9, 3.7718462492930403`*^9}},
+ CellLabel->
+  "In[293]:=",ExpressionUUID->"a70fd43b-8a1e-4182-ad9b-57e9e39f232d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   RowBox[{"cos", "(", "x", ")"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.77184625024988*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[293]//TraditionalForm=",ExpressionUUID->"d3867a07-065a-45ae-bfe7-\
+8701e016e223"]
+}, {2}]],
+
+Cell["In terms of the new variable, the integral becomes", "Text",
+ CellChangeTimes->{{3.771846259422813*^9, 
+  3.771846267093954*^9}},ExpressionUUID->"fb58bb28-d7cc-4961-a642-\
+e9b1b96f6b30"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Sin", "[", "x", "]"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{
+          RowBox[{"Cos", "[", "x", "]"}], "^", "2"}]}], ")"}]}], ",", "x"}], 
+     "]"}], "]"}], "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "y"}], "]"}], "]"}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "y"}], "]"}], "+", "C"}], 
+   "\[Equal]", " ", 
+   RowBox[{"C", "-", 
+    RowBox[{"ArcTan", "[", 
+     RowBox[{"Cos", "[", "x", "]"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771846310965362*^9, 3.771846435851074*^9}},
+ CellLabel->
+  "In[296]:=",ExpressionUUID->"2d25c34b-abc3-4e68-be47-282b38e78bed"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"sin", "(", "x", ")"}], 
+       RowBox[{"1", "+", 
+        RowBox[{
+         SuperscriptBox["cos", "2"], "(", "x", ")"}]}]], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["y", "2"]}]]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{
+     SuperscriptBox["tan", 
+      RowBox[{"-", "1"}]], "(", "y", ")"}]}], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{
+     SuperscriptBox["tan", 
+      RowBox[{"-", "1"}]], "(", 
+     RowBox[{"cos", "(", "x", ")"}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.771846388417306*^9, {3.771846425852233*^9, 3.771846438904002*^9}},
+ FontSize->18,
+ CellLabel->
+  "Out[296]//TraditionalForm=",ExpressionUUID->"081308b7-568d-4399-bcb9-\
+003679ca9bcf"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"00dc72cf-9d69-4321-9d99-ed35d9056bc3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"e14d893c-73d4-45df-b8b4-15cf1c72ffbe"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 42: ", "Subsection",
+ CellChangeTimes->{{3.77184652905029*^9, 
+  3.771846536370891*^9}},ExpressionUUID->"ddecb536-307c-4182-94f4-\
+0e00b8c593c5"],
+
+Cell["\<\
+We will use the substitution method to find the antiderivative first. \
+\>", "Text",
+ CellChangeTimes->{{3.771846564138279*^9, 3.771846598225513*^9}, {
+  3.771850014783654*^9, 
+  3.7718500173577967`*^9}},ExpressionUUID->"5e11656d-3ccf-49e4-841a-\
+d1377b142229"],
+
+Cell["Consider the substitution ", "Text",
+ CellChangeTimes->{{3.7718466044616127`*^9, 
+  3.771846608130815*^9}},ExpressionUUID->"032a4014-6edd-45ee-bd62-\
+2d4bd6916d12"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"3", "t"}], "-", "1"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771846613203801*^9, 3.771846621771842*^9}},
+ CellLabel->
+  "In[297]:=",ExpressionUUID->"878e3eb5-5ae6-422a-a621-f51d91da08d3"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"3", " ", "t"}], "-", "1"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.7718466223424673`*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[297]//TraditionalForm=",ExpressionUUID->"276dff24-af96-4259-ba63-\
+640840ba4b42"]
+}, {2}]],
+
+Cell["In terms of this variable, the integral can be written as ", "Text",
+ CellChangeTimes->{{3.771846626478467*^9, 
+  3.771846636062647*^9}},ExpressionUUID->"1d1b8fc2-c9c7-47d6-bdd1-\
+8c0f63be56d8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", "t"}], "-", "1"}], ")"}], "^", 
+       RowBox[{"(", "50", ")"}]}], ",", "t"}], "]"}], "]"}], "\[Equal]", " ", 
+   
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "^", 
+        RowBox[{"(", "50", ")"}]}], "/", "3"}], ",", "y"}], "]"}], "]"}], 
+   "\[Equal]", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "^", 
+        RowBox[{"(", "50", ")"}]}], "/", "3"}], ",", "y"}], "]"}], " ", "+", 
+    "C"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", "t"}], "-", "1"}], ")"}], "^", 
+       RowBox[{"(", "51", ")"}]}], ")"}], "/", "153"}], " ", "+", "C"}]}], 
+  " ", "]"}]], "Input",
+ CellChangeTimes->{{3.771847190217896*^9, 3.771847393836034*^9}, {
+  3.771850162362286*^9, 3.771850194529558*^9}},
+ CellLabel->
+  "In[302]:=",ExpressionUUID->"8090bdb7-a86a-4e71-a312-510ff14b5916"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", " ", "t"}], "-", "1"}], ")"}], "50"], 
+      RowBox[{"\[DifferentialD]", "t"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       SuperscriptBox["y", "50"], "3"], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "+", 
+    FractionBox[
+     SuperscriptBox["y", "51"], "153"]}], "\[LongEqual]", 
+   RowBox[{"C", "+", 
+    RowBox[{
+     FractionBox["1", "153"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"3", " ", "t"}], "-", "1"}], ")"}], "51"]}]}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.771847395550476*^9, {3.771850181038926*^9, 3.771850195707776*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[302]//TraditionalForm=",ExpressionUUID->"bc26b479-ace3-4ea3-b779-\
+1d85c17d4b9e"]
+}, {2}]],
+
+Cell["\<\
+Now that we know the antiderivative, we can apply the Net Change Theorem, to \
+obtain\
+\>", "Text",
+ CellChangeTimes->{{3.771847504198825*^9, 3.771847522214733*^9}, {
+  3.771850020247682*^9, 
+  3.771850022326532*^9}},ExpressionUUID->"6f65b8a5-8caf-4ce3-ac1c-\
+0cb6129ec24a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", "t"}], "-", "1"}], ")"}], "^", 
+       RowBox[{"(", "50", ")"}]}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "\[Equal]", 
+   " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", "^", 
+        RowBox[{"(", "51", ")"}]}], "+", "1"}], ")"}], "/", "153"}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.771850029212471*^9, 3.771850067625182*^9}, 
+   3.771850137750031*^9, {3.7718502114102373`*^9, 3.771850251312681*^9}},
+ CellLabel->
+  "In[303]:=",ExpressionUUID->"d772ea9c-bbd3-44bf-8c56-8d9f89dfda71"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "1"], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", " ", "t"}], "-", "1"}], ")"}], "50"], 
+      RowBox[{"\[DifferentialD]", "t"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{
+     FractionBox["1", "153"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["2", "51"], "+", "1"}], ")"}]}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771850068338669*^9, 3.771850252350686*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[303]//TraditionalForm=",ExpressionUUID->"68305d10-a5f4-46f2-9fcb-\
+28d2bf68f4dd"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"2a17b104-c932-4e64-a365-db3a019ad5a1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ea6149cc-32f1-47e2-a836-630883692a52"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 50:", "Subsection",
+ CellChangeTimes->{{3.7718508422160263`*^9, 
+  3.771850844907772*^9}},ExpressionUUID->"7caecf2f-fe6e-4ff3-a776-\
+a926c01bc56a"],
+
+Cell["\<\
+In this problem, we will use the substitution method for definite integrals \
+indirectly. We take advantage of the fact the integrand is an odd function, \
+that is, \
+\>", "Text",
+ CellChangeTimes->{{3.771851022847641*^9, 3.77185104267715*^9}, {
+  3.771851087286934*^9, 
+  3.7718511302624197`*^9}},ExpressionUUID->"8b5bfaae-6d6a-4e1f-ae45-\
+2b1ecd694a4f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"-", "x"}], ")"}], "^", "2"}], ")"}], "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"-", "x"}], "]"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", "x"}], ")"}], "^", "6"}]}], ")"}]}], "]"}], "\[Equal]", 
+   
+   RowBox[{"HoldForm", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "^", "2"}], ")"}], "*", 
+        RowBox[{"Sin", "[", "x", "]"}]}], ")"}]}], "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"x", "^", "6"}]}], ")"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771851132514348*^9, 3.7718512484756927`*^9}, 
+   3.771851283256132*^9},
+ CellLabel->
+  "In[307]:=",ExpressionUUID->"55eb4416-1220-4bad-a92a-a836770554fd"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    FractionBox[
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "x"}], ")"}], "2"], " ", 
+      RowBox[{"sin", "(", 
+       RowBox[{"-", "x"}], ")"}]}], 
+     RowBox[{"1", "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "x"}], ")"}], "6"]}]],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["x", "2"], " ", 
+       RowBox[{"sin", "(", "x", ")"}]}], 
+      RowBox[{"1", "+", 
+       SuperscriptBox["x", "6"]}]]}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771851217861017*^9, 3.771851250013384*^9}, 
+   3.771851285280816*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[307]//TraditionalForm=",ExpressionUUID->"14303a57-81e2-4235-b857-\
+9e7e8ffaeab3"]
+}, {2}]],
+
+Cell[TextData[{
+ "Using the substitution ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", 
+    RowBox[{"-", "x"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "049bdb06-beb6-4699-8f80-607e47c3390a"],
+ " , the definite integral becomes"
+}], "Text",
+ CellChangeTimes->{{3.771851296430341*^9, 
+  3.7718513247033253`*^9}},ExpressionUUID->"9d16067e-765c-4c80-934a-\
+c67a967df441"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TraditionalForm", "[", 
+   RowBox[{
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "^", "2"}], "*", 
+          RowBox[{"Sin", "[", "x", "]"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"x", "^", "6"}]}], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{
+          RowBox[{"-", "Pi"}], "/", "2"}], ",", 
+         RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}], "]"}], "\[Equal]", " ", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"-", "y"}], ")"}], "^", "2"}], "*", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"-", "y"}], "]"}]}], ")"}]}], "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"-", "y"}], ")"}], "^", "6"}]}], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"Pi", "/", "2"}], ",", 
+         RowBox[{
+          RowBox[{"-", "Pi"}], "/", "2"}]}], "}"}]}], "]"}], "]"}], 
+    "\[Equal]", " ", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", "y", ")"}], "^", "2"}], "*", 
+           RowBox[{"Sin", "[", "y", "]"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{
+            RowBox[{"(", "y", ")"}], "^", "6"}]}], ")"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{
+           RowBox[{"-", "Pi"}], "/", "2"}], ",", 
+          RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}]}], "]"}]}], "]"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.7718513264115267`*^9, 3.7718513885048923`*^9}, {
+  3.771851422370531*^9, 3.771851504073057*^9}, {3.771851545011948*^9, 
+  3.7718515466584873`*^9}},
+ CellLabel->
+  "In[312]:=",ExpressionUUID->"6a794351-f572-4c5a-b5bd-1fd37bb13b53"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", 
+       FractionBox["\[Pi]", "2"]}], 
+      FractionBox["\[Pi]", "2"]], 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["x", "2"], " ", 
+        RowBox[{"sin", "(", "x", ")"}]}], 
+       RowBox[{"1", "+", 
+        SuperscriptBox["x", "6"]}]], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      FractionBox["\[Pi]", "2"], 
+      RowBox[{"-", 
+       FractionBox["\[Pi]", "2"]}]], 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "y"}], ")"}], "2"], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"-", "y"}], ")"}]}], 
+        RowBox[{"1", "+", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "y"}], ")"}], "6"]}]]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"-", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", 
+        FractionBox["\[Pi]", "2"]}], 
+       FractionBox["\[Pi]", "2"]], 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["y", "2"], " ", 
+         RowBox[{"sin", "(", "y", ")"}]}], 
+        RowBox[{"1", "+", 
+         SuperscriptBox["y", "6"]}]], 
+       RowBox[{"\[DifferentialD]", "y"}]}]}]}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771851446389606*^9, 3.771851505569397*^9}, 
+   3.771851548307343*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[312]//TraditionalForm=",ExpressionUUID->"cd6399fa-609f-4544-9e28-\
+1c036c1bf628"]
+}, {2}]],
+
+Cell["\<\
+At this point, we note that the integrals at the extremes of this equation \
+are the same, except for the relabeling of variables. Thus, the equation \
+implies that the integral \
+\>", "Text",
+ CellChangeTimes->{{3.7718515226679296`*^9, 
+  3.771851591406712*^9}},ExpressionUUID->"3ad60f5c-9f42-41d5-8ef1-\
+4b1cc062b30d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"HoldForm", "[", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "*", 
+        RowBox[{"Sin", "[", "x", "]"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"x", "^", "6"}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{"-", "Pi"}], "/", "2"}], ",", 
+       RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.771851610654648*^9, 3.771851612368675*^9}},
+ CellLabel->
+  "In[313]:=",ExpressionUUID->"c3737452-a8b7-40a6-88b4-a38c3e1e903a"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", 
+      FractionBox["\[Pi]", "2"]}], 
+     FractionBox["\[Pi]", "2"]], 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["x", "2"], " ", 
+       RowBox[{"sin", "(", "x", ")"}]}], 
+      RowBox[{"1", "+", 
+       SuperscriptBox["x", "6"]}]], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}],
+   HoldForm], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771851613123805*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[313]//TraditionalForm=",ExpressionUUID->"ca8710c1-002e-4d2c-9c6a-\
+e6504ec93b97"]
+}, {2}]],
+
+Cell[TextData[{
+ "is equal to its negative. The only possible value for the integral is \
+therefore ",
+ Cell[BoxData[
+  FormBox["0", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7fc33cb3-6327-4256-8df0-b059cd05d6bb"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.771851615922279*^9, 
+  3.771851643593608*^9}},ExpressionUUID->"18292b42-0502-43b3-a6f2-\
+31a043d42305"],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"0e0dcb6d-be81-4d9e-bb02-fe778ed40070"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"551894d6-3666-4428-88d6-9afc31ead5eb"],
+
+Cell[CellGroupData[{
+
+Cell["Section 5.6", "Section",
+ CellChangeTimes->{{3.7718516642652597`*^9, 
+  3.771851669028295*^9}},ExpressionUUID->"395495c4-68c9-475c-a286-\
+0a65608766b9"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 6: ", "Subsection",
+ CellChangeTimes->{{3.771851671437278*^9, 3.7718516738929567`*^9}, {
+  3.7718522594374723`*^9, 
+  3.771852260073729*^9}},ExpressionUUID->"75fdb546-0019-419a-ace9-\
+c169c685b1e9"],
+
+Cell["\<\
+In problems of this type, integration of a polynomial times a trigonometric \
+function, it is better to differentiate the polynomial, as its derivatives \
+get simpler at every step. \
+\>", "Text",
+ CellChangeTimes->{{3.771852270636394*^9, 3.77185233244661*^9}, 
+   3.771852758717511*^9},ExpressionUUID->"1744c062-4574-4105-a083-\
+248b11f03b9a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"t", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", "*", "t"}], "]"}]}], ",", "t"}], "]"}], "]"}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "t"}], "*", 
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", "*", "t"}], "]"}], "/", "2"}]}], "+", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "*", "t"}], "]"}], "/", "2"}], ",", "t"}], "]"}], 
+     "]"}]}], "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"t", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", "*", "t"}], "]"}]}], ",", "t"}], "]"}], " ", "+", " ", 
+    "C"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.77185233805552*^9, 3.771852430728569*^9}, {
+  3.77187402131633*^9, 3.77187402400176*^9}},
+ CellLabel->
+  "In[352]:=",ExpressionUUID->"210d4c9e-c706-4d0f-b560-2ff87d6c6f69"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"t", " ", 
+       RowBox[{"sin", "(", 
+        RowBox[{"2", " ", "t"}], ")"}]}], 
+      RowBox[{"\[DifferentialD]", "t"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    TagBox[
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        RowBox[{"cos", "(", 
+         RowBox[{"2", " ", "t"}], ")"}]}], 
+       RowBox[{"\[DifferentialD]", "t"}]}]}],
+     HoldForm], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "t", " ", 
+     RowBox[{"cos", "(", 
+      RowBox[{"2", " ", "t"}], ")"}]}]}], "\[LongEqual]", 
+   RowBox[{"C", "+", 
+    RowBox[{
+     FractionBox["1", "4"], " ", 
+     RowBox[{"sin", "(", 
+      RowBox[{"2", " ", "t"}], ")"}]}], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "t", " ", 
+     RowBox[{"cos", "(", 
+      RowBox[{"2", " ", "t"}], ")"}]}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771852435803235*^9, 3.771874030210017*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[352]//TraditionalForm=",ExpressionUUID->"d92148c7-4408-441c-bb96-\
+2dc2e0d34e48"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"cc7867ca-cff3-4f69-b316-1963197074f5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"6a444a22-1160-4bba-8a7b-9f6e49eb9387"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 16: ", "Subsection",
+ CellChangeTimes->{{3.771852475338788*^9, 
+  3.771852482113418*^9}},ExpressionUUID->"66bdac09-86b1-4ba5-8153-\
+82ffd85a3847"],
+
+Cell["\<\
+In this example, an integral of a polynomial times an exponential function, \
+we once again prefer to differentiate the polynomial. We will solve this \
+problem by first computing the antiderivative via integration by parts, then \
+applying the Net Change Theorem. \
+\>", "Text",
+ CellChangeTimes->{{3.771852710215063*^9, 3.771852791229724*^9}, {
+  3.771852864981094*^9, 
+  3.771852891772081*^9}},ExpressionUUID->"e8cec443-6b3a-42d8-9b8c-\
+ad23b4fcec85"],
+
+Cell["The antiderivative is", "Text",
+ CellChangeTimes->{{3.771852903813422*^9, 
+  3.771852908284895*^9}},ExpressionUUID->"2ebe23ea-2f50-4663-a5b5-\
+8e614d4cecd9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], "*", 
+       RowBox[{"e", "^", 
+        RowBox[{"(", 
+         RowBox[{"-", "x"}], ")"}]}]}], ",", "x"}], "]"}], "]"}], "\[Equal]", 
+   " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"2", "x", "*", 
+        RowBox[{"e", "^", 
+         RowBox[{"(", 
+          RowBox[{"-", "x"}], ")"}]}]}], ",", "x"}], "]"}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], 
+      RowBox[{"e", "^", 
+       RowBox[{"(", 
+        RowBox[{"-", "x"}], ")"}]}]}]}], "]"}], " ", "\[Equal]", "  ", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"2", "x", "*", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", "x"}], "]"}]}], ",", "x"}], "]"}], "-", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], 
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", "x"}], "]"}]}], " ", "+", " ", "C"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718527930587482`*^9, 3.771852795896452*^9}, {
+  3.771852825993869*^9, 3.77185285567111*^9}, {3.771852895254409*^9, 
+  3.771852992545394*^9}, {3.7718532191115923`*^9, 3.77185329711242*^9}},
+ CellLabel->
+  "In[317]:=",ExpressionUUID->"f7ea6695-61ef-4000-8895-062198cc591f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", "1"}], ")"}], " ", 
+       SuperscriptBox["e", 
+        RowBox[{"-", "x"}]]}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{"2", " ", "x", " ", 
+        SuperscriptBox["e", 
+         RowBox[{"-", "x"}]]}], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", "1"}], ")"}], " ", 
+      SuperscriptBox["e", 
+       RowBox[{"-", "x"}]]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", "x"}]], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", "1"}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", "x"}]], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "x"}], "-", "1"}], ")"}]}]}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.771852995817314*^9, 3.771853254288014*^9, 
+  3.771853298528658*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[317]//TraditionalForm=",ExpressionUUID->"4ac2ce12-6c10-4a78-8f2f-\
+aa6a9fe854ec"]
+}, {2}]],
+
+Cell["Applying the Net Change Theorem, we get ", "Text",
+ CellChangeTimes->{{3.7718533925767803`*^9, 
+  3.7718534013198967`*^9}},ExpressionUUID->"45b1c635-76ac-43be-9f1b-\
+1a0db6677e19"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], "*", 
+       RowBox[{"e", "^", 
+        RowBox[{"(", 
+         RowBox[{"-", "x"}], ")"}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "\[Equal]", 
+   " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "+", "1"}], ")"}], "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"-", "x"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771853419273353*^9, 3.771853450797102*^9}},
+ CellLabel->
+  "In[318]:=",ExpressionUUID->"09b062ae-c5cc-43c2-ae75-7f175dab48e8"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "1"], 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", "1"}], ")"}], " ", 
+       SuperscriptBox["e", 
+        RowBox[{"-", "x"}]]}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"3", "-", 
+    FractionBox["6", "\[ExponentialE]"]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771853451324305*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[318]//TraditionalForm=",ExpressionUUID->"6f7e038b-b683-4d16-b032-\
+eca6397a6346"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"e1b64e2e-bbde-44f9-b55e-82e31709bc0d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"9410c115-8252-4d44-81a5-48a95ea40a8d"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 18:", "Subsection",
+ CellChangeTimes->{{3.771853496544005*^9, 
+  3.7718534984101048`*^9}},ExpressionUUID->"01a83545-ce29-4e82-938e-\
+49bb708f4ee2"],
+
+Cell["\<\
+In problems involving logarithmic and polynomial factors, it is a good idea \
+to differentiate the logarithm, as its derivative is of polynomial type.\
+\>", "Text",
+ CellChangeTimes->{{3.771853755880385*^9, 3.771853774922627*^9}, {
+  3.771853814879611*^9, 
+  3.771853906025248*^9}},ExpressionUUID->"88b8dfea-d676-486d-81ba-\
+c694ce19c2d8"],
+
+Cell["The antiderivative can be computed as follows,", "Text",
+ CellChangeTimes->{{3.7718538999498158`*^9, 
+  3.771853912176478*^9}},ExpressionUUID->"125a5b4e-b4e8-4e17-8221-\
+71153138fc62"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Log", "[", "y", "]"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"Sqrt", "[", "y", "]"}], ")"}]}], ",", "y"}], "]"}], "]"}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"2", 
+     RowBox[{"Log", "[", "y", "]"}], "*", 
+     RowBox[{"Sqrt", "[", "y", "]"}]}], "-", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1", "/", "y"}], "*", "2", 
+        RowBox[{"Sqrt", "[", "y", "]"}]}], ",", "y"}], "]"}], "]"}]}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"2", 
+     RowBox[{"Log", "[", "y", "]"}], "*", 
+     RowBox[{"Sqrt", "[", "y", "]"}]}], "-", " ", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"2", "/", 
+        RowBox[{"Sqrt", "[", "y", "]"}]}], ",", "y"}], "]"}], "]"}]}], 
+   "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"2", 
+     RowBox[{"Log", "[", "y", "]"}], "*", 
+     RowBox[{"Sqrt", "[", "y", "]"}]}], " ", "-", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"2", "/", 
+       RowBox[{"Sqrt", "[", "y", "]"}]}], ",", "y"}], "]"}], "+", "C"}]}], 
+  " ", "]"}]], "Input",
+ CellChangeTimes->{{3.771853868588619*^9, 3.771853876317482*^9}, {
+  3.771853919034886*^9, 3.7718541163152246`*^9}},
+ CellLabel->
+  "In[321]:=",ExpressionUUID->"70331e1a-d59e-48db-94f9-2a1bdea35d4d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"log", "(", "y", ")"}], 
+       SqrtBox["y"]], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     SqrtBox["y"], " ", 
+     RowBox[{"log", "(", "y", ")"}]}], "-", 
+    TagBox[
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"2", " ", 
+         SqrtBox["y"]}], "y"], 
+       RowBox[{"\[DifferentialD]", "y"}]}]}],
+     HoldForm]}], "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     SqrtBox["y"], " ", 
+     RowBox[{"log", "(", "y", ")"}]}], "-", 
+    TagBox[
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       FractionBox["2", 
+        SqrtBox["y"]], 
+       RowBox[{"\[DifferentialD]", "y"}]}]}],
+     HoldForm]}], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{"4", " ", 
+     SqrtBox["y"]}], "+", 
+    RowBox[{"2", " ", 
+     SqrtBox["y"], " ", 
+     RowBox[{"log", "(", "y", ")"}]}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.771854027613544*^9, {3.771854088268606*^9, 3.7718541177001743`*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[321]//TraditionalForm=",ExpressionUUID->"abc8c5f1-b001-485d-9980-\
+704a0b22cbf9"]
+}, {2}]],
+
+Cell["Applying the Net Change Theorem, we get", "Text",
+ CellChangeTimes->{{3.7718541480952663`*^9, 
+  3.771854156181982*^9}},ExpressionUUID->"e7a0d64e-d6d1-471c-97a5-\
+4c8513cc7976"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Log", "[", "y", "]"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"Sqrt", "[", "y", "]"}], ")"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", "4", ",", "9"}], "}"}]}], "]"}], "]"}], "\[Equal]", 
+   " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Log", "[", "y", "]"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"Sqrt", "[", "y", "]"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", "4", ",", "9"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718541586655207`*^9, 3.771854193131456*^9}},
+ CellLabel->
+  "In[322]:=",ExpressionUUID->"5b254dd6-edfb-4f3e-a073-e68f92ebb438"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "4", "9"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"log", "(", "y", ")"}], 
+       SqrtBox["y"]], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"-", "4"}], "+", 
+    RowBox[{"6", " ", 
+     RowBox[{"log", "(", "9", ")"}]}], "-", 
+    RowBox[{"log", "(", "256", ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771854194009927*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[322]//TraditionalForm=",ExpressionUUID->"9fa48efe-6a66-4625-919f-\
+f171d281ee02"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"399eb0bd-e8d6-436c-83e6-e1252a34576d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"7ef80b73-4b9e-4555-91b6-6c8c17ed1f53"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 30:", "Subsection",
+ CellChangeTimes->{{3.771854295196334*^9, 
+  3.7718542992448378`*^9}},ExpressionUUID->"67d01421-734e-41c9-a3c4-\
+089a87c46e63"],
+
+Cell["\<\
+In this problem, we are meant to make a substitution before applying \
+integration by parts. The form of the integral suggests that \
+\>", "Text",
+ CellChangeTimes->{{3.771854301198217*^9, 
+  3.7718543362916613`*^9}},ExpressionUUID->"ab8172e9-8afb-4ff2-b17c-\
+2105d4ff61c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"y", "\[Equal]", " ", 
+   RowBox[{"Log", "[", "x", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771854341186421*^9, 3.771854356061327*^9}},
+ CellLabel->
+  "In[323]:=",ExpressionUUID->"7ee72018-8774-4143-8b17-266a8f6de064"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"y", "\[LongEqual]", 
+   RowBox[{"log", "(", "x", ")"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771854356617794*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[323]//TraditionalForm=",ExpressionUUID->"ba719d57-a0de-46e3-a262-\
+8476c1770bb2"]
+}, {2}]],
+
+Cell["\<\
+is a good substitution. The relation between the differentials is \
+\>", "Text",
+ CellChangeTimes->{{3.77185438479492*^9, 3.7718543943901587`*^9}, {
+  3.7718545637660437`*^9, 
+  3.77185457136377*^9}},ExpressionUUID->"d4267055-1c95-45f1-a510-\
+c77a90b9e66c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"dy", "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "/", "x"}], " ", ")"}], "dx"}]}], " ", "]"}]], "Input",
+ CellChangeTimes->{{3.771854573466748*^9, 3.7718545963016253`*^9}},
+ CellLabel->
+  "In[324]:=",ExpressionUUID->"7b6a53c3-2c0e-4378-930c-95c331ef45f7"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"dy", "\[LongEqual]", 
+   FractionBox["dx", "x"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.7718545980286913`*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[324]//TraditionalForm=",ExpressionUUID->"a8eee563-20ef-4722-95ed-\
+51e853a7e49f"]
+}, {2}]],
+
+Cell["or, in a more convenient way, ", "Text",
+ CellChangeTimes->{{3.771854611257938*^9, 
+  3.771854625735643*^9}},ExpressionUUID->"aa702074-8eed-4051-972e-\
+709cd480d83b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"dx", "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"x", " ", "*", 
+     RowBox[{"(", "dy", ")"}]}], "]"}], " ", "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{
+     RowBox[{"e", "^", "y"}], "*", 
+     RowBox[{"(", "dy", ")"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771854628307365*^9, 3.771854662287882*^9}, {
+  3.771854703812958*^9, 3.7718547352976217`*^9}},
+ CellLabel->
+  "In[329]:=",ExpressionUUID->"67a972ef-5486-454f-b782-27291aa0aced"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"dx", "\[LongEqual]", 
+   TagBox[
+    RowBox[{"x", " ", "dy"}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{
+     SuperscriptBox["e", "y"], " ", "dy"}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.7718546653359632`*^9, {3.771854709461557*^9, 3.77185473570323*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[329]//TraditionalForm=",ExpressionUUID->"93684d16-9cc0-4d68-974b-\
+a1bbb68ae8a3"]
+}, {2}]],
+
+Cell["\<\
+With respect to this new variable, the integral can be written as \
+\>", "Text",
+ CellChangeTimes->{{3.7718543973451366`*^9, 
+  3.7718544130261707`*^9}},ExpressionUUID->"9b4845d7-c566-4b37-b2ab-\
+b7030ff6c03a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"Log", "[", "x", "]"}], "]"}], ",", "x"}], "]"}], "]"}], 
+   "\[Equal]", " ", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "y", "]"}], 
+       RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.771854416225266*^9, 3.7718544538428583`*^9}, {
+  3.771854673141253*^9, 3.77185468945807*^9}},
+ CellLabel->
+  "In[353]:=",ExpressionUUID->"8ec87d05-825b-4874-bbf2-281fe743be5e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"sin", "(", 
+       RowBox[{"log", "(", "x", ")"}], ")"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"sin", "(", "y", ")"}], " ", 
+       SuperscriptBox["e", "y"]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771874947648407*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[353]//TraditionalForm=",ExpressionUUID->"8793621f-01e4-4b3f-b67b-\
+0bf7d9d612a2"]
+}, {2}]],
+
+Cell[TextData[{
+ "We are now ready to proceed with the integration by parts. In this kind of \
+problem, there is no right or wrong choice (both choices of ",
+ Cell[BoxData[
+  FormBox["f", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9f57a961-3bce-40f6-82a6-eff8c492af90"],
+ " and ",
+ Cell[BoxData[
+  FormBox["g", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "27676b55-504f-46f9-9d4b-d83b9fb020b0"],
+ " would work!), but one does need to work a bit further, as it is necessary \
+to integrate by parts twice. "
+}], "Text",
+ CellChangeTimes->{{3.771854768770343*^9, 3.77185478094874*^9}, {
+  3.771855101980863*^9, 
+  3.771855193157647*^9}},ExpressionUUID->"177ad6f8-81bf-40f4-a042-\
+85b4e72bacf0"],
+
+Cell[TextData[{
+ "The first application, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], 
+     RowBox[{"(", "y", ")"}]}], "=", 
+    RowBox[{"sin", "(", "y", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fcf3e7dc-20e6-49ee-9ac9-54bdde1cbe7f"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"g", "(", "y", ")"}], "=", 
+    SuperscriptBox["e", "y"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b825ffc7-4330-4b71-b0fc-cbf634f56f2c"],
+ ", yields"
+}], "Text",
+ CellChangeTimes->{{3.7718552120167723`*^9, 
+  3.7718552588079967`*^9}},ExpressionUUID->"23ec810b-938e-40f1-a218-\
+773943e4eabf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "y", "]"}], 
+       RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}], "]"}], "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"Cos", "[", "y", "]"}]}], "*", 
+     RowBox[{"Exp", "[", "y", "]"}]}], " ", "+", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Cos", "[", "y", "]"}], 
+        RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7718552613724613`*^9, 
+  3.771855378701797*^9}},ExpressionUUID->"78b21ed1-4ae4-4a02-9f05-\
+87d4534ced0d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"sin", "(", "y", ")"}], " ", 
+       SuperscriptBox["e", "y"]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    TagBox[
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"cos", "(", "y", ")"}], " ", 
+        SuperscriptBox["e", "y"]}], 
+       RowBox[{"\[DifferentialD]", "y"}]}]}],
+     HoldForm], "-", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", "y"], " ", 
+     RowBox[{"cos", "(", "y", ")"}]}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771855323675602*^9, 3.771855368670652*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[334]//TraditionalForm=",ExpressionUUID->"c47df72e-a84f-4355-a7cb-\
+09fb3293f9a1"]
+}, {2}]],
+
+Cell["\<\
+We know apply integration by parts to the integral on the right-hand side of \
+this equation (being careful not to reverse our work in the previous step) ,\
+\>", "Text",
+ CellChangeTimes->{{3.7718553964051943`*^9, 
+  3.771855432596649*^9}},ExpressionUUID->"40cda551-60d9-4fe2-9423-\
+7453a2542e15"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Cos", "[", "y", "]"}], 
+       RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}], "]"}], "\[Equal]", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sin", "[", "y", "]"}], "*", 
+     RowBox[{"Exp", "[", "y", "]"}]}], " ", "+", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Sin", "[", "y", "]"}], 
+         RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}]}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.771855450522954*^9, 3.771855484604191*^9}, 
+   3.7718555209085083`*^9, 3.771855653208992*^9},
+ CellLabel->
+  "In[338]:=",ExpressionUUID->"96ded12a-476e-4fa9-9ed2-7a6c554b43fe"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"cos", "(", "y", ")"}], " ", 
+       SuperscriptBox["e", "y"]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    TagBox[
+     RowBox[{"-", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"sin", "(", "y", ")"}], " ", 
+         SuperscriptBox["e", "y"]}], 
+        RowBox[{"\[DifferentialD]", "y"}]}]}]}],
+     HoldForm], "+", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", "y"], " ", 
+     RowBox[{"sin", "(", "y", ")"}]}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.771855486914773*^9, 3.771855524373657*^9, 
+  3.771855665209392*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[338]//TraditionalForm=",ExpressionUUID->"6bfa69b9-f7c8-438b-ae27-\
+a48bb9e293ba"]
+}, {2}]],
+
+Cell["Combining the two equations, we find that ", "Text",
+ CellChangeTimes->{{3.771855533225416*^9, 
+  3.7718555411309977`*^9}},ExpressionUUID->"9df8366e-0f5d-4c73-b46b-\
+ce8a070a8a21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "y", "]"}], 
+       RowBox[{"e", "^", "y"}]}], ",", "y"}], "]"}], "]"}], " ", "\[Equal]", 
+   " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "y", "]"}], "*", 
+      RowBox[{"Exp", "[", "y", "]"}]}], ",", "y"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718555432097187`*^9, 3.771855569348317*^9}},
+ CellLabel->
+  "In[337]:=",ExpressionUUID->"b4a2426b-0ac5-4f74-afe5-c0b1399963ae"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"sin", "(", "y", ")"}], " ", 
+       SuperscriptBox["e", "y"]}], 
+      RowBox[{"\[DifferentialD]", "y"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    SuperscriptBox["\[ExponentialE]", "y"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sin", "(", "y", ")"}], "-", 
+      RowBox[{"cos", "(", "y", ")"}]}], ")"}]}]}], TraditionalForm]], "Output",\
+
+ CellChangeTimes->{3.771855569953619*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[337]//TraditionalForm=",ExpressionUUID->"3e0505b9-b6c8-45f3-b790-\
+67cd46282b47"]
+}, {2}]],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"52a41464-1605-48e3-94f6-c5f2caf1b7a1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"01f24521-6ac4-439d-b65c-aeed90146045"],
+
+Cell[CellGroupData[{
+
+Cell["Additional Techniques of Integration", "Section",
+ CellChangeTimes->{{3.771855705128395*^9, 
+  3.771855715233728*^9}},ExpressionUUID->"8c77544d-f17d-48f5-9730-\
+f4624bc19e7b"],
+
+Cell[CellGroupData[{
+
+Cell["Trigonometric integrals", "Subsection",
+ CellChangeTimes->{{3.771855719766848*^9, 3.77185572473462*^9}, {
+  3.771855783986124*^9, 
+  3.771855784164852*^9}},ExpressionUUID->"2e4e2f7a-938e-43bf-a98a-\
+36c5b638a7c8"],
+
+Cell["\<\
+Oftentimes it is convenient to apply trigonometric identities before \
+evaluating trigonometric integrals. The identities we will use often are the \
+following:\
+\>", "Text",
+ CellChangeTimes->{{3.771855790237371*^9, 3.7718558285270967`*^9}, 
+   3.771856037699726*^9},ExpressionUUID->"8f823397-a49d-4a7c-9c91-\
+fe8e8eb74647"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["sin", "2"], "(", "x", ")"}], "+", 
+          RowBox[{
+           SuperscriptBox["cos", "2"], "(", "x", ")"}]}], "=", "1"}]},
+       {
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["sec", "2"], "(", "x", ")"}], "=", 
+         RowBox[{"1", "+", 
+          RowBox[{
+           SuperscriptBox["tan", "2"], "(", "x", ")"}]}]}]},
+       {
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["csc", "2"], "(", "x", ")"}], "=", 
+         RowBox[{"1", "+", 
+          RowBox[{
+           SuperscriptBox["cot", "2"], "(", "x", ")"}]}]}]},
+       {
+        RowBox[{
+         RowBox[{"sin", "(", 
+          RowBox[{"2", "x"}], ")"}], "=", 
+         RowBox[{"2", 
+          RowBox[{"sin", "(", "x", ")"}], 
+          RowBox[{"cos", "(", "x", ")"}]}]}]},
+       {
+        RowBox[{
+         RowBox[{"cos", "(", 
+          RowBox[{"2", "x"}], ")"}], "=", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["cos", "2"], "(", "x", ")"}], "-", 
+          RowBox[{
+           SuperscriptBox["sin", "2"], "(", "x", ")"}]}]}]},
+       {
+        RowBox[{
+         RowBox[{"cos", "(", 
+          RowBox[{"2", "x"}], ")"}], "=", 
+         RowBox[{
+          RowBox[{"2", 
+           RowBox[{
+            SuperscriptBox["cos", "2"], "(", "x", ")"}]}], "-", "1"}]}]},
+       {
+        RowBox[{
+         RowBox[{"cos", "(", 
+          RowBox[{"2", "x"}], ")"}], "=", 
+         RowBox[{"1", "-", 
+          RowBox[{"2", 
+           RowBox[{
+            SuperscriptBox["sin", "2"], "(", "x", ")"}]}]}]}]}
+      },
+      GridBoxAlignment->{"Columns" -> {{"Center"}}}]}
+   },
+   GridBoxItemSize->{"Columns" -> {{
+        Scaled[0.96]}}}], 
+  TraditionalForm]],ExpressionUUID->"4921bdb2-d0c8-423d-8d20-fec15b1d1b5d"]], \
+"Text",
+ CellChangeTimes->{{3.771855834541305*^9, 3.771855914174336*^9}, {
+  3.7718559509592257`*^9, 
+  3.771856030197713*^9}},ExpressionUUID->"139bdc3a-3cb4-4d67-86ee-\
+c2b084960aa6"],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"434c7e29-fdeb-4d7f-bda9-81b5d0f0ebc2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"b5b710bd-c36d-44e1-8f6b-2450cc3853b3"],
+
+Cell[CellGroupData[{
+
+Cell["Additional Techniques of Integration", "Section",
+ CellChangeTimes->{{3.771856056035507*^9, 
+  3.77185606236272*^9}},ExpressionUUID->"671d20c5-46ab-4aa3-8731-\
+54c1ba8fdbdf"],
+
+Cell[CellGroupData[{
+
+Cell["Trigonometric integrals", "Subsection",
+ CellChangeTimes->{{3.771856067254369*^9, 
+  3.771856072917366*^9}},ExpressionUUID->"4a1bc5c5-1903-4e07-9ac0-\
+2d10a64a13c5"],
+
+Cell[CellGroupData[{
+
+Cell["Example 1: odd powers of sin(x) and cos(x). ", "Subsubsection",
+ CellChangeTimes->{{3.7718560777415457`*^9, 3.7718560867541943`*^9}, {
+  3.771856125185626*^9, 3.771856130580104*^9}, {3.771857248255415*^9, 
+  3.771857256021455*^9}},ExpressionUUID->"dab5c280-a68a-4901-9545-\
+9280203ecb8a"],
+
+Cell["Consider the following integral", "Text",
+ CellChangeTimes->{{3.7718561342815123`*^9, 
+  3.771856140351933*^9}},ExpressionUUID->"2bbd16e3-860a-4ffe-b69e-\
+596505c2cb7f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"HoldForm", "[", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "x", "]"}], "^", "5"}], ",", "x"}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.771856143978294*^9, 3.77185616540905*^9}},
+ CellLabel->
+  "In[339]:=",ExpressionUUID->"3194b063-e1e5-4ef7-af6f-5a6fe7026d4b"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["sin", "5"], "(", "x", ")"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}],
+   HoldForm], TraditionalForm]], "Output",
+ CellChangeTimes->{3.7718561676079903`*^9},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[339]//TraditionalForm=",ExpressionUUID->"60b65f9b-dd90-41d9-ab3b-\
+ddfba727df4f"]
+}, {2}]],
+
+Cell["\<\
+It is not possible to apply the substitution rule directly. However, using \
+the identity\
+\>", "Text",
+ CellChangeTimes->{{3.771856185159883*^9, 
+  3.7718562157863503`*^9}},ExpressionUUID->"b1e13b8c-542f-45a9-98bd-\
+658de6fd7bb9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "^", "2"}], "\[Equal]", " ", 
+   RowBox[{"1", "-", 
+    RowBox[{
+     RowBox[{"Cos", "[", "x", "]"}], "^", "2"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7718562198261213`*^9, 3.771856248322237*^9}},
+ CellLabel->
+  "In[341]:=",ExpressionUUID->"47de7577-2c4c-442f-9ea3-fe88bfcc29cd"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["sin", "2"], "(", "x", ")"}], "\[LongEqual]", 
+   RowBox[{"1", "-", 
+    RowBox[{
+     SuperscriptBox["cos", "2"], "(", "x", ")"}]}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771856236014143*^9, 3.771856249930093*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[341]//TraditionalForm=",ExpressionUUID->"131c13ba-d5a6-4f84-b681-\
+e0169aed32be"]
+}, {2}]],
+
+Cell["repeatedly, we get", "Text",
+ CellChangeTimes->{{3.77185627513982*^9, 
+  3.771856281739317*^9}},ExpressionUUID->"37d84596-6167-42bc-9eea-\
+dad81c75a14e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "x", "]"}], "^", "5"}], ",", "x"}], "]"}], "]"}], 
+   "\[Equal]", 
+   RowBox[{"HoldForm", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"Cos", "[", "x", "]"}], "^", "2"}]}], ")"}], "^", "2"}], 
+       RowBox[{"Sin", "[", "x", "]"}]}], ",", "x"}], "]"}], "]"}]}], " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.771856314207683*^9, 3.771856346437825*^9}},
+ CellLabel->
+  "In[343]:=",ExpressionUUID->"0d046bd6-9561-4bdd-9bf3-c3f836989864"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["sin", "5"], "(", "x", ")"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SuperscriptBox["cos", "2"], "(", "x", ")"}]}], ")"}], "2"], " ", 
+       RowBox[{"sin", "(", "x", ")"}]}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771856342535199*^9, 3.7718563486694183`*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[343]//TraditionalForm=",ExpressionUUID->"b40d0430-ae14-4bc1-b7c2-\
+e4c054897a87"]
+}, {2}]],
+
+Cell["\<\
+Now we are in a good position to use the substitution rule. The change of \
+variables we will use is\
+\>", "Text",
+ CellChangeTimes->{{3.771856362873654*^9, 
+  3.771856382944681*^9}},ExpressionUUID->"3f76f10f-7d9d-42b6-b9a9-\
+3490ce890038"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"z", "\[Equal]", " ", 
+   RowBox[{"Cos", "[", "x", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.771856385847031*^9, 3.7718564091180553`*^9}},
+ CellLabel->
+  "In[346]:=",ExpressionUUID->"331a9a69-b016-42ae-97ee-f14095cfc53d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"z", "\[LongEqual]", 
+   RowBox[{"cos", "(", "x", ")"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771856396354595*^9, 3.771856411386693*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[346]//TraditionalForm=",ExpressionUUID->"c1a65ade-5ad2-4cd4-82ff-\
+93f553eb146f"]
+}, {2}]],
+
+Cell["With this new variable, the integral becomes", "Text",
+ CellChangeTimes->{{3.771856423569376*^9, 
+  3.771856432289288*^9}},ExpressionUUID->"b7479c4d-3921-4dac-9596-\
+801ae2c38b10"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TraditionalForm", "[", 
+   RowBox[{
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"Cos", "[", "x", "]"}], "^", "2"}]}], ")"}], "^", "2"}], 
+        RowBox[{"Sin", "[", "x", "]"}]}], ",", "x"}], "]"}], "]"}], " ", 
+    "\[Equal]", " ", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"z", "^", "2"}]}], ")"}], "^", "2"}], ",", "z"}], "]"}]}], 
+     "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"z", "^", "2"}]}], ")"}], "^", "2"}], ",", "z"}], "]"}]}], 
+     " ", "+", " ", "C"}], "\[Equal]", " ", 
+    RowBox[{"C", "-", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Cos", "[", "x", "]"}], ")"}], "^", "5"}], "/", "5"}], "+", 
+     RowBox[{"2", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Cos", "[", "x", "]"}], ")"}], "^", "3"}], "/", "3"}]}], "-", 
+     RowBox[{"Cos", "[", "x", "]"}]}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.7718564474002037`*^9, 3.771856583224909*^9}},
+ CellLabel->
+  "In[351]:=",ExpressionUUID->"64687024-a2ba-488e-a705-da103304166a"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SuperscriptBox["cos", "2"], "(", "x", ")"}]}], ")"}], "2"], " ", 
+       RowBox[{"sin", "(", "x", ")"}]}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}],
+    HoldForm], "\[LongEqual]", 
+   TagBox[
+    RowBox[{"-", 
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["z", "2"]}], ")"}], "2"], 
+       RowBox[{"\[DifferentialD]", "z"}]}]}]}],
+    HoldForm], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    FractionBox[
+     SuperscriptBox["z", "5"], "5"], "+", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      SuperscriptBox["z", "3"]}], "3"], "-", "z"}], "\[LongEqual]", 
+   RowBox[{"C", "-", 
+    RowBox[{
+     FractionBox["1", "5"], " ", 
+     RowBox[{
+      SuperscriptBox["cos", "5"], "(", "x", ")"}]}], "+", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      RowBox[{
+       SuperscriptBox["cos", "3"], "(", "x", ")"}]}], "3"], "-", 
+    RowBox[{"cos", "(", "x", ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.771856514951878*^9, 3.771856524805125*^9}, {
+  3.771856573300118*^9, 3.7718565851591063`*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ CellLabel->
+  "Out[351]//TraditionalForm=",ExpressionUUID->"dcc86de7-64e8-49ab-8428-\
+4a49331965ca"]
+}, {2}]],
+
+Cell["\<\
+A similar technique can be applied to odd power of the sine function, e.g., \
+example 1, section 5.7. \
+\>", "Text",
+ CellChangeTimes->{{3.7718572608188143`*^9, 
+  3.771857313667325*^9}},ExpressionUUID->"dc87e1e9-aee0-4332-ab31-\
+780e1074d3c4"],
+
+Cell[TextData[{
+ ButtonBox["\[FilledLeftTriangle]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPagePrevious"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowPrevSlideText"]],
+ "\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]",
+ ButtonBox["\[ThickSpace]\[ThickSpace]\[ThickSpace]\[FilledRightTriangle]",
+  BaseStyle->"SlidePreviousNextLink",
+  Appearance->{Automatic, None},
+  ButtonFunction:>FrontEndExecute[{
+     FrontEndToken[
+      FrontEnd`ButtonNotebook[], "ScrollPageNext"]}],
+  ButtonNote->FEPrivate`FrontEndResource[
+   "FEStrings", "SlideshowNextSlideText"]]
+}], "PreviousNext",ExpressionUUID->"373cc3de-349b-42fa-a6f1-c68a3c8386af"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"194f2261-9db8-4ff5-a0aa-4011329c16e9"],
+
+Cell[CellGroupData[{
+
+Cell["Additional Techniques of Integration", "Section",
+ CellChangeTimes->{{3.7718573507240047`*^9, 
+  3.771857357024077*^9}},ExpressionUUID->"cd28ec17-85a2-41f5-9742-\
+fcd83d89b959"],
+
+Cell[CellGroupData[{
+
+Cell["Trigonometric integrals", "Subsection",
+ CellChangeTimes->{{3.7718573604771557`*^9, 
+  3.771857363921754*^9}},ExpressionUUID->"4ecedf2c-4401-4a7e-8192-\
+aebdadf4449f"],
+
+Cell[CellGroupData[{
+
+Cell["Example 2: even powers of sine and cosine.", "Subsubsection",
+ CellChangeTimes->{{3.771857369957506*^9, 
+  3.7718573879618464`*^9}},ExpressionUUID->"85188cdf-5d25-4407-9b8f-\
+ebc0f07d408f"],
+
+Cell["\<\
+When dealing with integrals involving even powers of sine and cosine, it is \
+often better to employ the double angle formulas. \
+\>", "Text",
+ CellChangeTimes->{{3.771857390195642*^9, 
+  3.771857422801448*^9}},ExpressionUUID->"8924b8c6-a89a-4496-8348-\
+8ea55d7bee45"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"SlideShow",
+WindowSize->{Full, Full},
+WindowMargins->{{36, Automatic}, {16, Automatic}},
+TaggingRules->{"SlideshowSettings" -> {"Toolbar" -> True}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"806544f5-d036-44c3-80a9-407234f1abf7",
+   CellTags->"SlideShowHeader"],
+  Cell[4725, 157, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"55256d1c-ef5c-4f52-a998-6305fc6b2cfc",
+   CellTags->"SlideShowHeader"],
+  Cell[9175, 305, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"1beffebf-5d38-4b86-a197-a99cd5774965",
+   CellTags->"SlideShowHeader"],
+  Cell[13177, 433, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"5bc137ff-1a58-4b61-b7e4-43340f36eb45",
+   CellTags->"SlideShowHeader"],
+  Cell[17671, 580, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"e14d893c-73d4-45df-b8b4-15cf1c72ffbe",
+   CellTags->"SlideShowHeader"],
+  Cell[24275, 803, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"ea6149cc-32f1-47e2-a836-630883692a52",
+   CellTags->"SlideShowHeader"],
+  Cell[34236, 1139, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"551894d6-3666-4428-88d6-9afc31ead5eb",
+   CellTags->"SlideShowHeader"],
+  Cell[38308, 1271, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"6a444a22-1160-4bba-8a7b-9f6e49eb9387",
+   CellTags->"SlideShowHeader"],
+  Cell[44870, 1485, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"9410c115-8252-4d44-81a5-48a95ea40a8d",
+   CellTags->"SlideShowHeader"],
+  Cell[51158, 1691, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"7ef80b73-4b9e-4555-91b6-6c8c17ed1f53",
+   CellTags->"SlideShowHeader"],
+  Cell[63680, 2110, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"01f24521-6ac4-439d-b65c-aeed90146045",
+   CellTags->"SlideShowHeader"],
+  Cell[67552, 2231, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"b5b710bd-c36d-44e1-8f6b-2450cc3853b3",
+   CellTags->"SlideShowHeader"],
+  Cell[77492, 2562, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"194f2261-9db8-4ff5-a0aa-4011329c16e9",
+   CellTags->"SlideShowHeader"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SlideShowHeader", 78997, 2612}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"806544f5-d036-44c3-80a9-407234f1abf7",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[727, 28, 158, 3, 84, "Section",ExpressionUUID->"c034f71f-38b5-44ed-83dd-617e28fa9728"],
+Cell[CellGroupData[{
+Cell[910, 35, 161, 3, 67, "Subsection",ExpressionUUID->"bad7a8e6-d500-4fc8-9f2c-2afeaaf3b712"],
+Cell[1074, 40, 190, 3, 44, "Text",ExpressionUUID->"6ff13d03-abbd-48e2-ad37-7c6a7780256a"],
+Cell[CellGroupData[{
+Cell[1289, 47, 276, 6, 37, "Input",ExpressionUUID->"a57f6826-471f-4e0b-a4b5-be9d53001e2d"],
+Cell[1568, 55, 298, 9, 59, "Output",ExpressionUUID->"3714642b-b836-4deb-99cd-788efeb29f17"]
+}, {2}]],
+Cell[1878, 67, 190, 3, 44, "Text",ExpressionUUID->"e85735ed-a73e-467c-9651-55a7c72cd075"],
+Cell[CellGroupData[{
+Cell[2093, 74, 837, 24, 64, "Input",ExpressionUUID->"d0175f84-85dd-44d8-8b9c-82daf7c83e78"],
+Cell[2933, 100, 883, 29, 85, "Output",ExpressionUUID->"a8c56950-a3fc-4ce7-9134-df6f562b9095"]
+}, {2}]],
+Cell[3828, 132, 836, 18, 31, "PreviousNext",ExpressionUUID->"d4990e33-aee9-43b6-b154-b613e6751fe9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4725, 157, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"55256d1c-ef5c-4f52-a998-6305fc6b2cfc",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[4872, 163, 161, 3, 67, "Subsection",ExpressionUUID->"a3e28484-f0d0-48c5-b15b-478c7d83b25f"],
+Cell[5036, 168, 187, 3, 44, "Text",ExpressionUUID->"5d24d7b5-cbae-476c-9e2c-dc283ae146ed"],
+Cell[CellGroupData[{
+Cell[5248, 175, 303, 7, 37, "Input",ExpressionUUID->"ce120c0f-fa01-4cb3-810d-7fbfdb2ac91c"],
+Cell[5554, 184, 323, 10, 63, "Output",ExpressionUUID->"2473e6d4-0c65-4321-9a4b-addbf29ca41b"]
+}, {2}]],
+Cell[5889, 197, 193, 3, 44, "Text",ExpressionUUID->"4f7a2c19-3a29-4aad-8d0b-f608eab29b3d"],
+Cell[CellGroupData[{
+Cell[6107, 204, 1166, 37, 64, "Input",ExpressionUUID->"3ada77c1-bfd5-421c-b44f-da07199f6fe4"],
+Cell[7276, 243, 1002, 35, 117, "Output",ExpressionUUID->"18303460-9585-42d8-9867-7beed6e62073"]
+}, {2}]],
+Cell[8290, 281, 836, 18, 98, "PreviousNext",ExpressionUUID->"868703ce-d953-415d-b116-38c195a18e8c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9175, 305, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"1beffebf-5d38-4b86-a197-a99cd5774965",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[9322, 311, 159, 3, 112, "Subsection",ExpressionUUID->"cf0f837f-4896-42b2-93b8-995f1e25f44c"],
+Cell[9484, 316, 168, 3, 62, "Text",ExpressionUUID->"ae1e398f-97e9-4081-ac5b-52398ac51eb6"],
+Cell[CellGroupData[{
+Cell[9677, 323, 282, 6, 37, "Input",ExpressionUUID->"b0bbb287-552f-4fc7-aef4-3c40204eea44"],
+Cell[9962, 331, 328, 9, 77, "Output",ExpressionUUID->"460c6edc-6352-4f83-800e-94b20ab59979"]
+}, {2}]],
+Cell[10302, 343, 193, 3, 62, "Text",ExpressionUUID->"c7036705-f7a8-4ea4-a7aa-05b78cf0bd6a"],
+Cell[CellGroupData[{
+Cell[10520, 350, 917, 27, 64, "Input",ExpressionUUID->"7067a4e2-8b41-4445-8d18-1759472c57a9"],
+Cell[11440, 379, 840, 27, 108, "Output",ExpressionUUID->"9f361785-79de-4781-8f61-4134a7cae5d7"]
+}, {2}]],
+Cell[12292, 409, 836, 18, 98, "PreviousNext",ExpressionUUID->"d5797182-dc06-4784-9e57-6e3fab750b2a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13177, 433, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"5bc137ff-1a58-4b61-b7e4-43340f36eb45",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[13324, 439, 159, 3, 112, "Subsection",ExpressionUUID->"69d5f60a-e10d-44f4-beec-6a69fe0c1768"],
+Cell[13486, 444, 186, 3, 62, "Text",ExpressionUUID->"4c190b93-eeda-4be8-b140-050568360be0"],
+Cell[CellGroupData[{
+Cell[13697, 451, 285, 6, 37, "Input",ExpressionUUID->"a70fd43b-8a1e-4182-ad9b-57e9e39f232d"],
+Cell[13985, 459, 303, 9, 77, "Output",ExpressionUUID->"d3867a07-065a-45ae-bfe7-8701e016e223"]
+}, {2}]],
+Cell[14300, 471, 192, 3, 62, "Text",ExpressionUUID->"fb58bb28-d7cc-4961-a642-e9b1b96f6b30"],
+Cell[CellGroupData[{
+Cell[14517, 478, 1180, 37, 90, "Input",ExpressionUUID->"2d25c34b-abc3-4e68-be47-282b38e78bed"],
+Cell[15700, 517, 1074, 36, 115, "Output",ExpressionUUID->"081308b7-568d-4399-bcb9-003679ca9bcf"]
+}, {2}]],
+Cell[16786, 556, 836, 18, 98, "PreviousNext",ExpressionUUID->"00dc72cf-9d69-4321-9d99-ed35d9056bc3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17671, 580, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"e14d893c-73d4-45df-b8b4-15cf1c72ffbe",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[17818, 586, 159, 3, 112, "Subsection",ExpressionUUID->"ddecb536-307c-4182-94f4-0e00b8c593c5"],
+Cell[17980, 591, 271, 6, 62, "Text",ExpressionUUID->"5e11656d-3ccf-49e4-841a-d1377b142229"],
+Cell[18254, 599, 170, 3, 62, "Text",ExpressionUUID->"032a4014-6edd-45ee-bd62-2d4bd6916d12"],
+Cell[CellGroupData[{
+Cell[18449, 606, 296, 7, 37, "Input",ExpressionUUID->"878e3eb5-5ae6-422a-a621-f51d91da08d3"],
+Cell[18748, 615, 324, 10, 77, "Output",ExpressionUUID->"276dff24-af96-4259-ba63-640840ba4b42"]
+}, {2}]],
+Cell[19084, 628, 200, 3, 62, "Text",ExpressionUUID->"1d1b8fc2-c9c7-47d6-bdd1-8c0f63be56d8"],
+Cell[CellGroupData[{
+Cell[19309, 635, 1177, 38, 90, "Input",ExpressionUUID->"8090bdb7-a86a-4e71-a312-510ff14b5916"],
+Cell[20489, 675, 1030, 36, 114, "Output",ExpressionUUID->"bc26b479-ace3-4ea3-b779-1d85c17d4b9e"]
+}, {2}]],
+Cell[21531, 714, 284, 7, 102, "Text",ExpressionUUID->"6f65b8a5-8caf-4ce3-ac1c-0cb6129ec24a"],
+Cell[CellGroupData[{
+Cell[21840, 725, 815, 24, 64, "Input",ExpressionUUID->"d772ea9c-bbd3-44bf-8c56-8d9f89dfda71"],
+Cell[22658, 751, 720, 25, 108, "Output",ExpressionUUID->"68305d10-a5f4-46f2-9fcb-28d2bf68f4dd"]
+}, {2}]],
+Cell[23390, 779, 836, 18, 98, "PreviousNext",ExpressionUUID->"2a17b104-c932-4e64-a365-db3a019ad5a1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24275, 803, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"ea6149cc-32f1-47e2-a836-630883692a52",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[24422, 809, 161, 3, 112, "Subsection",ExpressionUUID->"7caecf2f-fe6e-4ff3-a776-a926c01bc56a"],
+Cell[24586, 814, 365, 8, 102, "Text",ExpressionUUID->"8b5bfaae-6d6a-4e1f-ae45-2b1ecd694a4f"],
+Cell[CellGroupData[{
+Cell[24976, 826, 1013, 33, 64, "Input",ExpressionUUID->"55eb4416-1220-4bad-a92a-a836770554fd"],
+Cell[25992, 861, 858, 31, 95, "Output",ExpressionUUID->"14303a57-81e2-4235-b857-9e7e8ffaeab3"]
+}, {2}]],
+Cell[26862, 895, 404, 12, 44, "Text",ExpressionUUID->"9d16067e-765c-4c80-934a-c67a967df441"],
+Cell[CellGroupData[{
+Cell[27291, 911, 2197, 67, 90, "Input",ExpressionUUID->"6a794351-f572-4c5a-b5bd-1fd37bb13b53"],
+Cell[29491, 980, 1768, 61, 97, "Output",ExpressionUUID->"cd6399fa-609f-4544-9e28-1c036c1bf628"]
+}, {2}]],
+Cell[31271, 1044, 330, 7, 73, "Text",ExpressionUUID->"3ad60f5c-9f42-41d5-8ef1-4b1cc062b30d"],
+Cell[CellGroupData[{
+Cell[31626, 1055, 689, 20, 37, "Input",ExpressionUUID->"c3737452-a8b7-40a6-88b4-a38c3e1e903a"],
+Cell[32318, 1077, 631, 22, 97, "Output",ExpressionUUID->"ca8710c1-002e-4d2c-9c6a-e6504ec93b97"]
+}, {2}]],
+Cell[32961, 1102, 387, 11, 44, "Text",ExpressionUUID->"18292b42-0502-43b3-a6f2-31a043d42305"],
+Cell[33351, 1115, 836, 18, 31, "PreviousNext",ExpressionUUID->"0e0dcb6d-be81-4d9e-bb02-fe778ed40070"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34236, 1139, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"551894d6-3666-4428-88d6-9afc31ead5eb",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[34383, 1145, 158, 3, 145, "Section",ExpressionUUID->"395495c4-68c9-475c-a286-0a65608766b9"],
+Cell[CellGroupData[{
+Cell[34566, 1152, 212, 4, 112, "Subsection",ExpressionUUID->"75fdb546-0019-419a-ace9-c169c685b1e9"],
+Cell[34781, 1158, 354, 7, 142, "Text",ExpressionUUID->"1744c062-4574-4105-a083-248b11f03b9a"],
+Cell[CellGroupData[{
+Cell[35160, 1169, 1070, 33, 90, "Input",ExpressionUUID->"210d4c9e-c706-4d0f-b560-2ff87d6c6f69"],
+Cell[36233, 1204, 1166, 39, 106, "Output",ExpressionUUID->"d92148c7-4408-441c-bb96-2dc2e0d34e48"]
+}, {2}]],
+Cell[37411, 1246, 836, 18, 98, "PreviousNext",ExpressionUUID->"cc7867ca-cff3-4f69-b316-1963197074f5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38308, 1271, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"6a444a22-1160-4bba-8a7b-9f6e49eb9387",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[38455, 1277, 160, 3, 112, "Subsection",ExpressionUUID->"66bdac09-86b1-4ba5-8153-82ffd85a3847"],
+Cell[38618, 1282, 464, 9, 182, "Text",ExpressionUUID->"e8cec443-6b3a-42d8-9b8c-ad23b4fcec85"],
+Cell[39085, 1293, 163, 3, 62, "Text",ExpressionUUID->"2ebe23ea-2f50-4663-a5b5-8e614d4cecd9"],
+Cell[CellGroupData[{
+Cell[39273, 1300, 1510, 45, 90, "Input",ExpressionUUID->"f7ea6695-61ef-4000-8895-062198cc591f"],
+Cell[40786, 1347, 1401, 49, 104, "Output",ExpressionUUID->"4ac2ce12-6c10-4a78-8f2f-aa6a9fe854ec"]
+}, {2}]],
+Cell[42199, 1399, 186, 3, 62, "Text",ExpressionUUID->"45b1c635-76ac-43be-9f1b-1a0db6677e19"],
+Cell[CellGroupData[{
+Cell[42410, 1406, 909, 28, 64, "Input",ExpressionUUID->"09b062ae-c5cc-43c2-ae75-7f175dab48e8"],
+Cell[43322, 1436, 651, 22, 109, "Output",ExpressionUUID->"6f7e038b-b683-4d16-b032-eca6397a6346"]
+}, {2}]],
+Cell[43985, 1461, 836, 18, 98, "PreviousNext",ExpressionUUID->"e1b64e2e-bbde-44f9-b55e-82e31709bc0d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44870, 1485, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"9410c115-8252-4d44-81a5-48a95ea40a8d",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[45017, 1491, 161, 3, 112, "Subsection",ExpressionUUID->"01a83545-ce29-4e82-938e-49bb708f4ee2"],
+Cell[45181, 1496, 349, 7, 102, "Text",ExpressionUUID->"88b8dfea-d676-486d-81ba-c694ce19c2d8"],
+Cell[45533, 1505, 190, 3, 62, "Text",ExpressionUUID->"125a5b4e-b4e8-4e17-8221-71153138fc62"],
+Cell[CellGroupData[{
+Cell[45748, 1512, 1503, 45, 116, "Input",ExpressionUUID->"70331e1a-d59e-48db-94f9-2a1bdea35d4d"],
+Cell[47254, 1559, 1284, 46, 114, "Output",ExpressionUUID->"abc8c5f1-b001-485d-9980-704a0b22cbf9"]
+}, {2}]],
+Cell[48550, 1608, 183, 3, 62, "Text",ExpressionUUID->"e7a0d64e-d6d1-471c-97a5-4c8513cc7976"],
+Cell[CellGroupData[{
+Cell[48758, 1615, 855, 25, 64, "Input",ExpressionUUID->"5b254dd6-edfb-4f3e-a073-e68f92ebb438"],
+Cell[49616, 1642, 645, 22, 111, "Output",ExpressionUUID->"9fa48efe-6a66-4625-919f-f171d281ee02"]
+}, {2}]],
+Cell[50273, 1667, 836, 18, 98, "PreviousNext",ExpressionUUID->"399eb0bd-e8d6-436c-83e6-e1252a34576d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51158, 1691, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"7ef80b73-4b9e-4555-91b6-6c8c17ed1f53",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[51305, 1697, 161, 3, 112, "Subsection",ExpressionUUID->"67d01421-734e-41c9-a3c4-089a87c46e63"],
+Cell[51469, 1702, 284, 6, 102, "Text",ExpressionUUID->"ab8172e9-8afb-4ff2-b17c-2105d4ff61c1"],
+Cell[CellGroupData[{
+Cell[51778, 1712, 283, 6, 37, "Input",ExpressionUUID->"7ee72018-8774-4143-8b17-266a8f6de064"],
+Cell[52064, 1720, 304, 9, 77, "Output",ExpressionUUID->"ba719d57-a0de-46e3-a262-8476c1770bb2"]
+}, {2}]],
+Cell[52380, 1732, 267, 6, 62, "Text",ExpressionUUID->"d4267055-1c95-45f1-a510-c77a90b9e66c"],
+Cell[CellGroupData[{
+Cell[52672, 1742, 336, 8, 37, "Input",ExpressionUUID->"7b6a53c3-2c0e-4378-930c-95c331ef45f7"],
+Cell[53011, 1752, 299, 9, 108, "Output",ExpressionUUID->"a8eee563-20ef-4722-95ed-51e853a7e49f"]
+}, {2}]],
+Cell[53322, 1764, 172, 3, 62, "Text",ExpressionUUID->"aa702074-8eed-4051-972e-709cd480d83b"],
+Cell[CellGroupData[{
+Cell[53519, 1771, 538, 13, 37, "Input",ExpressionUUID->"67a972ef-5486-454f-b782-27291aa0aced"],
+Cell[54060, 1786, 476, 16, 80, "Output",ExpressionUUID->"93684d16-9cc0-4d68-974b-a1bbb68ae8a3"]
+}, {2}]],
+Cell[54548, 1805, 220, 5, 62, "Text",ExpressionUUID->"9b4845d7-c566-4b37-b2ab-b7030ff6c03a"],
+Cell[CellGroupData[{
+Cell[54793, 1814, 662, 19, 64, "Input",ExpressionUUID->"8ec87d05-825b-4874-bbf2-281fe743be5e"],
+Cell[55458, 1835, 661, 23, 104, "Output",ExpressionUUID->"8793621f-01e4-4b3f-b67b-0bf7d9d612a2"]
+}, {2}]],
+Cell[56131, 1861, 745, 18, 143, "Text",ExpressionUUID->"177ad6f8-81bf-40f4-a042-85b4e72bacf0"],
+Cell[56879, 1881, 698, 23, 63, "Text",ExpressionUUID->"23ec810b-938e-40f1-a218-773943e4eabf"],
+Cell[CellGroupData[{
+Cell[57602, 1908, 752, 23, 64, "Input",ExpressionUUID->"78b21ed1-4ae4-4a02-9f05-87d4534ced0d"],
+Cell[58357, 1933, 838, 28, 104, "Output",ExpressionUUID->"c47df72e-a84f-4355-a7cb-09fb3293f9a1"]
+}, {2}]],
+Cell[59207, 1964, 307, 6, 102, "Text",ExpressionUUID->"40cda551-60d9-4fe2-9423-7453a2542e15"],
+Cell[CellGroupData[{
+Cell[59539, 1974, 827, 24, 64, "Input",ExpressionUUID->"96ded12a-476e-4fa9-9ed2-7a6c554b43fe"],
+Cell[60369, 2000, 888, 30, 104, "Output",ExpressionUUID->"6bfa69b9-f7c8-438b-ae27-a48bb9e293ba"]
+}, {2}]],
+Cell[61269, 2033, 186, 3, 62, "Text",ExpressionUUID->"9df8366e-0f5d-4c73-b46b-ce8a070a8a21"],
+Cell[CellGroupData[{
+Cell[61480, 2040, 604, 17, 37, "Input",ExpressionUUID->"b4a2426b-0ac5-4f74-afe5-c0b1399963ae"],
+Cell[62087, 2059, 696, 24, 106, "Output",ExpressionUUID->"3e0505b9-b6c8-45f3-b790-67cd46282b47"]
+}, {2}]],
+Cell[62795, 2086, 836, 18, 98, "PreviousNext",ExpressionUUID->"52a41464-1605-48e3-94f6-c5f2caf1b7a1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63680, 2110, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"01f24521-6ac4-439d-b65c-aeed90146045",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[63827, 2116, 181, 3, 153, "Section",ExpressionUUID->"8c77544d-f17d-48f5-9730-f4624bc19e7b"],
+Cell[CellGroupData[{
+Cell[64033, 2123, 219, 4, 118, "Subsection",ExpressionUUID->"2e4e2f7a-938e-43bf-a98a-36c5b638a7c8"],
+Cell[64255, 2129, 335, 7, 102, "Text",ExpressionUUID->"8f823397-a49d-4a7c-9c91-fe8e8eb74647"],
+Cell[64593, 2138, 2059, 66, 301, "Text",ExpressionUUID->"139bdc3a-3cb4-4d67-86ee-c2b084960aa6"],
+Cell[66655, 2206, 836, 18, 98, "PreviousNext",ExpressionUUID->"434c7e29-fdeb-4d7f-bda9-81b5d0f0ebc2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67552, 2231, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"b5b710bd-c36d-44e1-8f6b-2450cc3853b3",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[67699, 2237, 180, 3, 84, "Section",ExpressionUUID->"671d20c5-46ab-4aa3-8731-54c1ba8fdbdf"],
+Cell[CellGroupData[{
+Cell[67904, 2244, 171, 3, 67, "Subsection",ExpressionUUID->"4a1bc5c5-1903-4e07-9ac0-2d10a64a13c5"],
+Cell[CellGroupData[{
+Cell[68100, 2251, 294, 4, 56, "Subsubsection",ExpressionUUID->"dab5c280-a68a-4901-9545-9280203ecb8a"],
+Cell[68397, 2257, 175, 3, 44, "Text",ExpressionUUID->"2bbd16e3-860a-4ffe-b69e-596505c2cb7f"],
+Cell[CellGroupData[{
+Cell[68597, 2264, 376, 10, 37, "Input",ExpressionUUID->"3194b063-e1e5-4ef7-af6f-5a6fe7026d4b"],
+Cell[68976, 2276, 411, 14, 85, "Output",ExpressionUUID->"60b65f9b-dd90-41d9-ab3b-ddfba727df4f"]
+}, {2}]],
+Cell[69399, 2293, 241, 6, 44, "Text",ExpressionUUID->"b1e13b8c-542f-45a9-98bd-658de6fd7bb9"],
+Cell[CellGroupData[{
+Cell[69665, 2303, 392, 10, 37, "Input",ExpressionUUID->"47de7577-2c4c-442f-9ea3-fe88bfcc29cd"],
+Cell[70060, 2315, 440, 14, 63, "Output",ExpressionUUID->"131c13ba-d5a6-4f84-b681-e0169aed32be"]
+}, {2}]],
+Cell[70512, 2332, 159, 3, 44, "Text",ExpressionUUID->"37d84596-6167-42bc-9eea-dad81c75a14e"],
+Cell[CellGroupData[{
+Cell[70696, 2339, 735, 22, 64, "Input",ExpressionUUID->"0d046bd6-9561-4bdd-9bf3-c3f836989864"],
+Cell[71434, 2363, 811, 27, 85, "Output",ExpressionUUID->"b40d0430-ae14-4bc1-b7c2-e4c054897a87"]
+}, {2}]],
+Cell[72257, 2393, 250, 6, 44, "Text",ExpressionUUID->"3f76f10f-7d9d-42b6-b9a9-3490ce890038"],
+Cell[CellGroupData[{
+Cell[72532, 2403, 285, 6, 37, "Input",ExpressionUUID->"331a9a69-b016-42ae-97ee-f14095cfc53d"],
+Cell[72820, 2411, 328, 9, 58, "Output",ExpressionUUID->"c1a65ade-5ad2-4cd4-82ff-93f553eb146f"]
+}, {2}]],
+Cell[73160, 2423, 186, 3, 44, "Text",ExpressionUUID->"b7479c4d-3921-4dac-9596-801ae2c38b10"],
+Cell[CellGroupData[{
+Cell[73371, 2430, 1489, 46, 90, "Input",ExpressionUUID->"64687024-a2ba-488e-a705-da103304166a"],
+Cell[74863, 2478, 1451, 47, 150, "Output",ExpressionUUID->"dcc86de7-64e8-49ab-8428-4a49331965ca"]
+}, {2}]],
+Cell[76326, 2528, 254, 6, 44, "Text",ExpressionUUID->"dc87e1e9-aee0-4332-ab31-780e1074d3c4"],
+Cell[76583, 2536, 836, 18, 31, "PreviousNext",ExpressionUUID->"373cc3de-349b-42fa-a6f1-c68a3c8386af"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77492, 2562, 122, 2, 1, "SlideShowNavigationBar",ExpressionUUID->"194f2261-9db8-4ff5-a0aa-4011329c16e9",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[77639, 2568, 183, 3, 84, "Section",ExpressionUUID->"cd28ec17-85a2-41f5-9742-fcd83d89b959"],
+Cell[CellGroupData[{
+Cell[77847, 2575, 173, 3, 67, "Subsection",ExpressionUUID->"4ecedf2c-4401-4a7e-8192-aebdadf4449f"],
+Cell[CellGroupData[{
+Cell[78045, 2582, 195, 3, 56, "Subsubsection",ExpressionUUID->"85188cdf-5d25-4407-9b8f-ebc0f07d408f"],
+Cell[78243, 2587, 278, 6, 73, "Text",ExpressionUUID->"8924b8c6-a89a-4496-8348-8ea55d7bee45"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

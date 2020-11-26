@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% THE FOLLOWING ARE FORMATTING COMMANDS.  Please do not delete or edit!
+%
+%%%%%%%%%%
+\makeatletter
+\newcommand{\spe@ker}{}
+\newcommand{\t@lktitle}{}
+\newcommand{\@ffili@tion}{}
+\newcommand{\speaker}[1]{%
+  \renewcommand{\spe@ker}{#1}}
+\newcommand{\talktitle}[1]{%
+  \renewcommand{\t@lktitle}{#1}}
+\newcommand{\affiliation}[1]{%
+  \renewcommand{\@ffili@tion}{#1}}
+\renewenvironment{abstract}{%
+  \begin{center}
+    \large
+    \textbf{\spe@ker} %(\@ffili@tion)
+    : ``\t@lktitle''
+  \end{center}
+  \begin{trivlist}
+  \item\textsc{Abstract:}}{%
+  \end{trivlist}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb,latexsym}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IMPORTANT: PLEASE READ
+% Do not define your own commands or load any other packages.  All
+% talk submissions will be put together into a single document to
+% produce a book of talk abstracts.  Defining your own commands could
+% impact other speakers' abstracts!  Please do not do so.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SEMINAR INFORMATION
+\title{Student Differential Geometry Seminar}
+\author{Stony Brook University}
+\date{November 26, 2018}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edit the SPEAKER, TALKTITLE, AFFILIATION and ABSTRACT in the
+% following document body.
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\speaker{Zhongshan An}
+\talktitle{Moduli and convergence theory}
+%\affiliation{Replace by your university, affiliation or organization}
+
+\begin{abstract}
+In this talk I will first give a brief description of the (pre)moduli space of Einstein metrics on a closed manifold. Then I will talk about some important rigidity and convergence results, which helps to understand the moduli space better. 
+\end{abstract}
+
+\end{document}

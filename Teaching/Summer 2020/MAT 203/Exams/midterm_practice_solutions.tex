@@ -1,0 +1,333 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, color}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes} %%%% This package allows Tex to recognize quotation marks with the \enquote command. 
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MAT 203}
+\newcommand{\term}{Summer I 2020}
+\newcommand{\examnum}{Midterm}
+\newcommand{\examdate}{06/11/20}
+\newcommand{\timelimit}{3 hours and 25 minutes}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+\title{MAT 203 - Summer II 2020: Midterm solutions}
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}\textbf{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} & ID number & \makebox[2in]{\hrulefill}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{center}
+\large{\textbf{Instructions}}
+\end{center}
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+
+\item This exam contains \numpages\ pages (including this cover page) and
+\numquestions\ problems.  Check to see if any pages are missing.  Enter
+all requested information on the top of this page, and put your initials
+on the top of every page, in case the pages become separated.
+
+\item You may \textit{not} use your books, notes, or any device that is capable of accessing the internet on this exam (e.g., smartphones, smartwatches, tablets). You may not use a calculator.
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers will not receive full
+credit}.
+
+\end{itemize}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+%%%%%%%%%%%%%%
+
+\addpoints
+\question In each of the following problems, determine if the statements are true or false. Explain your reasoning (correct answers without an explanation will be worth only 2 points per statement). 
+\begin{parts}
+\part[5] Two vectors in space always determine a unique plane. 
+
+\textit{Solution:} This is false. Collinear vectors do not determine a unique plane.
+
+\vfill
+\part[5] Two planes in space always intersect. 
+
+\textit{Solution:} This is false. Parallel planes do not intersect.
+\vfill
+\part[5] The dot product can be used to detect whether two non-zero vectors in space are aligned. 
+
+\textit{Solution:} This is true. Two vectors are aligned if $(u\cdot v)^2 = (u\cdot u)(v\cdot v)$. 
+\vfill
+\part[5] Let $r(t)$ and $s(t)$ be curves in the plane, such that neither has a limit as $t$ converges to $0$. Then their cross-product $r(t)\times s(t)$ does not have a limit at $0$ either. 
+
+\textit{Solution:} This is false. Neither of the curves $r(t)=\frac{1}{t}i$ and $s(t)=\frac{2}{t}i$, defined for $t \neq 0$, has a limit as $t$ goes to $0$, but their cross-product $(r\times s)(t)$ is equal to zero for all $t \neq 0$, since the curves are collinear, hence has limit $0$ as $t$ goes to $0$. 
+\vfill
+\part[5] If all directed limits a scalar-valued, multivariable function at a point exist and coincide, then the function has a limit at the point, in the multivariable sense.
+
+\textit{Solution:} This is false. One counter-example, as seen in the supplemental notes on continuity, is the function $f(x,y)=\frac{x^2y}{x^4+y^2}$, which has directed limits equal to $0$ at the origin, along any direction, but whose limit at the origin does not exist in the multivariable sense, since limits along other curves, such as the parabolae $y=kx^2$ yield inconsistent results, for different values of $k$. 
+
+\vfill
+\part[5] If a scalar-valued, multivariable function is separately continuous with respect to each variable, then it is continuous in the multivariable sense.
+
+\textit{Solution:} This is false. One counter-example, as seen in the notes, is the function defined by 
+\begin{equation*}
+f(x,y) = 
+\left\{
+\begin{array}{rl}
+\frac{y}{x}-y & \mbox{ if} \ 0 \leq y < x \leq 1 \\
+\frac{x}{y}-x & \mbox{ if} \ 0 \leq x < y \leq 1 \\
+1-x & \mbox{if} \ 0 <x = y \leq 1 \\
+0 & \mbox{ elsewhere},
+\end{array}
+\right.
+\end{equation*}
+which is separately continuous with respect to $x$ and $y$, but not continuous at the origin, for its directed limit along the ray $y=x, x>0$, as $x$ tends to $0$, does not coincide with the value of the function at the origin. 
+\vfill 
+\end{parts}
+
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addpoints 
+\question Consider the lines whose parametric equations are given by 
+\begin{align*}
+L_1 \colon  & x=2t, y=4t, z=6t.\\
+L_2 \colon & x=1-s, y=4+s, z=-1+s.
+\end{align*}
+
+\begin{parts}
+\part[5] Write symmetric equations for each line
+
+\textit{Solution:} We can rewrite the equations of line 1 by eliminating the variable t as 
+\begin{equation*} 
+x = \frac{y}{2} = \frac{z}{3}
+\end{equation*}
+Meanwhile, equations for line 2 can be written as 
+\begin{equation*}
+1-x = y-4 = z+1
+\end{equation*}
+\vfill
+\part[5] Explain why these lines do not intersect. 
+
+\textit{Solution:} If the lines intersect then the following system of equations has a solution, 
+\begin{align*}
+2t & =1-s \\
+4t & = 4+s \\
+6t & = -1+s.
+\end{align*}
+
+However, these equations are incompatible with each other: solving equations 1 and 2 for $t$ yields $t=\frac{5}{6}$; solving equations 1 and 3 for $t$ yields $t=0$.
+
+\vfill
+\newpage
+
+\part[5] Explain why these lines are not parallel. 
+
+\textit{Solution:} Line $L_1$ is parallel to the vector $(2,4,6)$. Line $L_2$ is parallel to the vector $(-1,1,1)$. These vectors are not multiples of each other, so the lines are not parallel. 
+
+\vfill
+\part[5]  Find the general equations of two parallel planes, $\Pi_1$ and $\Pi_2$, containing lines $L_1$ and $L_2$, respectively. 
+
+
+\textit{Solution:} The vector $(2,4,6) \times (-1,1,1) = (-2,-8,6)$ is normal to both lines, so it defines a plane parallel to both, given by equation
+\begin{equation*}
+\Pi_1 \colon \ -2x -8y + 6z =0.
+\end{equation*}
+Notice that this plane contains the line $L_1$. To find a parallel plane $\Pi_2$ containing the line $L_2$, we have to translate this plane. The amount of translation can be computed by inputing the coordinates of points in the line into the left-hand side of the equation of $\Pi_1$: since 
+\begin{equation*}
+-2(1) -8(4) + 6(-1) = -40,
+\end{equation*}
+the equation of the plane $\Pi_2$ is 
+\begin{equation*}
+\Pi_2 \colon \ -2x -8y + 6z =-40
+\end{equation*}
+
+\vfill
+\end{parts}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%
+\addpoints
+\question[10] Compute the trajectory of a curve whose velocity vector is given by 
+\begin{equation*}
+r'(t)= e^{-t}i + t^2j + \frac{1}{1+t^2} k,
+\end{equation*}
+and such that $r(0)=(1,1,1)$. 
+
+\textit{Solution:} By the Fundamental Theorem of Calculus for Curves, 
+\begin{align*}
+r(t) & = r(0) +\int_{0}^{t} r'(s)\ ds\\
+& = i + j +k + \left(\int_{0}^{t} e^{-s}ds \right)i + \left(\int_{0}^{t} s^2 ds\right)j + \left( \int_{0}^{t}  \frac{1}{1+s^2} ds \right) k \\
+& = (2-e^{-t})i + \left( 1+ \frac{t^3}{3} \right)j + (1+\arctan(t))k
+\end{align*}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%
+
+\addpoints
+
+\addpoints
+\question Consider the function
+\begin{equation*}
+f(x,y)=\left\{
+\begin{array}{rc}
+\frac{xy(x^2-y^2)}{x^2+y^2} & \mbox{if} \ (x,y) \neq (0,0)\\
+0, & \mbox{if} \ (x,y)=(0,0).
+\end{array}
+\right.
+\end{equation*}
+
+\begin{parts}
+\part[5] What are the directed limits of the function along lines $y=kx$, as $x \to 0$? 
+
+\textit{Solution:} If $y=kx$, then 
+\begin{equation*}
+f(x,kx)= \frac{kx^2(x^2-k^2x^2)}{x^2+k^2x^2} = x^2\left(\frac{k(1-k^2)}{1+k^2}\right),
+\end{equation*}
+and the limit of this expression as $x \to 0$ is $0$, regardless of the value of $k$. \textit{[2 points for setting up the limit, 3 points for correct evaluation.]}
+\vfill
+\part[5] Is this function continuous at the origin?
+
+\textit{Solution:} Yes, it is. The term 
+\begin{equation*}
+\frac{x^2-y^2}{x^2+y^2}
+\end{equation*}
+is bounded above and below, 
+\begin{equation*}
+-1 \leq \frac{x^2-y^2}{x^2+y^2} \leq 1. 
+\end{equation*}
+Thus the limit 
+\begin{equation*}
+\lim_{(x,y) \to (0,0)} \frac{xy(x^2-y^2)}{x^2+y^2}
+\end{equation*}
+exists, and equals the limit
+\begin{equation*}
+\lim_{(x,y) \to (0,0)} xy = 0,
+\end{equation*}
+the same as the value of the function at the origin. 
+
+\vfill
+\newpage
+\part[5] What is the partial derivative of this function relative to $x$, at points other than the origin?
+\begin{align*}
+\frac{\partial f}{\partial x} & = \frac{(3x^2-y^3)(x^2+y^2) - (x^3y-xy^3)(2x)}{(x^2+y^2)^2}  \\
+& = \frac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^2}.
+\end{align*}
+
+\vfill
+\part[5] What is the partial derivative of this function relative to $y$, at points other than the origin?
+\begin{align*}
+\frac{\partial f}{\partial y} & = \frac{(3x^3-3y^2x)(x^2+y^2) - (x^3y-xy^3)(2y)}{(x^2+y^2)^2}  \\
+& = \frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2}.
+\end{align*}
+\vfill
+\end{parts}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\addpoints
+\question Recall that the polar coordinate system in the plane is related to Cartesian coordinates by means of the equations
+\begin{align}
+x & = r\cos(\theta), \\
+y & = r\sin(\theta).
+\end{align}
+\begin{parts}
+\part[6] Differentiate equation (1) relative to $x$ to find a relation between $\frac{\partial r}{\partial x}$ and $\frac{\partial \theta}{\partial x}$.
+
+\textit{Solution:} By the product rule, 
+\begin{equation*} 
+\nonumber 
+1  = \frac{\partial r}{\partial x}\cos(\theta) -r\sin(\theta)\frac{\partial \theta}{\partial x}
+\end{equation*}
+\vfill
+\part[6] Differentiate equation (2) relative to $x$ to find a second relation between $\frac{\partial r}{\partial x}$ and $\frac{\partial \theta}{\partial x}$.
+
+\textit{Solution:} 
+\begin{equation*}
+0 =\frac{\partial r}{\partial x}\sin(\theta)+ r\cos(\theta)\frac{\partial \theta}{\partial x}
+\end{equation*}
+\vfill
+\newpage
+\part[8] By solving the system of equations obtained in the previous two steps, compute the derivatives $\frac{\partial r}{\partial x}$ and $\frac{\partial \theta}{\partial x}$.
+
+\textit{Solution:} This problem can be solved by elimination. Multiplying equation 1 by $\sin(\theta)$ and equation 2 by $-\cos(\theta)$ and adding the resulting equations, we obtain
+\begin{equation*}
+\frac{\partial \theta}{\partial x} = -\frac{\sin(\theta)}{r}
+\end{equation*}
+Substituting this value within one of the equations of the system yields
+\begin{equation*}
+\frac{\partial r}{\partial x} = \cos(\theta)
+\end{equation*}
+\end{parts}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{questions}
+\end{document}

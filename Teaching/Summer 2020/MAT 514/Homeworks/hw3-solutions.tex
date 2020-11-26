@@ -1,0 +1,166 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Problem #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\vsspan}{span}
+\newcommand{\func}[3]{{#1} \colon {#2} \longrightarrow {#3}} 
+
+\title{Math 514 - Summer II 2020: Homework 1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 514 - Summer II 2020\\
+July 28, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Solutions to Homework 3} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{3.44(d)}
+Determine all complex numbers for which the function $f(z)=\exp(\overline{z})$ is holomorphic.
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} Let us write this function in terms of the real and imaginary parts of $z$, 
+\begin{align*}
+f(x+iy) & = \exp(x-iy) \\
+& = e^{x}[\cos(-y)+i\sin(-y)]\\
+& = e^{x}[\cos(y)-i\sin(y)],
+\end{align*}
+thus $f$ has real and imaginary parts 
+\begin{equation*}
+u(x,y)=e^{x}\cos(y), \, \, v(x,y) = -e^{x}\sin(y),
+\end{equation*}
+respecively. The Cauchy-Riemann equations are thus
+\begin{align*}
+e^{x}\cos(y) & = -e^{x}\cos(y) \\
+-e^{x}\sin(y) & = e^{x}\cos(y).
+\end{align*}
+This set of equations has no solutions, thus $f$ is not complex-differentiable anywhere. 
+
+\vspace{1cm}
+
+\begin{exercise}{3.45(b)}
+Find all solutions to the equation 
+\begin{equation*}
+\mathrm{Log}(z)=\frac{3\pi i}{2}
+\end{equation*}
+\end{exercise}
+
+\vspace{0.5cm}
+\noindent \textbf{Solution:} This equation has no solutions, as the argument of the principal branch of the logarithm is constrained between $-\pi$ and $\pi$. 
+\vspace{1cm}
+
+\begin{exercise}{4.3}
+Integrate the function $f(z)=\overline{z}$ over the paths given below
+\begin{itemize}
+\item[(a)] $\gamma(t) = t+it$, $0\leq t \leq 1$. 
+\item[(b)] $\gamma(t) = t + it^2$, $0 \leq t \leq 1$. 
+\item[(c)] The path $\xi$, juxtaposition of the paths $\gamma_1(t) =t$, $0\leq t \leq 1$, and $\gamma_2(t) = 1+it$, $0 \leq t \leq 1$. 
+\end{itemize}
+\end{exercise}
+
+\vspace{0.5cm}
+\noindent \textbf{Solution:} 
+\begin{itemize}
+\item[(a)] The velocity vector of the path is $\gamma^{'}(t)=1+i$, hence the integral is 
+\begin{align*}
+\int_{\gamma} \overline{z} \, dz & = \int_{0}^{1} (t-it)(1+i) \, dt \\
+& = \int_{0}^{1}(t+it-it-i^2t) \, dt \\
+& = \int_{0}^{1} 2t \, dt\\
+& = 1
+\end{align*}
+\item[(b)] The velocity vector of the path is $\gamma^{'}(t) = 1 + 2it$, thus the integral is 
+\begin{align*}
+\int_{\gamma} \overline{z} \, dz & = \int_{0}^{1} (t-it^2)(1+2it) \, dt \\
+& = \int_{0}^{1} (t+2it^2-it^2-2i^2t^3) \, dt \\
+& = \frac{t^2}{2} + \frac{it^3}{3}+\frac{t^4}{2} \Big|_{t=0}^{t=1} \\
+& = 1+\frac{i}{3}.
+\end{align*}
+\item[(c)] This integral is split the sum of the integrals in the two paths, whose respective derivatives are $\gamma_{1}^{'}(t) = 1$ and $\gamma_{2}^{'}(t) = i$. 
+\begin{align*}
+\int_{\xi} \overline{z} \, dz & = \int_{\gamma_{1}} \overline{z} \, dz  + \int_{\gamma_{2}} \overline{z} \, dz \\
+& = \int_{0}^{1} t \, dt + \int_{0}^{1} (1-it)i \, dt \\
+& = \int_{0}^{1} (2t+i) \, dt \\
+& = t^2+it \Big|_{t=0}^{t=1} \\
+& = 1+i.
+\end{align*}
+\end{itemize}
+
+\vspace{1cm}
+
+\begin{exercise}{4.4}
+Compute $\int_{\gamma} \frac{dz}{z}$, where $\gamma$ is the unit circle oriented counterclockwise. More generally, show that for any $w \in \mathbb{C}$ and $r>0$, 
+\begin{equation*}
+\int_{C[w,r]} \frac{dz}{w-z} = 2\pi i.
+\end{equation*}
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} 
+Let us parametrize the unit circle by $\gamma(t) = e^{it}$, $0 \leq t \leq 2\pi$, with velocity $\gamma'(t) = ie^{it}$. The first integral may be evaluated as 
+\begin{equation*}
+\int_{\gamma} \frac{dz}{z} = \int_{0}^{2\pi} \frac{ie^{it}}{e^{it}}  \, dt = \int_{0}^{1} i \, dt = 2\pi i.
+\end{equation*}
+More generally, consider the circle of center $w$ and radius $r$, oriented counterclockwise, parametrized by $\xi(t) = w + re^{it}$, for $0 \leq t \leq 2\pi$, with velocity $\xi'(t) = rie^{it}$. The second integral may be evaluated as
+\begin{equation*}
+\int_{C[w,r]} \frac{dz}{w-z} = \int_{0}^{2\pi} \frac{rie^{it}}{w+re^{it}-w}= \, dt = \int_{0}^{2\pi} i \, dt = 2\pi i.
+\end{equation*}
+
+\vspace{1cm}
+
+\begin{exercise}{4.10}
+Prove the following integration by parts statement: let $f$ and $g$ be holomorphic in $G$, and suppose $\gamma \subset G$ is a piecewise smooth path from $\gamma(a)$ to $\gamma(b)$. Then 
+\begin{equation*}
+\int_{\gamma} fg' = f(\gamma(b))g(\gamma(b))-f(\gamma(a))g(\gamma(a)) - \int_{\gamma}f'g 
+\end{equation*}
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} If $f$ and $g$ are holomorphic, so is their product $fg$, whose derivative is 
+\begin{equation*}
+(fg)'=f'g+fg'.
+\end{equation*}
+Said it another way, $(fg)$ is an antiderivative of $(f'g+fg')$. Applying theorem $4.11$ to $(f'g+fg')$, we obtain the desired conclusion,
+\begin{align*}
+\int_{\gamma} f'g+fg' & = (fg)(\gamma(b))-(fg)(\gamma(a)) \\
+\int_{\gamma} fg' & = f(\gamma(b))g(\gamma(b))-f(\gamma(a))g(\gamma(a))-\int_{\gamma} f'g.
+\end{align*}
+\end{document}
+

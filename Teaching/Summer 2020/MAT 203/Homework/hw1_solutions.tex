@@ -1,0 +1,288 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 511 - Summer I 2019: Solutions to Homework 1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 203 - Summer I 2020\\
+June 2, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Homework 1 solutions} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Find the distance between the points $(-2,1,-5)$ and $(4,-1,-1)$.
+
+\end{exercise}
+
+\begin{newsolution} 
+The distance formula yields
+\begin{equation*}
+d = \sqrt{(-2-4)^2+(1-(-1))^2+(-5-(-1))^2} = \sqrt{56}
+\end{equation*}
+\end{newsolution}
+
+\begin{exercise}{2}
+Initial and terminal points are given, (6,2,0), (3,-3,8), respectively. 
+\begin{parts}
+\part Sketch the directed line segment. 
+\part Find the component form of the vector.
+\part Write the vector using standard unit vector notation. 
+\part Sketch the vector with its initial point at the origin.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part See class notes for similar problem.
+\part $v=(3,-3,8)-(6,2,0) = (-3,-5,8)$.
+\part $v = -3i -5j +8k$.
+\part See class notes for similar problem.
+\end{parts}
+\end{newsolution}
+
+
+\begin{exercise}{3}
+Use vectors to determine whether the points (5,-4,7), (8,-5,5) and (11,6,3) are collinear.
+\end{exercise}
+
+\begin{newsolution}
+Taking the point $(5,-4,7)$ as our base-point, we may define vectors 
+\begin{align*}
+u & = (8,-5,-5) - (5,-4,7) = (3,-1,-12) \\
+v & = (11,6,3) - (5,-4,7) = (6,10,-4)
+\end{align*}
+A direct comparison between corresponding coordinates shows that these vectors are not scalar multiples of each other, hence the three given points are not collinear. 
+\end{newsolution} 
+
+\begin{exercise}{4}
+You are given points P = (2,-1,3), Q = (0,5,1), R = (5,5,0). Let u be the vector from P to Q, v be the vector from P to R. Find
+\begin{parts}
+\part the component forms of u and v
+\part $u \cdot v$
+\part $v \cdot v$.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part The vectors $u$ and $v$ are 
+\begin{align*}
+u & = (0,5,1) - (2,-1,3) = (-2,6,-2)\\
+v & = (5,5,0) - (2,-1,3) = (3,6,-3)
+\end{align*}
+\part 
+\begin{equation*}
+u \cdot v = (-2,6,-2) \cdot (3,6,-3) = (-2)\cdot 3 + 6 \cdot 6 + (-2)\cdot (-3) = 36.
+\end{equation*}
+\part 
+\begin{equation*}
+v \cdot v = (3,6,-3)\cdot (3,6,-3) = 3^2+6^2+(-3)^2 = 54
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{5}
+Find the angle between the vectors u=(1,0,-3) and v=(2,-2,1)
+\begin{parts}
+\part in radians;
+\part in degrees.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+The angle between two vectors may be computed by means of the formula
+\begin{equation*}
+u \cdot v = \|u \| \|v\| \cos(\theta).
+\end{equation*}
+Using the given values of $u$ and $v$, we find
+\begin{align*}
+\cos(\theta)  & = \frac{1\cdot 2+ 0 \cdot (-2) + (-3) \cdot 1}{\sqrt{1^2+0^2+(-3)^2}\sqrt{2^2+(-2)^2+1^2}} \\
+& = -\frac{1}{3\sqrt{10}}
+\end{align*}
+We find the values of the angle by using the arc-cosine function:
+\begin{parts}
+\part $1.676$ radians
+\part$96.05^{\circ}$
+\end{parts}
+\end{newsolution}. 
+
+\begin{exercise}{6}
+You are given vectors u = (1,-1,1), v=(2,0,2). Find 
+\begin{parts}
+\part the projection of u onto v;
+\part the vector component of u orthogonal to v.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part Recall that the norm of the projection vector is given by 
+\begin{align*}
+\| \mathrm{proj}(u,v)\| & = \frac{u \cdot v}{\|v\|} \\
+& = \frac{1 \cdot 2 + (-1) \cdot 0 + 1 \cdot 2}{\sqrt{2^2+0^2+2^2}}\\
+& = \frac{4}{2\sqrt{2}}\\
+& = \sqrt{2}
+\end{align*}
+It follows that the projection vector is 
+\begin{align*}
+\mathrm{proj}(u,v) & = \frac{\sqrt{2}}{\|v\|}v\\
+& = \frac{\sqrt{2}}{2\sqrt{2}}(2,0,2) \\
+& = (1,0,1)
+\end{align*}
+\part The complement vector $w$ is defined by the equation 
+\begin{equation*}
+\mathrm{proj}(u,v) + w = u.
+\end{equation*}
+Using the given value of $u$ and the value we found for the projection on part $(a)$, we conclude
+\begin{equation*}
+w = (1,-1,1)-(1,0,1) = (0,-1,0).
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{7}
+You are given vectors u = (0,2,1), v=(1,-3,4). Find
+\begin{parts}
+\part $u \times v$;
+\part $ v \times u$;
+\part $v \times v$.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part We will use the determinants in this part:
+\begin{align*}
+u \times v & = 
+\begin{vmatrix}
+2 & 1 \\
+1 & 4
+\end{vmatrix}i + 
+\begin{vmatrix}
+0 & 1 \\
+1 & 4
+\end{vmatrix}j +
+\begin{vmatrix}
+0 & 2 \\
+1 & -3
+\end{vmatrix}k \\
+& = (2\cdot 4 - 1\cdot(-3)) i - (0\cdot 4- 1\cdot 1)j + (0\cdot (-3) -1 \cdot 2)k \\
+& = 11i +j -2k 
+\end{align*}
+\part In this case we will use multiplication rules for $i$, $j$ and $k$
+\begin{align*}
+v \times u & = (i-3j+4k)\times (2j+k) \\
+& = 2 i \times j -6 j \times j + 8 k \times j + i \times k -3 j \times k + 4 k \times k \\
+& = 2k - 8i-j-3i\\
+& = -11i - j + 2k
+\end{align*}
+\part As we saw in class, the cross product between a vector and itself is $0$. 
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{8}
+You are given points (-1,4,3), (8,10,5). Find sets of 
+\begin{parts}
+\part parametric equations, and
+\part symmetric equations.
+\end{parts}
+for the line that passes through the points (write the direction numbers as integers).
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part A parametric equation can be found by describing a base-point and a direction vector. We will choose $(-1,4,3)$ as our base point. The difference
+\begin{equation*}
+u = (8,10,5)-(-1,4,3) = (9,6,2)
+\end{equation*}
+serves a direction vector. The parametric equation with this data is 
+\begin{align*}
+(x,y,z) & = (-1,4,3) + \lambda (9,6,2) \\
+& = (-1+9\lambda, 4 + 6\lambda, 3+2\lambda).
+\end{align*}
+\part Emphasizing the parameter $\lambda$ in the equations found on part (a), we find
+\begin{align*}
+\lambda & = \frac{x-1}{9}, \\
+\lambda & = \frac{y-4}{6}, \\
+\lambda & = \frac{z-3}{2}.
+\end{align*}
+This yields the symmetric equations:
+\begin{equation*}
+\frac{x-1}{9} = \frac{y-4}{6} = \frac{z-3}{2}
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{9}
+Find a set of parametric equations for the line that passes though the point $(1,2,3)$ and is parallel to the line given by $x=y=z$. 
+\end{exercise}
+
+\begin{newsolution}
+A direction vector for the line $x=y=z$ can be found by choosing two points on the line and finding their difference, e.g.
+\begin{equation*}
+v = (1,1,1)-(0,0,0) = (1,1,1).
+\end{equation*}
+We can thus express the parametric equations for the desired line as 
+\begin{equation*}
+(x,y,z) = (1,2,3) + \lambda(1,1,1).
+\end{equation*}
+\end{newsolution}
+
+\begin{exercise}{10} 
+Find the equation of the plane that passes through the point $(-2,3,1)$ and is perpendicular to $n=3i - j + k$.
+\end{exercise}
+
+\begin{newsolution}
+The general form of the equation of a plane perpendicular to $n = 3i - j +k$ takes the form
+\begin{equation*}
+3x-y+z = D.
+\end{equation*}
+To find $D$, we substitute the coordinates of the point $(-2,3,1)$:
+\begin{equation*}
+3\cdot (-2) - 3 + 1 = D,
+\end{equation*}
+hence the equation for the plane is 
+\begin{equation*}
+3x-y+z = -8.
+\end{equation*}
+\end{newsolution}
+
+\end{document}
+

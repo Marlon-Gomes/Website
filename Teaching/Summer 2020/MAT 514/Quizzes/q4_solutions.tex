@@ -1,0 +1,85 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Problem #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\vsspan}{span}
+
+\newcommand{\func}[3]{{#1} : {#2} \longrightarrow {#3}}
+
+\title{Math 514 - Summer II 2020: Quiz 2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 514 - Summer II 2020\\
+July 21, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Quiz 4} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Use the relation
+\begin{equation*}
+\sin(z) = \frac{e^{iz}-e^{-iz}}{2i}
+\end{equation*}
+to show that $\sin(z)$ is an antiderivative of $\cos(z)$. 
+\end{exercise}
+
+\noindent \textbf{Solution:} Using the chain rule
+\begin{align*}
+\sin'(z) & = \left( \frac{e^{iz}-e^{-iz}}{2}\right)^{'} \\
+& = \frac{(e^{iz})'-(e^{-iz})'}{2} \\
+& = \frac{ie^{iz}+ie^{-iz}}{2}\\
+& = \cos(z).
+\end{align*}
+\vfill
+
+\begin{exercise}{2}
+Compute the derivative of 
+\begin{equation*}
+\cosh(z^2) 
+\end{equation*}
+by using properties of derivatives and complex exponentials.
+\end{exercise}
+\noindent \textbf{Solution:} Using the chain rule
+\begin{align*}
+(\cosh(z^2))' & = \sinh(z^2)(z^2)' \\
+& = 2z\sinh(z^2).
+\end{align*}
+\vfill
+
+\end{document}
+

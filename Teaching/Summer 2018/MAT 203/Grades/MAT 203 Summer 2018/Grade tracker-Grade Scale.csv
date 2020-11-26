@@ -1,0 +1,13 @@
+Grade Scale
+Grade Threshold,Scaled Grade Range,Grade,# of Students
+94%,89%,A,0
+88%,83%,A-,0
+82%,77%,B+,0
+76%,71%,B,0
+70%,65%,B-,0
+64%,59%,C+,0
+58%,53%,C,0
+52%,47%,C-,0
+46%,41%,D+,6
+40%,35%,D,3
+0%,-5%,F,10

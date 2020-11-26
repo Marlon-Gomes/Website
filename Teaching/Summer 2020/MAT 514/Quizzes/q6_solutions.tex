@@ -1,0 +1,108 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Problem #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\vsspan}{span}
+
+\newcommand{\func}[3]{{#1} : {#2} \longrightarrow {#3}}
+
+\title{Math 514 - Summer II 2020: Quiz 6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 514 - Summer II 2020\\
+July 28, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Solutions to Quiz 6} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Compute the integral
+\begin{equation*}
+\int_{\gamma} \frac{z+1}{z}	\, dz,
+\end{equation*}
+where $\gamma$ is the line segment joining $4$ to $4i$.
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} The function $f(z)=\frac{z+1}{z}$ is singular at the origin, but otherwise holomorphic. An antiderivative is 
+\begin{equation*}
+F(z) = z + \mathrm{Log}(z).
+\end{equation*}
+This anti-derivative is defined and holomorphic in $\mathbb{C}\setminus \mathbb{R}_{\leq 0}$, a domain which includes the path of integration. It follows from Theorem 4.11 in our textbook that 
+\begin{align*}
+\int_{\gamma} \frac{z+1}{z} \, dz & = 4i+\mathrm{Log}(4i)-4-\mathrm{Log}(4) \\
+& = 4i+ \log(4)+\frac{i\pi}{2} - 4 -\log(4) \\
+& = -4 + \left(4 + \frac{\pi}{2}\right) i.
+\end{align*}
+
+\vspace{1cm}
+
+\begin{exercise}{2}
+Compute the integral 
+\begin{equation*}
+\int_{C[-1,2]} \frac{z^2}{4-z^2} \, dz.
+\end{equation*}
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} We begin by simplifying the integrand, 
+\begin{equation*}
+\frac{z^2}{4-z^2}  = -1 + \frac{4}{4-z^2}.
+\end{equation*}
+Next we write the remaining fraction in terms of partial fractions, 
+\begin{equation*}
+\frac{4}{4-z^2} = -\frac{1}{z+2} + \frac{1}{z-2}.
+\end{equation*}
+We can therefore decompose the original integral into 
+\begin{equation*}
+\int_{C[-1,2]} \frac{z^2}{4-z^2} \, dz = -\int_{C[-1,2]} 1\, dz - \int_{C[-1,2]} \frac{1}{z+2} \, dz+ \int_{C[-1,2]} \frac{1}{z-2} \, dz.
+\end{equation*}
+Among these integrands, two are holomorphic functions within the disk bounded by the circle $C[-1,2]$, namely $(-1)$ and $\frac{1}{z-2}$. By Cauchy's Theorem, the first and third integrals above vanish. The second integral remains, as its integrand has a singularity at $-2$, a point situated within the disk $D[-1,2]$. The circle $C[-1,2]$ is $(\mathbb{C}\setminus \{-2\})$-homotopic to the circle $C[-2,2]$, by means of translations, so by Theorem 4.18, 
+\begin{equation*}
+\int_{C[-1,2]} \frac{1}{z+2} \, dz = \int_{C[-2,2]} \frac{1}{z+2}\, dz
+\end{equation*}
+The latter is evaluated by substitution, using the parametrization $\gamma(t)=-2+2e^{it}$, $0 \leq t \leq 2\pi$.
+\begin{align*}
+\int_{C[-2,2]} \frac{1}{z+2}\, dz & = \int_{0}^{2\pi} \frac{2ie^{it}}{2+(-2+2e^{it})}\, dt\\
+& = \int_{0}^{2\pi} \frac{2ie^{it}}{2e^{it}}\, dt\\
+& = 2\pi i.
+\end{align*}
+\end{document}
+

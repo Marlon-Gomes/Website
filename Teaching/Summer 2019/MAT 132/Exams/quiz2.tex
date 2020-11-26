@@ -1,0 +1,164 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes} %%%% This package allows Tex to recognize quotation marks with the \enquote command. 
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MAT 132}
+\newcommand{\term}{Summer II 2019}
+\newcommand{\examnum}{Quiz 2}
+\newcommand{\examdate}{07/24/19}
+\newcommand{\timelimit}{50 minutes}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+\title{MAT 132 - Summer II 2019: Quiz 2}
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}\textbf{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} & ID number & \makebox[2in]{\hrulefill}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{center}
+\large{\textbf{Instructions}}
+\end{center}
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+
+\item This exam contains \numpages\ pages (including this cover page) and
+\numquestions\ problems.  Check to see if any pages are missing.  Enter
+all requested information on the top of this page, and put your initials
+on the top of every page, in case the pages become separated.
+
+\item You may \textit{not} use your books, notes, or any device that is capable of accessing the internet on this exam (e.g., smartphones, smartwatches, tablets). You may use a calculator.
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers will not receive full
+credit}.
+
+\end{itemize}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% 
+
+\addpoints
+\question This problem aims to estimate the area under the curve $y=e^x/x$, for $1 \leq x \leq 4$. 
+\begin{parts}
+\part[2] Estimate using the midpoint rule with $n=4$.
+\vfill
+\part[2] Estimate using the trapezoidal rule with $n=4$.
+\vfill 
+\newpage
+\part[2] Estimate using Simpson's rule with $n=4$.
+\end{parts}
+%%%%%%%%%%%%%%%%%
+
+\newpage
+\addpoints
+\question[3] Determine whether the integral is divergent or convergent. If the integral converges, compute its value. 
+\begin{equation*}
+\int_{2}^{3}\frac{1}{\sqrt{3-x}} \ dx
+\end{equation*}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%
+\addpoints
+\question[4] Find the area of the region enclosed by the curves 
+\begin{equation*}
+f(x)=\cos(x)
+\end{equation*}
+and 
+\begin{equation*}
+g(x)=2-\cos(x),
+\end{equation*}
+for $0 \leq x \leq 2\pi$. 
+
+%%%%%%%%%
+\newpage
+\addpoints
+
+\question[4] The region bounded by the curves
+\begin{align*}
+y & =\sqrt{x}\\
+y & =x^2,
+\end{align*}
+is rotated about the $y$-axis. Find the volume of the resulting solid.
+
+\addpoints 
+\newpage
+
+\question[3] Find the exact length of the arc of the curve
+\begin{equation*}
+y=x^\frac{3}{2}
+\end{equation*}
+bounded between $1 \leq x \leq 2$. 
+\addpoints
+\end{questions}
+\end{document}

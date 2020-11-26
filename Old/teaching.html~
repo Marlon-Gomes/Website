@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Marlon de Oliveira Gomes | Teaching</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
+<link href="styles/cuheader.css" rel="stylesheet" media="screen" />
+<style>
+p.ex { 
+    margin-left: 228px;
+}
+ul.ex{
+	margin-left: 228px;
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<!-- <div id="cuheader">
+		<h1><a href="#">your website name here</a></h1>
+	</div> -->
+	<div id="wrapper">
+		<div id="banner">
+			<div id="name">
+				<h1>Marlon de Oliveira Gomes</h1>
+				<p>Graduate Student</p>
+				<p>Mathematics Department</p>
+			</div>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="teaching.html">Teaching</a></li>
+				<!-- <li><a href="cv.html">CV</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="research.html">Research</a></li>
+				<li><a href="contact.html">Contact</a></li> -->
+			</ul>
+		</div>
+		<div id="page">
+			<div id="content">
+				<div id="contentbar" class="contentbar1">
+					<h3>Content</h3>
+							<ul>
+									<li>Fall 2014</li>
+									<!-- <li>Past Teaching</li>  -->
+							</ul>
+				</div>        
+			<p > This is were you`ll find my current teaching activities. <!-- For Past Teaching, refer to the menu on the left. --></p>
+         <p > Office Hours: MoTu - 2:30 - 3:30 (Math Learning Center), We - 2:30-3:30 (Graduate Students Office inside the MLC)</p>
+	      <p class="ex"> Courses:</p>	
+	         <ul class="ex">MAT 324- Real Analysis 
+	         		<li> <a href="Teaching/Fall 2014/Mat 324/MAT324F14-Syllabus.pdf" > Syllabus</a>	</li>
+	         		<li> Solutions to Homework
+	         			<ul>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 1 Solutions.pdf" >HW1</a></li>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 2 Solutions.pdf" >HW2</a></li>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 3 Solutions.pdf" >HW3</a></li>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 4 Solutions.pdf" >HW4</a></li>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 5 Solutions.pdf" >HW5</a></li>
+	         			<li><a href="Teaching/Fall 2014/Mat 324/MAT 324 - Assignment 6 Solutions.pdf" >HW6</a></li>
+	         			</ul>
+	         		</li>
+	         	</ul>
+	         	</div>
+		</div>
+    </div>
+    <!-- <div id="footer">
+		<a href="http://www.colorado.edu"><strong>University of Colorado Boulder</strong></a><br />
+		&copy; Regents of the University of Colorado<br />
+		<a href="http://www.colorado.edu/about/legal.html">Legal &amp; Trademarks</a> &bull; <a href="http://www.colorado.edu/privacy">Privacy</a>
+	</div> -->
+</div>
+</body>
+</html>

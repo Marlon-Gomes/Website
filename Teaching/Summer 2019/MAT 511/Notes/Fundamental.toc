@@ -1,0 +1,12 @@
+\select@language {english}
+\contentsline {chapter}{\tocchapter {Lecture}{1}{Elements of Mathematical Logic}}{5}
+\contentsline {section}{\tocsection {}{1}{Propositional Logic}}{5}
+\contentsline {section}{\tocsection {}{2}{Predicate Languages}}{7}
+\contentsline {chapter}{\tocchapter {Lecture}{2}{Elements of Inference}}{9}
+\contentsline {section}{\tocsection {}{1}{Rules of Inference}}{9}
+\contentsline {section}{\tocsection {}{2}{Rules of Replacement}}{10}
+\contentsline {section}{\tocsection {}{3}{Compound tautologies}}{10}
+\contentsline {section}{\tocsection {}{4}{Proofs}}{10}
+\contentsline {chapter}{\tocchapter {Lecture}{3}{Fundamentals of Set Theory}}{11}
+\contentsline {chapter}{\tocchapter {Lecture}{4}{The Natural Numbers}}{13}
+\contentsline {chapter}{\tocchapter {Lecture}{5}{Cardinality}}{15}

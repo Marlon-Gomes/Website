@@ -1,0 +1,94 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Problem #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\vsspan}{span}
+
+\newcommand{\func}[3]{{#1} : {#2} \longrightarrow {#3}}
+
+\title{Math 514 - Summer II 2020: Long Quiz 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 514 - Summer II 2020\\
+August 11, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Solutions to Quiz 8} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}{1}
+Find a power series representation for 
+\begin{equation*}
+\frac{1}{1-z}
+\end{equation*}
+centered at $z=4$. 
+\end{exercise}
+
+\vspace{0.5cm}
+
+\textbf{Solution:} To obtain this power series representation we will use a change of variables trick, by substituting $w=z-4$. In terms of $w$, this function can be written as 
+\begin{equation*}
+\frac{1}{1-(w+4)} = \frac{1}{-3-w} = -\frac{1}{3+w} = \frac{-\frac{1}{3}}{1-\left(\frac{-w}{3}\right)}.
+\end{equation*}
+The last expression can be represented as a geometric series, so long as $|\frac{w}{3}| < 1$, 
+\begin{align*}
+\frac{1}{1-z} & = \frac{-\frac{1}{3}}{1-\left(\frac{-w}{3}\right)}\\
+& = \left(-\frac{1}{3}\right) \sum_{k=0}^{\infty} \left(-\frac{w}{3}\right)^k \\
+& = \sum_{k=0}^{\infty} \frac{(-1)^{k+1}w^k}{3^{k+1}}\\
+& = \sum_{k=0}^{\infty} \frac{(-1)^{k+1}(z-4)^k}{3^{k+1}}
+\end{align*}
+\vspace{1cm}
+
+\begin{exercise}{2}
+Determine the first three terms of the Taylor series for 
+\begin{equation*}
+\frac{e^z}{1-z}
+\end{equation*}
+centered at $z=0$. Determine the radius of convergence of this power series. 
+\end{exercise}
+
+\vspace{0.5cm}
+
+\textbf{Solution:} The first three terms of this Taylor series may be determined by Cauchy's Integral Formulas or via derivatives. In what follows, we use the second approach. 
+\begin{itemize}
+\item $a_0 = \frac{e^0}{1-0}= 1$.
+\item $a_1 = \left(\frac{e^z}{1-z}\right)'(0) = \frac{-e^{z}(z-2)}{1-z} (0)=2$
+\item $a_2 = \left(\frac{1}{2}\right)\left(\frac{e^z}{1-z}\right)^{''}(0) =  \left(\frac{1}{2}\right) \left[ \frac{e^z}{1-z}	+ \frac{2e^z}{(1-z)^2}+ \frac{2e^z}{(1-z)^3}\right](0) = \frac{5}{2}$.
+\end{itemize}
+The series converges for $|z|<1$, as this is the largest disk centered at $z=0$ not including the singularity at $z=1$. 
+
+\end{document}
+

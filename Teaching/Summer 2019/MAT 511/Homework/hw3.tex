@@ -1,0 +1,142 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define an environment for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 511 - Summer I 2019: Homework 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 511 - Summer 1\\
+June 14, 2019
+\end{flushright}
+\bigskip
+
+This homework is due on Thursday, June 20, by 7:00 pm. 
+\begin{center}
+\textsf{Homework 3} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Let $A=\{1,2,3\}$. Construct a relation on $A \times A$ satisfying the following properties:
+\begin{parts}
+\part It is not reflexive, not symmetric, and not transitive.
+\part It is reflexive, not symmetric, and not transitive.
+\part It is not reflexive, symmetric, and not transitive.
+\part It is reflexive, symmetric, and not transitive.
+\part It is not reflexive, not symmetric, and transitive.
+\part It is reflexive, not symmetric, and transitive.
+\part It is not reflexive, symmetric, and transitive.
+\part It is reflexive, symmetric, and transitive.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{2}
+Define the following relation on $\mathbb{R} \times \mathbb{R}$: a point $(a,b)$ is related to $(x,y)$ if 
+\begin{equation*}
+y-b=x-a
+\end{equation*}
+Show that this relation is an equivalence, i.e., it is reflexive, symmetric, and transitive. What are the equivalence classes?
+\end{exercise}
+
+\begin{exercise}{3}
+Let $A = \mathbb{Z} \times (\mathbb{Z}-\{0\})$. This is the set of pairs of integers, in which the second entry is non-zero. On this set, we consider the following relation, 
+\begin{equation*}
+\mathbb{Q}=\{ ((a,b), (c,d)) \in A \times A| \ ad=bc\}.
+\end{equation*}
+Show that this relation is an equivalence relation, that is:
+\begin{parts}
+\part it is reflexive: $(a,b) \in A$ is related to itself.
+\part it is symmetric: if $((a,b),(c,d)) \in Q$, then $((c,d), (a,b)) \in Q$. 
+\part it is transitive: given $((a,b),(c,d)) \in Q$, and $((c,d),(e,f)) \in Q$, then $((a,b),(e,f))$. 
+\end{parts}
+
+Furthermore, describe the equivalence classes of this relation. 
+\end{exercise}
+
+\begin{exercise}{4}
+In each of the problems below, you are given a set $A$ and a collection of subsets. Determine if this collection is a partition. Explain your reasoning. 
+\begin{parts}
+\part $A =\mathbb{N}$, $\mathcal{P}=\{ \{0\}, \{n \in \mathbb{N}| \ n \ \mbox{is even}\}, \{n \in \mathbb{N}| \ n \ \mbox{is a prime number}\}\}$.
+\part $A= \mathbb{N}$, $\mathcal{P}=\{ \{0,1\}, \{n\in \mathbb{N}| \ n \ \mbox{has a prime factor} \}\}$.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{5}
+Let $A=\{a,b,c\}$. Give an example of a relation on $A$ that is 
+\begin{parts}
+\part antisymmetric and symmetric.
+\part antisymmetric, reflexive, and not symmetric.
+\part antisymmetric, not reflexive, and not symmetric. 
+\part symmetric and not antisymmetric. 
+\part not symmetric and not antisymmetric.
+\part irreflexive and not symmetric.
+\part irreflexive and not antisymmetric.
+\part antisymmetric, not reflexive, and not irreflexive.
+\part transitive, antisymmetric, and irreflexive.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{6}
+Define the relation $R$ on $\mathbb{N}$ by the following property: $a$ is related to $b$ by $R$ if there exists a non-negative integer $k$ such that $b=2^ka$. Show that this is a partial ordering. Does this relation have the comparability property?
+\end{exercise}
+
+\begin{exercise}{7}
+Consider a partially ordered set $A$, with order relation $R$. Assume that $C \subset B \subset A$. Determine whether the statements below are true or false.
+\begin{parts}
+\part Every upper bound for $C$ is an upper bound for $B$.
+\part Every upper bound for $B$ is an upper bound for $C$.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{8}
+Consider an order relation on the set $A=\{a,b,c,d,e,f,g,h\}$, given by the following properties: 
+\begin{itemize}
+\item $g \leq  f$
+\item $h \leq f$
+\item $h \leq d$
+\item $f \leq c$
+\item $f \leq b$
+\item $e \leq b$
+\item $e \leq a$.
+\end{itemize}
+
+Construct its Hasse diagram. In addition, find the following bounds:
+\begin{parts}
+\part all upper bounds for the set $\{b,f,g,h\}$.
+\part all lower bounds for the set $\{a,d\}$.
+\part the supremum, if it exists, for the set $\{e,g,h\}$.
+\part the infimum, if it exists, for the set $\{b,f,g\}$.
+\part the smallest element, if it exists, for the set $\{b,c,d\}$.
+\end{parts}
+\end{exercise}
+
+\end{document}

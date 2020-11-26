@@ -1,0 +1,156 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes} %%%% This package allows Tex to recognize quotation marks with the \enquote command. 
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MAT 132}
+\newcommand{\term}{Summer II 2019}
+\newcommand{\examnum}{Quiz 1}
+\newcommand{\examdate}{07/15/19}
+\newcommand{\timelimit}{50 minutes}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+\title{MAT 132 - Summer II 2019: Quiz 1}
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}\textbf{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} & ID number & \makebox[2in]{\hrulefill}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{center}
+\large{\textbf{Instructions}}
+\end{center}
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+
+\item This exam contains \numpages\ pages (including this cover page) and
+\numquestions\ problems.  Check to see if any pages are missing.  Enter
+all requested information on the top of this page, and put your initials
+on the top of every page, in case the pages become separated.
+
+\item You may \textit{not} use your books, notes, or any device that is capable of accessing the internet on this exam (e.g., smartphones, smartwatches, tablets). You may not use a calculator.
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers will not receive full
+credit}.
+
+\end{itemize}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% 
+
+\addpoints
+\question[2] Express the area under the graph of the function $f(x)=e^{3x}$, in the region $0 \leq x \leq 2$, as a limit of Riemann sums. Clearly indicate the choice of sampling points, and the width of the subintervals (that is, do not simply write $x_{i}^{*}$ and $\Delta x$, respectively). 
+
+\newpage
+
+%%%%%%%%%%%%%%%%%
+\addpoints
+\question Compute the indefinite integrals below:
+\begin{parts}
+\part[3] 
+\begin{equation*}
+\int \sin(x)\cos(\cos(x))\ dx
+\end{equation*}
+\newpage
+\part[4]
+\begin{equation*}
+\int \frac{x-3}{x(x^2+4)} \ dx
+\end{equation*}
+\end{parts}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%
+\addpoints
+\question Compute the definite integrals below: 
+\begin{parts}
+\part[3] 
+\begin{equation*}
+\int_{1}^{2} \frac{\ln(x)}{x^2} \ dx 
+\end{equation*}
+\newpage
+\part[4] 
+\begin{equation*}
+\int_{0}^{\frac{\pi}{4}} (\sin(x))^3(\cos(x))^2\  dx 
+\end{equation*}
+\end{parts}
+%%%%%%%%%5
+\newpage
+\addpoints
+
+\question[4] Find the derivative of the function $f(x)$, defined by the integral below
+\begin{equation*}
+f(x)=\int_{0}^{x^2+2x+1} \sqrt{1+3x} \ dx
+\end{equation*}
+
+\addpoints
+\end{questions}
+\end{document}

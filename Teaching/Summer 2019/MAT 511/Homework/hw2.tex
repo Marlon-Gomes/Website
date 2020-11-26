@@ -1,0 +1,146 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define an environment for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 511 - Summer I 2019: Homework 2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 511 - Summer 1\\
+June 4, 2019
+\end{flushright}
+\bigskip
+
+This homework is due on Tuesday, June 11, by 7:00 pm. 
+\begin{center}
+\textsf{Homework 2} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+Prove the uniqueness of the empty set, that is, if $A$ and $B$ are empty sets, show that $A = B$. 
+\end{exercise}
+
+\begin{exercise}{2}
+The following claim is true, but the argument presented as its proof contains a mistake. Find the mistake, and fix it. 
+
+\textbf{Claim}: If $A$ is a set, then $A \in \mathcal{P}(A)$. 
+
+\begin{proof}
+Suppose $x \in A$. Then $\{x\} \subset A$. Thus $\{x\} \in \mathcal{P}(A)$. Therefore, $A \in \mathcal{P}(A)$.
+\end{proof}
+\end{exercise}
+
+\begin{exercise}{3}
+Let $A$ and $B$ be sets. Prove that $A = B$ if and only if $\mathcal{P}(A)=\mathcal{P}(B)$.
+\end{exercise}
+
+\begin{exercise}{4}
+Let $A$, $B$, $C$ and $D$ be sets. Prove that
+\begin{parts}
+\part $A \subset B$ if and only if $A-B = \emptyset$.
+\part If $A \subset B \cup C$ and $A\cap B = \emptyset$, then $A \subset C$. 
+\part If $A \subset C$ and $B \subset C$, then $A \cup B \subset C$. 
+\part If $C \subset A$ and $D \subset B$, then $C\cap D \subset A \cap B$. 
+\part If $A \cup B \subset C \cup D$, $A\cap B = \emptyset$, and $C \subset A$, then $B \subset D$. 
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{5}
+Let $A$ and $B$ be sets. Prove that 
+\begin{equation*}
+\mathcal{P}(A) \cup \mathcal{P}(B) \subset \mathcal{P}(A \cup B).
+\end{equation*}
+Show, by means of an example, that the equality 
+\begin{equation*}
+\mathcal{P}(A) \cup \mathcal{P}(B) = \mathcal{P}(A \cup B)
+\end{equation*}
+need not be true. 
+\end{exercise}
+
+\begin{exercise}{6}
+Let $A, B, C$ and $D$ be sets. 
+\begin{parts}
+\part Prove that $(A \times B) \cap (C \times D) = (A\cap C) \times (B \cap D)$.
+\part Find an example that show thats the equality 
+\begin{equation*}
+(A\times B) \cup (C \times D) = (A\cup C) \times (B \cup D)
+\end{equation*}
+is, in general, false.   
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{7}
+Use Mathematical Induction to verify the following statements:
+\begin{parts}
+\part For every $n \in \mathbb{N}$, the number 
+\begin{equation*}
+\frac{n(n+1)}{2}
+\end{equation*}
+is an integer.
+\part For every $n \in \mathbb{N}$, the number 
+\begin{equation*}
+n(n+1)(2n+1)
+\end{equation*}
+is divisible by $6$.
+\part For all $n \in \mathbb{N}$, the sum of the interior angles of a convex polygon with $(n+2)$-sides is $180 \cdot n$ degrees.
+\part For all $n \in \mathbb{N}$, given $n$ points in a plane, no three of which are collinear, there are exactly 
+\begin{equation*}
+\frac{n^2-n}{2}
+\end{equation*}
+line segments joining pairs all pairs of points. 
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{8}
+The Fibonacci numbers are recursively defined by the relations
+\begin{align*}
+f_1 & =1,\\
+f_2 & = 1,\\
+f_{n+2} &=f_{n+1}+f_{n}.
+\end{align*}
+In this problem, you are required to use Induction (or its variants) to show the following:
+\begin{parts}
+\part Two consecutive terms of this sequence have no common divisors, other than $\pm 1$.
+\part $f_{3n}$ is always even. 
+\part $f_{4n}$ is divisible by $3$, for all $n \in \mathbb{N}$.
+\end{parts}
+\end{exercise}
+
+\begin{exercise}{9}
+In a certain kind of tournament, every player plays every other player exactly once, and either wins or losess. There are no ties. Define a top player to be a player who, for every other player $x$, either beats $x$ or beats a player $y$ who beats $x$. 
+\begin{parts}
+\part Show, by means of an example, that there can be more than one top player.
+\part Use Induction to show that every such tournament with $n$ players has a top player. 
+\part Use the Well-Ordering Principle to show that every such tournament with $n$ players has a top player.
+\end{parts}
+\end{exercise}
+\end{document}

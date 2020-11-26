@@ -1,0 +1,208 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes} %%%% This package allows Tex to recognize quotation marks with the \enquote command. 
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MAT 203}
+\newcommand{\term}{Summer I 2020}
+\newcommand{\examnum}{Midterm}
+\newcommand{\examdate}{06/11/20}
+\newcommand{\timelimit}{3 hours and 5 minutes}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+\title{MAT 203 - Summer I 2020: Midterm}
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}\textbf{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} & ID number & \makebox[2in]{\hrulefill}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{center}
+\large{\textbf{Instructions}}
+\end{center}
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+
+%\item This exam contains \numpages\ pages (including this cover page) and
+%\numquestions\ problems.  Check to see if any pages are missing.  Enter
+%all requested information on the top of this page, and put your initials
+%on the top of every page, in case the pages become separated.
+
+\item You may use your textbook and class notes. You may not use calculators.
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers will not receive full
+credit}.
+
+\end{itemize}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+%%%%%%%%%%%%%%
+
+\addpoints
+\question In each of the following problems, determine if the statements are true or false. Explain your reasoning (correct answers without an explanation will be worth only 2 points per statement). 
+\begin{parts}
+\part[5] Two planes in space always intersect along a line. 
+\vfill
+\part[5] Non-parallel lines in space always intersect. 
+\vfill
+\part[5] The cross product can be used to detect whether two non-zero vectors in space are perpendicular. 
+\vfill
+\part[5] Let $r(t)$ and $s(t)$ be curves in the plane, such that neither has a limit as $t$ converges to $0$. Then their dot product $r(t)\cdot s(t)$ does not have a limit at $0$ either. 
+\vfill
+\part[5] If the limit of a scalar-valued, multivariable function exists at a point, then all directed limits at that point exist and coincide.
+\vfill
+\part[5] If all the partial derivatives of a scalar-valued, multivariable function exist at a point, then all directional derivatives at that point exist.
+\vfill
+\end{parts}
+
+\newpage 
+\addpoints
+\question Consider the lines whose parametric equations are given by 
+\begin{align*}
+L_1 \colon  & x=3t, y=2-t, z=-1+t.\\
+L_2 \colon & x=1+4s, y=-2+s, z=-3-3s.
+\end{align*}
+
+\begin{parts}
+\part[5] Write symmetric equations for each line
+\vfill
+\part[5] Explain why these lines do not intersect. 
+\vfill
+\newpage
+\part[5] Explain why these lines are not parallel. 
+\vfill
+\part[5]  Find the general equations of two parallel planes, $\Pi_1$ and $\Pi_2$, containing lines $L_1$ and $L_2$, respectively. 
+\vfill
+\end{parts}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addpoints 
+\question A line and a plane are said to be parallel if they do not intersect. Consider the line $L$ whose symmetric equations are
+\begin{equation*}
+x-1 = \frac{y-1}{-2} = z-1,
+\end{equation*}
+and the plane $\Pi$ with equation
+\begin{equation*}
+x+y+z=1.
+\end{equation*}
+
+\begin{parts}
+\part[3] Find a vector perpendicular to the plane. 
+\vfill
+\part[3] Write parametric equations for the line. Clearly identify a direction vector.
+\vfill
+\part[4] Check that the line $L$ and the plane $\Pi$ are parallel by verifying that the vector perpendicular to the plane you found on part (a) is also perpendicular to the direction vector you found in part (b).
+\vfill
+\newpage
+\part[5] The point $P = (1,1,1)$ belongs to the line $L$. Write an equation of a line perpendicular to the plane, passing through $P$. 
+\vfill
+\part[5] The line you found on part (d) should intersect the plane at a point $Q$. Find the distance between $P$ and $Q$. 
+\vfill 
+\end{parts}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\addpoints
+\question You are given a curve with velocity vector 
+\begin{equation*}
+r'(t)= \sin(t)i + \cos(t)j + t k,
+\end{equation*}
+and such that $r(0)=(1,0,1)$.
+\begin{parts}
+\part[5] Compute the trajectory of a curve, as a function of $t$. 
+\vfill
+\part[5] Compute the arclength of the curve for $0 \leq t \leq 2\pi$. 
+\vfill
+\end{parts}
+\addpoints
+%%%%%%%%%%%
+\newpage
+
+\question Recall that the polar coordinate system in the plane is related to Cartesian coordinates by means of the equations
+\begin{align}
+x & = r\cos(\theta), \\
+y & = r\sin(\theta).
+\end{align}
+\begin{parts}
+\part[6] Differentiate equation (1) relative to $y$ to find a relation between $\frac{\partial r}{\partial y}$ and $\frac{\partial \theta}{\partial y}$.
+\vfill 
+\newpage 
+\part[6] Differentiate equation (2) relative to $y$ to find a second relation between $\frac{\partial r}{\partial y}$ and $\frac{\partial \theta}{\partial y}$.
+\vfill
+\newpage
+\part[8] By solving the system of equations obtained in the previous two steps, compute the derivatives $\frac{\partial r}{\partial y}$ and $\frac{\partial \theta}{\partial y}$.
+\end{parts}
+\addpoints
+
+\end{questions}
+\end{document}

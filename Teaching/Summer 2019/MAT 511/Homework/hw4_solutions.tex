@@ -1,0 +1,475 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{tikz}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define an environment for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Exercise #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+\newtheorem{definition}{Definition}
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\func}[3]{{#1} : {#2} \longrightarrow {#3}}
+
+\DeclareMathOperator{\vsspan}{span}
+
+\title{Math 511 - Summer I 2019: Solutions to Homework 4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 511 - Summer 1\\
+June 28, 2019
+\end{flushright}
+\bigskip
+
+\begin{center}
+\textsf{Homework 4: solutions to selected problems.} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{1}
+In what follows, determine whether the relations are functions or not.
+\begin{parts}
+\part $R=\{(x,y)\in \mathbb{N} \times \N | 2x^2-y=1\}$.
+\part $R=\{(x,y) \in \mathbb{Z} \times \mathbb{Z} | x^2+y=2\}$.
+\part $R=\{(x,y) \in \mathbb{N} \times \N | xy \ \mbox{is even}\}$.
+\part $R=\{(x,y) \in \mathbb{R} \times \mathbb{R} | x^2=y\}$.
+\part $R=\{(x,y) \in \mathbb{R} \times \mathbb{R} | x=y^2\}$.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+The question amounts to whether given $x$ in the domain, it is possible to find one, and exactly one, value of $y$ in the range which is related to it.
+\begin{parts}
+\part This is not a function, for given $x \in \N$, the unique value of $y$ related to it by this relation is 
+\begin{equation*}
+y=2x^2 -1,
+\end{equation*}
+and when $x=0$, $y$ is not a natural number. 
+\part This is a function, for given $x \in \Z$, the unique value of $y$ related to it by this relation is 
+\begin{equation*}
+y=2-x^2 \in \Z.
+\end{equation*}
+\part This is not a function. Indeed, given $x \in \mathbb{N}$, any even number $y \in \N$ is related to it.
+\part This is a relation, for given $x \in \R$, the unique value of $y$ related to it by this relation is 
+\begin{equation*}
+y=x^2 \in \R.
+\end{equation*}
+\part This is not a relation. First, not all $x \in \R$ have a related element in the range (if $x<0$, no $y \in \R$ such that $xRy$ exists). Second, any $x>0$ has multiple related elements in the range, namely $y=\sqrt{x}$ and $y=-\sqrt{x}$.
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{2}
+Describe the images of the following functions
+\begin{parts}
+\part $\func{f}{\mathbb{N}}{\mathbb{N}}$, given by 
+\begin{equation*}
+f(n)=2n
+\end{equation*}
+\part $\func{g}{\mathbb{Z}}{\mathbb{Z}}$, given by 
+\begin{equation*}
+g(z)=z^2
+\end{equation*}
+\part $\func{h}{\mathbb{R}}{\mathbb{R}}$, given by 
+\begin{equation*}
+h(x)=x^3
+\end{equation*}
+\part $\func{\sin}{[0,\pi]}{\mathbb{R}}$.
+\part $\func{\exp}{\mathbb{R}}{\mathbb{R}}$, given by exponentiation, $\exp(x)=e^x$.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part The image of this function consists of the subset of even natural numbers, 
+\begin{equation*}
+\textrm{Im}(f)=\{m \in \mathbb{N} |\  \exists \ m \ \in \N \ m=2n\}.
+\end{equation*}
+\part The image of this function consists of the set of non-negative integer numbers, 
+\begin{equation*}
+\textrm{Im}(g)=\{z \in \Z | z \geq 0\}.
+\end{equation*}
+\part The image of this function consists of the set of all real numbers, 
+\begin{equation*}
+\textrm{Im}(h)=\R.
+\end{equation*}
+\part The image of this function is an interval,
+\begin{equation*}
+\textrm{Im}(\sin)=[0,1].
+\end{equation*}
+\part The image of this function is the subset of positive real numbers, 
+\begin{equation*}
+\textrm{Im}(\exp)=(0,\infty).
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{3}
+In each of the problems below, you are given a pair of functions, whose composition $g \circ f$ cannot be defined on the entire domain of $f$. Describe the largest subset of the domain of $f$ for which the composition is a function.
+
+\begin{parts}
+\part The functions $\func{f}{\mathbb{N}}{\N}$, given by 
+\begin{equation*}
+f(n)=2n,
+\end{equation*}
+and $\func{g}{\{m \in \N| \ m \ \mbox{is divisible by 3}\}}{\N}$, given by 
+\begin{equation*}
+f(m)=m/3
+\end{equation*}
+\part The functions $\func{f}{\R}{\R}$, given by 
+\begin{equation*}
+f(x)=x^2,
+\end{equation*}
+and $\func{g}{\{y \in \R| y \leq 9\}}{\R}$, given by
+\begin{equation*}
+g(y)=\sqrt{9-y}.
+\end{equation*}
+\part The functions $\func{f}{\R}{\R}$, given by 
+\begin{equation*}
+f(x)=\frac{x}{x^2+1},
+\end{equation*}
+and the natural logarithm, $\func{\ln}{\{ y \in \R| 0 < y\}}{\R}$.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part In order for $g\circ f(n)$ to make sense (relative to the domain and range of $g$), we need $f(n)=2n$ to be a multiple of $3$. Since $2$ and $3$ are relatively prime, $2n$ is a multiple of $3$ if and only if $n$ itself is a multiple of $3$. Thus, the largest subset of $\N$ in which $g \circ f$ is defined as a function is 
+\begin{equation*}
+\textrm{Dom}(g\circ f)= \{m \in \N| \ m \ \mbox{is divisible by 3}\}.
+\end{equation*}
+\part In order for $g \circ f(x)$ to make sense, $f(x)$ must belong to the domain of $g$, that is 
+\begin{equation*}
+f(x)=x^2 \leq 9,
+\end{equation*}
+or, in other words, 
+\begin{equation*}
+\textrm{Dom}(g \circ f)=\{x \in \R| -3 \leq x \leq 3\}.
+\end{equation*} 
+\part In order for the composition $\ln(f(x))$ to make sense, $f(x)$ must belong to the domain of the logarithm, the set of positive real numbers. Note that the expression 
+\begin{equation*}
+f(x)=\frac{x}{x^2+1}
+\end{equation*}
+has positive denominator, regardless of the value of $x$, hence its sign is determined by that of $x$, its numerator. As long as $x>0$, $f(x)>0$, and the composition makes sense. Thus, the domain of $\ln \circ f$ is 
+\begin{equation*}
+\textrm{Dom}(\ln\circ f)=\{ x \in \R| x>0\}.
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{4}
+Find sets $A$, $B$ and $C$, and functions $\func{f}{A}{B}$ and $\func{g}{B}{C}$ such that 
+\begin{parts}
+\part $f$ is surjective, but $g \circ f$ is not surjective.
+\part $g$ is surjective, but $g \circ f$ is not surjective.
+\part $g \circ f$ is surjective, but $f$ is not surjective.
+\part $f$ is injective, but $g \circ f$ is not injective.
+\part $g$ is injective, but $g \circ f$ is not injective.
+\part $g \circ f$ is injective, but $g$ is not injective.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part Consider the following sets and functions: $A=\{1,2\}$, $B=\{a,b\}$, $C=\{x,y\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$, $f(2)=b$; 
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$, $g(b)=x$. 
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, $g \circ f (2)=x$, so this function is not surjective onto $C$.
+\part Consider the following sets and functions: $A=\{1,2\}$, $B=\{a,b,c\}$, $C=\{x,y\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$, $f(2)=b$; 
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$, $g(b)=x$, $g(c)=y$ 
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, $g \circ f (2)=x$, so this function is not surjective onto $C$.
+\part Consider the following sets and functions: $A=\{1,2\}$, $B=\{a,b,c\}$, $C=\{x,y\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$, $f(2)=b$; 
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$, $g(b)=y$, $g(c)=y$ 
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, $g \circ f (2)=y$, so it is surjective onto $C$, even though $f$ is not surjective onto $B$.
+\part Consider the following sets and functions: $A=\{1,2\}$, $B=\{a,b\}$, $C=\{x\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$, $f(2)=b$; 
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$, $g(b)=x$. 
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, $g \circ f (2)=x$, so this function is not injective, in contrast to $f$. 
+\part Consider the following sets and functions: $A=\{1,2\}$, $B=\{a\}$, $C=\{x\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$, $f(2)=b$; 
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$.
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, $g \circ f (2)=x$, so this function is not injective, in contrast to $g$. 
+\part Consider the following sets and functions: $A=\{1\}$, $B=\{a.b\}$, $C=\{x\}$; 
+\begin{equation*}
+\func{f}{A}{B},
+\end{equation*}
+given by $f(1)=(a)$;
+\begin{equation*}
+\func{g}{B}{C},
+\end{equation*}
+given by $g(a)=x$, $g(b)=x$.
+
+The composition $g\circ f$ is given by $g\circ f (1)=x$, an injective function, in contrast to $g$. 
+\end{parts}
+
+\end{newsolution}
+
+\begin{exercise}{5}
+For each of the bijections below, find the inverse function. Verify your answer by computing the composite of the function and its inverse.
+\begin{parts}
+\part $\func{f}{(0,\infty)}{(0,\infty)}$, given by 
+\begin{equation*}
+f(x)=\frac{1}{x}.
+\end{equation*}
+\part $\func{g}{(-2,\infty)}{(-\infty,4)}$, given by 
+\begin{equation*}
+g(x)=\frac{4x}{x+2}.
+\end{equation*}
+\part $\func{h}{\R}{(0,\infty)}$, given by 
+\begin{equation*}
+h(x)=e^{x+3}
+\end{equation*}
+\part $\func{i}{(3,\infty)}{(5,\infty)}$, given by 
+\begin{equation*}
+i(x)=\frac{5(x-1)}{x-3}.
+\end{equation*}
+\end{parts}
+\end{exercise}
+
+
+\begin{newsolution}
+\begin{parts}
+\part The inverse function is $\func{f^{-1}}{(0, \infty)}{(0, \infty)}$, given by 
+\begin{equation*}
+f^{-1}(y)=\frac{1}{y}.
+\end{equation*}
+Indeed, the compositions yield 
+\begin{equation*}
+f^{-1}(f(x))=\frac{1}{f(x)} =\frac{1}{\frac{1}{x}}=x, 
+\end{equation*}
+and
+\begin{equation*}
+f(f^{-1}(y))=\frac{1}{f^{-1}(y)}=\frac{1}{\frac{1}{y}}=y.
+\end{equation*}
+\part The inverse function is $\func{g^{-1}}{(-\infty, 4)}{(\infty, 2)}$, given by 
+\begin{equation*}
+g^{-1}(y)=\frac{2y}{4-y}.
+\end{equation*}
+Indeed, the compositions yield
+\begin{equation*}
+g^{-1}(g(x))=\frac{2g(x)}{4-g(x)}=\frac{2\cdot \left(\frac{4x}{x+2}\right)}{4-\left(\frac{4x}{x+2}\right)}= \frac{\frac{8x}{x+2}}{\frac{8}{x+2}}=x,
+\end{equation*}
+and 
+\begin{equation*}
+g(g^{-1}(y))=\frac{4g^{-1}(y)}{g^{-1}(y)-4}=\frac{4\left(\frac{2y}{y-4}\right)}{\left(\frac{2y}{y-4}\right) +2}=\frac{\left(\frac{8y}{4-y}\right)}{\left(\frac{8}{4-y}\right)}=y
+\end{equation*}
+\part The inverse function is $\func{h^{-1}}{(0, \infty)}{\R}$, given by 
+\begin{equation*}
+h^{-1}(y)=\ln(y)-3.
+\end{equation*}
+Indeed, the compositions yield
+\begin{equation*}
+h^{-1}(h(x))=\ln(h(x))-3=\ln(e^{x+3})-3=(x+3)-3=x,
+\end{equation*}
+and 
+\begin{equation*}
+h(h^{-1}(y))=e^{h^{-1}(y)+3}=e^{\ln(y)-3+3}=e^{\ln(y)}=y.
+\end{equation*}
+\part The inverse function is $\func{i^{-1}}{(5,\infty)}{(3,\infty)}$, given by 
+\begin{equation*}
+i^{-1}(y)=\frac{3y-5}{y-5}.
+\end{equation*}
+Indeed, the compositions yield
+\begin{equation*}
+i^{-1}(i(x))=\frac{3i(x)-5}{i(x)-5} =\frac{3\left(\frac{5x-5}{x-3}\right)-5}{\left(\frac{5x-5}{x-3}\right)-5}=\frac{\frac{10x}{x-3}}{\frac{10}{x-3}}=x,
+\end{equation*}
+and 
+\begin{equation*}
+i(i^{-1}(y))=\frac{5i^{-1}(y)-5}{i^{-1}(y)-3}=\frac{5\left(\frac{3y-5}{y-5}\right) -5}{\left(\frac{3y-5}{y-5}\right) -3} = \frac{\frac{10y}{y-5}}{\frac{10}{y-5}}=y.
+\end{equation*}
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{6}
+For each of following statements about cardinality of sets, determine whether the statement is true or false. If true, prove it using the definitions of finiteness and infiniteness given in class. If false, disprove itby exhibiting a counter-example.
+\begin{parts}
+\part If $A$ is finite and $B \subset A$, then $B$ is finite. 
+\part if $A$ is infinite and $B \subset A$, then $B$ is infinite.
+\part If $A$ is infinite and $A \subset B$, then $B$ is infinite.
+\part If $A$ is infinite and $B$ is finite, then $A-B$ is infinite.
+\part if $A$ is infinite and $B$ is infinite, then $A-B$ is finite.
+\part If $A\cup B$ is infinite, then $A$ or $B$ is infinite.
+\part If $A \cap B$ is finite, then $A$ or $B$ is finite.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+Recall the definitions of finite and infinite sets given in class:
+\begin{definition}
+A set $A$ is finite if any injective function $\func{f}{A}{A}$ is surjective. Otherwise, the set $A$ is called infinite. 
+\end{definition}
+\begin{parts}
+\part This statement is true, as shall be proven below. Suppose $A$ is finite, $B \subset A$. Let $\func{g}{B}{B}$ be an injective function. Consider the auxilliary function $\func{f}{A}{A}$, given by
+\begin{equation*}
+f(x)=\left\{
+\begin{array}{rc}
+g(x), & \mbox{if} \ x \in B,\\
+x, & \mbox{if} \ x \in A\setminus B.
+\end{array}
+\right.
+\end{equation*}
+This function is injective, after all, it is composed of two injective functions ($g$, on $B$, and the identity, on $A\setminus B$). From finiteness of $A$, $f$ must be surjective as well. This means that for every $y \in A$, there exists $x \in A$ for which $f(x)=y$. In particular, consider the case $y \in B$. In this case, the pre-image $x$ must belong to $B$ as well, otherwise, if $x \in A\setminus$, then $f(x)=x=y \in A-B$ as well, a contradiction with our assumption $y\in B$. It follows that there exists $x \in B$ for which $f(x)=g(x)=y$. Since $y \in B$ is generic, this shows that $g$ itself is surjective. Thus, we have shown that an injective function on $B$ is surjective, that is, $B$ is finite.
+\part This statement is false, as the following counter-example shows: $A=\mathbb{N}$, $B=\{1\}$.
+\part This statement is true, as we shall prove below. Assume $A$ is infinite, that is, there exists an injective function $\func{g}{A}{A}$, which is not surjective. Consider the auxiliary function 
+\begin{equation*}
+f(x)=\left\{
+\begin{array}{rc}
+g(x), & \mbox{if} \ x \in A,\\
+x, & \mbox{if} \ x \in B\setminus A.
+\end{array}
+\right.
+\end{equation*}
+This function is injective, as it is composed of two injective functions, $g$ on $A$, and the identity on $B\setminus A$. However, it is not surjective. Indeed, if $y \in A$ is an element for which there is no $x \in A$ satisfying $g(x)=y$, then there does not exist a $z \in B$ for which $f(z)=y$ either. For if it did, and $z \in B \setminus A$, we would conclude that $f(z)=z=y \in B\setminus A$, violating our initial assumption that $y \in A$. Else, if such a $z$ exists, and $z \in A$, then it must be the case that $f(z)=g(z)=y$, which contradicts our assumption that no element of $A$ is mapped to $y$ by $g$. All the possibilities for $z$ being exhausted, each of them leading to a contradiction, one infers that there is no $z \in B $ satisfying $f(z)=y$, i.e., $f$ is not surjective, as we wanted to show. 
+\part This statement is true. Recall that we have shown in class that a finite union of finite sets is finite.
+
+Assume, by contradiction, that $A \setminus B$ is finite. Then the set 
+\begin{equation*}
+A\cup B = (A\setminus B) \cup B
+\end{equation*}
+is finite. On the other hand, since $A \subset A \cup B$, and $A$ is assumed to be infinite, the set $A \cup B$ is infinite, as shown above. We have thus arrived at a contradiction: the set $A\cup B$ is both finite and infinite. This shows that $A \setminus B$ must be infinite. 
+\part This is false, as the counter-example below shows
+\begin{align*}
+A & = \N \\
+B & = \{n \in \N | \ \mbox{n is even}\}.
+\end{align*}
+\part This statement is the contrapositive of the following statement, shown in class: if $A$ and $B$ are finite, then $A \cup B$ is finite. 
+\part This statement is false. Indeed, the sets 
+\begin{align*}
+A  & = \{n \in \N | \ \mbox{n is even}\},\\
+B & = \{n \in \N | \ \mbox{n is prime}\}.
+\end{align*}
+are both infinite, but their intersection $A \cap B =\{2\}$ is finite. 
+\end{parts}
+\end{newsolution}
+
+\begin{exercise}{7}
+Show that the following characterizations of a finite set $A$ are equivalent:
+\begin{itemize}
+\item P: ``any injective function $\func{f}{A}{A}$ is surjective"
+\item Q: ``any surjective function $\func{f}{A}{A}$ is injective".
+\end{itemize}
+\end{exercise}
+
+\begin{newsolution}
+$\underline{P \Rightarrow Q}$
+
+Consider a surjective function $\func{g}{A}{A}$. It admits a right inverse, that is, a function $\func{f}{A}{A}$ such that $g \circ f = \textrm{id}_{A}$. The auxilliary function $f$ must be injective, after all, if $x,y \in A$ are such that $f(x)=f(y)$, then 
+\begin{align*}
+g(f(x)) & =g(f(y)) \Rightarrow \\
+x & = y.
+\end{align*}
+By assumption, $P$, the function $f$ is surjective. We claim that this is enough to show that $g$ is injective. Indeed, suppose that $g(x)=g(y)$, for some $x,y \in A$. Since $f$ is surjective, there exists $u,v \in A$ such that $f(u)=x$, $f(v)=y$. Thus, 
+\begin{align*}
+g(x) & = g(y) \Rightarrow \\
+g(f(u)) & = g(f(v)) \Rightarrow\\
+u & = v,
+\end{align*}
+from which it follows that $x=f(u)=f(v)=y$. We have shown that if the images of $x$ and $y$ under $g$ are the same, then $x$ and $y$ themselves are the same, that is, $g$ is injective. 
+
+$\underline{Q \Rightarrow P}$
+
+Consider an injective function $\func{h}{A}{A}$. It amits a left inverse, a function $\func{i}{A}{A}$ such that $i \circ h=\textrm{id}_{A}$. The function $i$ must thus be surjective, for if $x \in A$ is given, then 
+\begin{equation*}
+i(h(x))=x,
+\end{equation*}
+so any $x \in A$ is in the image of $i$. By assumption, Q, $i$ must also be an injective function. This implies that $h$ is surjective, as we shall see below. Consider an element $y \in A$. We seek to show that the equation 
+\begin{equation*}
+h(x)=y
+\end{equation*}
+has a solution $x \in A$. Consider the equation
+\begin{equation*}
+i(h(i(y))) = i(y).
+\end{equation*}
+Since $i$ is injective, this equation means that 
+\begin{equation*}
+h(i(y))=y,
+\end{equation*}
+thus we may take $x=i(y)$ as the desired solution to the equation $h(x)=y$. This shows that any element in $A$ is in the image of the function $h$, that is, $h$ is surjective, as we wanted to show. 
+\end{newsolution}
+
+\begin{exercise}{8}
+You have been promoted to junior manager of The Grand Hilbert Hotel, a hotel with a countably infinite number of rooms. Your task is simple: keep the hotel full, but make sure there is always room for more guests. Luckily, as you start your first shift, the hotel is fully booked: there is one guest in every room. Describe a way to accomodate new guests in the following scenarios (remember: upper management does not want empty rooms!). 
+\begin{parts}
+\part A bus containing 40 guests arrives. 
+\part A countably infinite caravan of buses arrives, each bus containing 40 guests.
+\part A countably infinite horde of caravans arrives, each containing countably infinitely many buses, each of which contains 40 guests.
+\end{parts}
+\end{exercise}
+
+\begin{newsolution}
+\begin{parts}
+\part The manager may ask all the guest on room number $n$ to move to room number $n+40$, thus making room for the 40 new guests, while keeping all the rooms occupied. 
+\part The manager may label the buses, using natural numbers for indices, and label guests in each bus, using an ordered pair system: the new guest indexed by the pair $(m,n)$, where $m \in \mathbb{N}$, and $n \in \N$, $1 \leq n\leq 40$, is the guest on bus $m$, seat number $n$. 
+
+Rooms are reassigned as follows. Existing guests will be relocated to rooms whose numbers are multiples of 41, with guest in room number $k$ being relocated to room number $41k$. New guests are assigned rooms based on their ordered-pair label: new guest labeled $(m,n)$ is assigned room $41m+n$. 
+\part \textbf{Note:} For notational convenience, we will think that the hotel room numbers are labeleled by positive natural numbers (i.e., there is no room number 0). 
+
+Guests present at the beginning of the night will ocupy odd-numbered rooms: guest in room number $x$ goes to room number $2x-1$. This leaves us with all the even-numbered rooms empty, ready for the mass arrival of guests. 
+
+Just as we did in the last part, we are going to use a multi-component label for the new guests. Label the caravans by positive natural numbers, buses within a given caravan in the same manner, and passengers within a bus by their seat number, $1$ through $40$. Thus, each new guest has a ticket that reads $(k,l,m)$, where $k$ stands for their caravan number, $l$ for the bus number within that caravan, and $m$ for the seat number within that bus. This passenger will be assigned room number
+\begin{equation*}
+(2k-1)2^{41l+m}.
+\end{equation*}
+
+We have some explaining to do. First, notice that since the bus seat number, $m$, is a positive natural number, $1 \leq m \leq 40$, the exponent of $2$ in the expression above is always non-zero, hence all the rooms described by such expressions are even-numbered. Next we note that no two exponents are the same, unless the passengers bus number and seat number are the same, in which case we differentiate them by their caravan number. Finally, we note that all rooms are assigned, for any positive natural number can be written in a unique way as the product of an odd number and a power of $2$. 
+\end{parts}
+
+\end{newsolution}
+\end{document}

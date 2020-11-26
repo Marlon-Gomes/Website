@@ -1,0 +1,353 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, caption}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes} %%%% This package allows Tex to recognize quotation marks with the \enquote command. 
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MAT 132}
+\newcommand{\term}{Summer II 2019}
+\newcommand{\examnum}{Quiz 4}
+\newcommand{\examdate}{08/08/19}
+\newcommand{\timelimit}{50 minutes}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+\title{MAT 132 - Summer II 2019: Quiz 4 solutions}
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}\textbf{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} & ID number & \makebox[2in]{\hrulefill}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{center}
+\large{\textbf{Instructions}}
+\end{center}
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+
+\item This exam contains \numpages\ pages (including this cover page) and
+\numquestions\ problems.  Check to see if any pages are missing.  Enter
+all requested information on the top of this page, and put your initials
+on the top of every page, in case the pages become separated.
+
+\item You may \textit{not} use your books, notes, or any device that is capable of accessing the internet on this exam (e.g., smartphones, smartwatches, tablets). You may use a calculator.
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers will not receive full
+credit}.
+
+\end{itemize}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% 
+
+\addpoints
+\question[2] Determine whether the sequence 
+\begin{equation*}
+a_n = \frac{n\sin(n)}{n^2+1}
+\end{equation*}
+converges or diverges. If it converges, finds its limit. 
+
+\textbf{Solution:} The sequence is bounded as follows 
+\begin{equation*}
+\frac{-n}{n^2+1} \leq a_n \leq \frac{n}{n^2+1}. 
+\end{equation*}
+The bounds have the same limit, as $n \to \infty$, 
+\begin{equation*}
+\lim_{n\to \infty} \frac{-n}{n^2+1}=\lim_{n\to \infty} \frac{n}{n^2+1} = 0,
+\end{equation*}
+hence the limit of the sequence is 
+\begin{equation*}
+\lim_{n \to \infty} a_n=0.
+\end{equation*}
+%%%%%%%%%%%%%%%%%
+
+\newpage
+\addpoints
+\question Determine the value of the following series: 
+\begin{parts}
+\part[2] 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{3^n}{4^{n+2}}
+\end{equation*}
+
+\textbf{Solution:} This is a geometric series. It can be written in standard form as follows, 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{3^n}{4^{n+2}} = \sum_{n=1}^{\infty} \frac{1}{16}\left(\frac{3}{4}\right)^n.
+\end{equation*}
+We recognize the ratio as $\frac{3}{4}$. Since the ratio is, in absolute value, less than 1, the series converges, and its value is given by 
+\begin{equation*}
+ \sum_{n=1}^{\infty} \frac{1}{16}\left(\frac{3}{4}\right)^n = \frac{\frac{1}{16}\left(\frac{3}{4}\right)}{1-\frac{3}{4}} = \frac{3}{16}.
+ \end{equation*}
+ 
+\newpage
+\part[2] 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2+7n+10}
+\end{equation*}
+\end{parts}
+
+\textbf{Solution:} The denominator of the fractions can be factored as 
+\begin{equation*}
+n^2+7n+10 =(n+2)(n+5).
+\end{equation*}
+The compound fraction can be written in terms of partial fractions as 
+\begin{align*}
+\frac{1}{n^2+7n+10} & =\frac{A}{n+2} + \frac{B}{n+5}\\
+& = \frac{A(n+5)+B)n+2)}{(n+2)(n+5)}\\
+& = \frac{(A+B)n+(5A+2B)}{(n+2)(n+5)},
+\end{align*}
+for constants $A$ and $B$ to be determined. These constants satisfy the following system of equations
+\begin{equation*}
+\left\{
+\begin{array}{rl}
+A + B & = 0\\
+5A+2B & = 1
+\end{array}
+\right.
+\end{equation*}
+The solutions of the system are $A=\frac{1}{3}$ and $B=-\frac{1}{3}$. 
+
+Now we can rewritte the series as 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2+7n+10} = \sum_{n=1}^{\infty} \frac{1}{3}\left[ \frac{1}{n+2} - \frac{1}{n+5} \right].
+\end{equation*}
+We recognize the series as a telescopic series, with cancellations every three terms. The value of the series is therefore the sum of its three elements, 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2+7n+10} = \frac{1}{9}+\frac{1}{12}+\frac{1}{15} = \frac{47}{180}.
+\end{equation*}
+
+%%%%%%%%%
+
+\newpage
+\addpoints
+\question[2] Use the Integral Test to determine whether the following series converges
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2+1}
+\end{equation*}
+
+\textbf{Solution:} The function we use for comparison is 
+\begin{equation*}
+f(x)=\frac{1}{x^2+1}.
+\end{equation*}
+This function is decreasing, for $x>0$, and the improper integral
+\begin{equation*}
+\int_{1}^{\infty} \frac{1}{x^2+1} \ dx. 
+\end{equation*}
+converges, as the computation below shows, 
+\begin{align*}
+\int_{1}^{\infty} \frac{1}{x^2+1} \ dx & = \lim_{t \infty} \int_{1}^{t} \frac{1}{x^2+1} \ dx \\
+& = \lim_{t \to \infty} \left( \arctan(x) \Big|_{1}^{t} \right) \\
+& = \lim_{t \to \infty} (\arctan(t)-\arctan(1))\\
+& = \frac{\pi}{2} -\frac{\pi}{4}\\ 
+& = \frac{\pi}{4}.
+\end{align*}
+Therefore, by the Integral Comparison Test, the series 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2+1}
+\end{equation*}
+converges.
+
+%%%%%%%%%%%%
+%%%%%%%%%
+\newpage
+\addpoints
+\question[2] Use the Comparison Test to determine whether the following series converges
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1+\sin(n)}{3^n}
+\end{equation*}
+
+\textbf{Solution:} The terms of the series are bounded as follows, 
+\begin{equation*}
+0 \leq \frac{1+ \sin(n)}{3^n} \leq \frac{2}{3^n}.
+\end{equation*}
+The series formed by the upper bounds, 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{2}{3^n},
+\end{equation*}
+is a geometric series whose ratio is $\frac{1}{3}$, thus it converges. Therefore, by comparison, the series 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1+\sin(n)}{3^n}
+\end{equation*}
+converges. 
+
+%%%%%%%%%%%%
+
+\newpage
+\addpoints
+\question[2] Use the Limit Comparison Test to determine whether the following series converges
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{n^2-1}{3n^4+1}
+\end{equation*}
+
+\textbf{Solution:} This series is comparable to 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{1}{n^2}.
+\end{equation*}
+Indeed, the limit 
+\begin{equation*}
+\lim_{n \to \infty} \frac{\frac{n^2-1}{3n^4+1}}{\frac{1}{n^2}} = \lim_{n \to \infty} \frac{n^4-n^2}{3n^4+1} =\frac{1}{3}
+\end{equation*}
+exists and is a positive number. By the Limit Comparison Test, the two series have the same behavior relative to convergence. Since $\sum \frac{1}{n^2}$ is known to converge, the series 
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{n^2-1}{3n^4+1}
+\end{equation*}
+also converges. 
+%%%%%%%%%%
+
+\newpage
+\addpoints 
+\question[2] Use the Alternating Series Test to determine whether the following series converges
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{(-1)^n(2n+1)}{3n-1}
+\end{equation*}
+
+\textbf{Solution:} The sequence of absolute values
+\begin{equation*}
+a_n=\frac{2n+1}{3n-1}
+\end{equation*} 
+is decreasing. Indeed, the auxilliary function 
+\begin{equation*}
+f(x)=\frac{2x+1}{3x-1},
+\end{equation*}
+whose values coincide with the sequence $a_n$ for $x=n$, has derivative
+\begin{equation*}
+f'(x)=\frac{-5}{(3x-1)^2},
+\end{equation*}
+which is negative for all values of $x$ for which it is defined ($x\neq \frac{1}{3}$). In particular, this function decreases for $x\geq1$. 
+
+However, the limit of the sequence is not zero:
+\begin{equation*}
+\lim_{n \to \infty} a_n = \lim_{n \to 0} \frac{2n+1}{3n-1}=\frac{2}{3},
+\end{equation*}
+hence the alternating series diverges. 
+%%%%%%%%%%%
+
+\newpage
+\addpoints
+\question[3] Find the radius and interval of convergence of the following series
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{n(x+1)^n}{4^n}
+\end{equation*}
+
+\textbf{Solution:} We shall use the Ratio Test to determine the radius of convergence. The limitting ratio is 
+\begin{align*}
+\lim_{n \to \infty} \left| \frac{\frac{(n+1)(x+1)^{n+1}}{4^{n+1}}}{\frac{n(x+1)^n}{4^n}} \right| & = \lim_{n \to \infty} \left|\frac{(n+1)(x+1)}{4n} \right| \\
+& = \frac{|x+1|}{4}.
+\end{align*}
+This limit is less than 1 if 
+\begin{align*}
+\frac{|x+1|}{4} & < 1 \\
+|x+1| & < 4,
+\end{align*}
+so the radius of convergence of the series is 4. 
+
+To determine the interval of convergence, we test for convergence at the endpoints.
+
+When $x=-5$, the series becomes
+\begin{equation*}
+\sum_{n=1}^{\infty}  n\left(\frac{-4}{4}\right)^n = \sum_{n=1}^{\infty} (-1)^n n
+\end{equation*}
+This is a divergent alternating series, as the sequence of absolute values,
+\begin{equation*}
+a_n=n
+\end{equation*}
+diverges to infinity. 
+
+When $x=3$, the series becomes 
+\begin{equation*}
+\sum_{n=1}^{\infty}  n\left(\frac{4}{4}\right)^n = \sum_{n=1}^{\infty} n
+\end{equation*}
+This series diverges, as the general term, $b_n=n$, diverges to infinity. 
+
+The interval of convergence of the power series is $(-5,3)$. 
+
+
+%%%%%%%%%%%
+
+\newpage
+\addpoints
+\question[3] Find a power series representation of the following function
+\begin{equation*}
+f(x)=\frac{x}{9+x^2}.
+\end{equation*}
+
+\textbf{Solution:} We can rewrite this function as 
+\begin{equation*}
+\frac{x}{9+x^2}=\frac{x}{9}\left[\frac{1}{1-\left(\frac{-x^2}{9}\right)}\right].
+\end{equation*}
+In this way, we recognize the expression on the rightmost fraction as a a geometric sum (for $|x|<3$), hence
+\begin{align*}
+f(x) & = \frac{x}{9}\sum_{n=0}^{\infty} \left(\frac{-x^2}{9}\right)^n \\
+& = \frac{x}{9}\sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{9^{n}} \\
+& = \sum_{n=0}^{\infty} (-1)^n\frac{x^{2n+1}}{9^{n+1}}, 
+\end{align*}
+for $|x|<3$. 
+\end{questions}
+\end{document}

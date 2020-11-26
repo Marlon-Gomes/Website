@@ -1,0 +1,85 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \documentclass[11pt,letterpaper]{amsbook}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage{slashed}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+%%%%%%%%%%% Quotations in the beggining of chapters
+\usepackage{epigraph}
+%%%%%%%%%
+
+%%%%%%%%%%%%% Author and Title information
+\author{Marlon Gomes}
+\title{Fundamental Concepts of Mathematics \\
+\large{Lecture notes from Summer 2019.}}
+\makeindex
+
+%%%%%%% Labeling Chapters as lectures
+\addto\captionsenglish{\renewcommand{\chaptername}{Lecture}}
+%%%%%%%%%%
+
+%% Theorem-like environments
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{conjecture}[subsection]{Conjecture}
+
+%%%%%%%%%%%% Tikz
+\makeatletter
+\tikzset{join/.code=\tikzset{after node path={%
+\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+edge[every join]#1(\tikzchaincurrent)\fi}}}
+\makeatother
+\tikzset{>=stealth',every on chain/.append style={join},
+         every join/.style={->}}
+         
+
+%%%%%%%%%%%%%%% New commands
+\newcommand{\func}[3]{{#1} \colon {#2} \longrightarrow {#3}} 
+\newcommand{\dotp}[2]{\left\langle {#1}, {#2} \right\rangle}
+\newcommand{\dirder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\norms}[2]{{\| {#1} \|}_{#2}}
+\newcommand{\norm}[1]{{\| {#1}\|}}
+\newcommand{\exact}[3]{0\rightarrow {#1} \rightarrow {#2} \rightarrow {#3}\rightarrow 0}
+\newcommand{\dbar}{\bar{\partial}}
+\newcommand{\chr}[3]{{\Gamma}_{{#1}{#2}}^{{#3}}}
+
+%% Better wedge powers
+\makeatletter
+\newcommand{\extp}{\@ifnextchar^\@extp{\@extp^{\,}}}
+\def\@extp^#1{\mathop{\bigwedge\nolimits^{\!#1}}}
+\makeatother
+%%
+
+%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%% Misc
+\numberwithin{equation}{chapter}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\input{lecture1}
+\input{lecture2}
+\input{lecture3}
+\input{lecture4}
+\input{lecture7}
+
+\bibliographystyle{amsalpha}
+\bibliography{mybib}
+\end{document}

@@ -1,0 +1,120 @@
+\documentclass[12pt,oneside]{exam}
+
+% This package simply sets the margins to be 1 inch.
+\usepackage[margin=1in]{geometry}
+
+% These packages include nice commands from AMS-LaTeX
+\usepackage{amssymb,amsmath,amsthm,amsfonts,latexsym,verbatim,xspace,setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Make the space between lines slightly more
+% generous than normal single spacing, but compensate
+% so that the spacing between rows of matrices still
+% looks normal.  Note that 1.1=1/.9090909...
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{.91}
+
+% Define environments for exercises.
+\newenvironment{exercise}[1]{\vspace{.1in}\noindent\textbf{Problem #1 \hspace{.05em}}}{}
+\newenvironment{newsolution}{\vspace{.1in}\noindent\textbf{Solution: \hspace{.05em}}}{}
+
+% define shortcut commands for commonly used symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\vsspan}{span}
+
+\newcommand{\func}[3]{{#1} : {#2} \longrightarrow {#3}}
+
+\title{Math 514 - Summer II 2020: Long Quiz 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{flushright}
+\sc MAT 514 - Summer II 2020\\
+July 30, 2020
+\end{flushright}
+\bigskip
+ 
+\begin{center}
+\textsf{Solutions to Quiz 7} 
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}{1}
+Use Cauchy's Integral Formula to compute the integral
+\begin{equation*}
+\int_{C[0,2]} \frac{e^z}{z(z-3)}\, dz
+\end{equation*}
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} The integrand may be written as 
+\begin{equation*}
+ \frac{e^z}{z(z-3)} = \frac{\frac{e^z}{z-3}}{z}, 
+ \end{equation*}
+ an expression whose numerator is a holomorphic function on $D[0,2]$, and whose denominator is singular at the center of the circle of integration. By Cauchy's Integral Formula, the value of the integral can be computed by means of the value of the numerator at the singular point, 
+ \begin{equation*}
+\int_{C[0,2]} \frac{e^z}{z(z-3)}\, dz = 2\pi i \left(\frac{e^0}{0-3}\right) = -\frac{2\pi i}{3}.
+\end{equation*}
+
+\vspace{1cm}
+
+\begin{exercise}{2}
+Compute the integral 
+\begin{equation*}
+\int_{C[0,4]} \frac{e^z}{z(z-3)}\, dz
+\end{equation*}
+\emph{Hint:} the integrand is not holomorphic in the disk bounded by the path of integration. Use a decomposition into partial fractions.
+\end{exercise}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Solution:} As the hint indicates, the method used in problem 1 can not be used directly in this problem. The issue is that the numerator used in problem 1,
+\begin{equation*}
+\frac{e^z}{z-3}
+\end{equation*}
+is singular at $z=3$, a point within the disk $D[0,4]$, hence Cauchy's Formula does not apply. 
+
+We can bypass this issue by means of a partial fractions decomposition, 
+\begin{equation*}
+\frac{e^z}{z(z-3)} = -\frac{e^z}{3z} + \frac{e^{z}}{z-3}.
+\end{equation*}
+The resulting integrals are simpler:
+\begin{itemize}
+\item the integral 
+\begin{equation*}
+\int_{C[0,4]} -\frac{e^z}{3z}\, dz
+\end{equation*}
+can be computed directly by Cauchy's theorem, applied to the function $f(z)=-\frac{e^z}{3}$, resulting in 
+\begin{equation*}
+\int_{C[0,4]} -\frac{e^z}{3z}\, dz = 2\pi i \left(-\frac{e^0}{3}\right) = -\frac{2\pi i}{3}
+\end{equation*}
+\item to compute
+\begin{equation*}
+\int_{C[0,4]} \frac{e^{z}}{3(z-3)} \, dz
+\end{equation*}
+we make use of a homotpy trick, by moving the curve of integration to $C[3,4]$ via translations (observe that there is no crossing of the singular point $z=3$ throghout the homotopy), so that 
+\begin{equation*}
+\int_{C[0,4]} \frac{e^{z}}{3(z-3)} \, dz = \int_{C[3,4]} \frac{e^{z}}{3(z-3)} \, dz,
+\end{equation*}
+an integral which may be evaluated directly by Cauchy's Integral Formula, applied to the function $g(z)=\frac{e^z}{3}$,
+\begin{equation*} 
+\int_{C[3,4]} \frac{e^{z}}{3(z-3)} \, dz = 2\pi i\left( \frac{e^3}{3}\right)
+\end{equation*}
+\end{itemize}
+We conclude that 
+\begin{equation*}
+\int_{C[0,4]} \frac{e^z}{z(z-3)}\, dz =\frac{ 2\pi ie^3}{3} -\frac{2\pi i}{3}.
+\end{equation*}
+\end{document}
+
